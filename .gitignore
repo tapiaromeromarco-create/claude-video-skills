@@ -19,3 +19,4 @@ render/
 # IDE
 .vscode/
 .idea/
+.env
