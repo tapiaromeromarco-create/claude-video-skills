@@ -88,7 +88,6 @@ const useDraw = (it: BoardItem, t0: number, frames = 14) => {
 };
 
 /* ---------- Materiales ---------- */
-const Sombra = 'drop-shadow(0 14px 18px rgba(30,20,10,0.32)) drop-shadow(0 2px 3px rgba(30,20,10,0.25))';
 
 const Papel: React.FC<{it: BoardItem}> = ({it}) => {
 	const w = it.w ?? 900, h = it.h ?? 1200, v = (it.variant as string) ?? 'page';
@@ -104,7 +103,7 @@ const Papel: React.FC<{it: BoardItem}> = ({it}) => {
 						? '#1A1714'
 						: '#EFE6D3';
 	return (
-		<div style={{width: w, height: h, filter: Sombra}}>
+		<div style={{width: w, height: h}}>
 			<div style={{width: '100%', height: '100%', background: bg, clipPath: roughPolygon(seed, v === 'torn' ? 3 : 0.9, 12), position: 'relative', overflow: 'hidden'}}>
 				{v === 'kraft' ? (
 					<AbsoluteFill style={{backgroundImage: 'repeating-linear-gradient(8deg, rgba(90,60,30,0.10) 0 2px, transparent 2px 9px), radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 60%)'}} />
@@ -150,9 +149,9 @@ const Foto: React.FC<{it: BoardItem; t0: number}> = ({it, t0}) => {
 	const bw = Boolean(it.bw);
 	const seed = `${it.x}${it.y}`;
 	if (cutout && src)
-		return <Img src={staticFile(src)} style={{width: w, height: h, objectFit: 'contain', filter: Sombra}} />;
+		return <Img src={staticFile(src)} style={{width: w, height: h, objectFit: 'contain'}} />;
 	return (
-		<div style={{width: w, height: h, filter: Sombra}}>
+		<div style={{width: w, height: h}}>
 			<div style={{width: '100%', height: '100%', background: '#FBF8F1', padding: border, boxSizing: 'border-box', clipPath: roughPolygon(seed, 1.1, 10)}}>
 				<div style={{width: '100%', height: '100%', overflow: 'hidden', position: 'relative', background: '#D9CFBD'}}>
 					{src ? (
@@ -351,7 +350,7 @@ const Pictos: React.FC<{it: BoardItem; t0: number}> = ({it, t0}) => {
 				const st = pc.at != null ? Math.round((pc.at - t0) * fps) : 0;
 				const p = interpolate(frame - st, [0, 14], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.6))});
 				return (
-					<div key={i} style={{width: size, height: size, scale: String(p), rotate: `${(random(pc.name + i) - 0.5) * 8}deg`, filter: Sombra}}>
+					<div key={i} style={{width: size, height: size, scale: String(p), rotate: `${(random(pc.name + i) - 0.5) * 8}deg`, filter: 'drop-shadow(8px 14px 10px rgba(30,20,10,0.35))'}}>
 						<Picto name={pc.name} color={['#3A3330', '#7A5230', '#1A1714'][i % 3]} />
 					</div>
 				);
@@ -404,14 +403,47 @@ const RENDER: Record<string, React.FC<{it: BoardItem; t0: number}>> = {
 	embed: Incrustada,
 };
 
-const Pieza: React.FC<{it: BoardItem; t0: number}> = ({it, t0}) => {
+// Capas de profundidad por tipo (0 = fondo, 3 = encima de todo)
+const PROF: Record<string, number> = {paper: 0.3, opart: 0, embed: 0.4, rotulo: 1, year: 1, photo: 1.6, pictos: 1.6, label: 2, ficha: 2, tag: 2, tape: 2.6, hand: 2.4, arrow: 2.4, circle: 2.4, asterisk: 2.4};
+type CamT = {x: number; y: number; z: number; t: number};
+
+const Pieza: React.FC<{it: BoardItem; t0: number; cam: CamT}> = ({it, t0, cam}) => {
 	const e = useEntrada(it, t0);
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
 	if (!e.vis) return null;
 	const R = RENDER[it.type];
 	if (!R) return null;
+	const d = (it.depth as number | undefined) ?? (it.type === 'photo' && it.cutout ? 2 : PROF[it.type] ?? 1);
+	const w = it.w ?? 400, h = it.h ?? 300;
+	const cx = it.x + w / 2, cy = it.y + h / 2;
+	// parallax: las capas altas se desplazan más con la cámara
+	const k = (d - 1) * 0.045;
+	const px = (cx - cam.x) * k, py = (cy - cam.y) * k;
+	// caída al entrar: la pieza "aterriza" (sombra grande -> normal)
+	const since = it.at == null ? 999 : frame - Math.round((it.at - t0) * fps);
+	const lift = interpolate(since, [0, 18], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+	const alt = d + lift * 3; // altura efectiva
+	const shadow = d < 0.2 ? 'none' : `drop-shadow(${(4 + alt * 7).toFixed(1)}px ${(6 + alt * 10).toFixed(1)}px ${(6 + alt * 9).toFixed(1)}px rgba(25,15,5,${(0.18 + alt * 0.06).toFixed(2)}))`;
+	// inclinación 3D según la posición respecto a la cámara + flotación leve
+	const ry = Math.max(-7, Math.min(7, ((cx - cam.x) / 960) * 5 * Math.min(1, d)));
+	const rx = Math.max(-6, Math.min(6, ((cam.y - cy) / 540) * 4 * Math.min(1, d)));
+	const fl = Math.sin(cam.t * 0.8 + (random(`${it.x}f${it.y}`) * 6)) * 2.5 * Math.max(0, d - 1);
+	const sc = 1 + lift * 0.06;
 	return (
-		<div style={{position: 'absolute', left: it.x, top: it.y, rotate: `${it.rot ?? 0}deg`, zIndex: it.z ?? 1, ...e.style}}>
-			<R it={it} t0={t0} />
+		<div
+			style={{
+				position: 'absolute',
+				left: it.x,
+				top: it.y,
+				zIndex: it.z ?? 1,
+				translate: `${px.toFixed(1)}px ${(py + fl).toFixed(1)}px`,
+				filter: shadow,
+			}}
+		>
+			<div style={{rotate: `${it.rot ?? 0}deg`, transform: `perspective(1600px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) scale(${sc.toFixed(3)})`, ...e.style}}>
+				<R it={it} t0={t0} />
+			</div>
 		</div>
 	);
 };
@@ -447,7 +479,7 @@ export const BoardScene: React.FC<{t0: number; items: BoardItem[]; cams: Cam[]; 
 				<Img src={staticFile('img/papel_arrugado.jpg')} style={{position: 'absolute', inset: 0, width: CANVAS.w, height: CANVAS.h}} />
 				<div style={{position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(120,140,160,0.10) 2px, transparent 2px), linear-gradient(90deg, rgba(120,140,160,0.10) 2px, transparent 2px)', backgroundSize: '60px 60px'}} />
 				{[...items].sort((a, b) => (a.z ?? 1) - (b.z ?? 1)).map((it, i) => (
-					<Pieza key={i} it={it} t0={t0} />
+					<Pieza key={i} it={it} t0={t0} cam={cam} />
 				))}
 			</div>
 			{era && title ? <BarraCapitulo era={era} title={title} t0={t0} showAt={barAt} /> : null}

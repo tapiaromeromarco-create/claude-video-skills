@@ -167,14 +167,15 @@
      {
       "type": "photo",
       "w": 640,
-      "h": 440,
+      "h": 456,
       "rot": 2,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 2680,
       "y": 480,
       "label": "Vista aérea de la Ciudad de México, 1962",
+      "src": "img/st/aerea_cdmx_1962.png",
       "at": 10.44
      },
      {
@@ -746,17 +747,26 @@
      },
      {
       "type": "photo",
-      "w": 560,
-      "h": 760,
+      "w": 800,
+      "h": 560,
       "rot": -4,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 2220,
-      "y": 260,
+      "cutout": true,
+      "x": 2180,
+      "y": 300,
       "label": "La Familia Burrón",
-      "at": 58.68,
-      "tag": "PORTADA"
+      "src": "img/st/familia_burron_estanquillo.png",
+      "at": 58.68
+     },
+     {
+      "type": "tag",
+      "text": "MUSEO DEL ESTANQUILLO · CDMX",
+      "rot": 0,
+      "z": 6,
+      "x": 2200,
+      "y": 880,
+      "at": 58.68
      },
      {
       "type": "photo",
@@ -792,7 +802,7 @@
       "z": 9,
       "x": 2800,
       "y": 220,
-      "at": 56.22
+      "at": 55.36
      },
      {
       "type": "arrow",
@@ -1218,7 +1228,7 @@
       "z": 7,
       "x": 380,
       "y": 2500,
-      "at": 99.72
+      "at": 98.08
      },
      {
       "type": "photo",
@@ -1801,7 +1811,7 @@
       "z": 7,
       "x": 2130,
       "y": 1350,
-      "at": 179.08
+      "at": 177.68
      },
      {
       "type": "pictos",
@@ -2148,7 +2158,7 @@
       "x": 180,
       "y": 240,
       "label": "Obras del Metro, 1969",
-      "at": 230.46
+      "at": 228.08
      },
      {
       "type": "label",
@@ -2339,7 +2349,7 @@
       "z": 7,
       "x": 160,
       "y": 2500,
-      "at": 275.0
+      "at": 273.2
      },
      {
       "type": "year",
@@ -2419,7 +2429,7 @@
       "x": 4160,
       "y": 2540,
       "label": "MUCA · Ciudad Universitaria",
-      "at": 294.12
+      "at": 291.9
      },
      {
       "type": "photo",
@@ -2992,7 +3002,7 @@
       "z": 7,
       "x": 2260,
       "y": 1400,
-      "at": 376.0
+      "at": 373.36
      },
      {
       "type": "photo",
@@ -3073,7 +3083,7 @@
       "z": 7,
       "x": 2300,
       "y": 2600,
-      "at": 389.6,
+      "at": 382.66,
       "bg": false
      },
      {
@@ -3120,7 +3130,7 @@
       "y": 2560,
       "label": "Metro",
       "src": "img/st/metro_logo.png",
-      "at": 397.54,
+      "at": 396.3,
       "fit": "contain"
      },
      {

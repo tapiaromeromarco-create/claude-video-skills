@@ -167,14 +167,15 @@
      {
       "type": "photo",
       "w": 640,
-      "h": 440,
+      "h": 456,
       "rot": 2,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 2680,
       "y": 480,
       "label": "Vista aérea de la Ciudad de México, 1962",
+      "src": "img/st/aerea_cdmx_1962.png",
       "at": "@diseño gráfico"
      },
      {
@@ -744,17 +745,26 @@
      },
      {
       "type": "photo",
-      "w": 560,
-      "h": 760,
+      "w": 800,
+      "h": 560,
       "rot": -4,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 2220,
-      "y": 260,
+      "cutout": true,
+      "x": 2180,
+      "y": 300,
       "label": "La Familia Burrón",
-      "at": "@Familia Burrón",
-      "tag": "PORTADA"
+      "src": "img/st/familia_burron_estanquillo.png",
+      "at": "@Familia Burrón"
+     },
+     {
+      "type": "tag",
+      "text": "MUSEO DEL ESTANQUILLO · CDMX",
+      "rot": 0,
+      "z": 6,
+      "x": 2200,
+      "y": 880,
+      "at": "@Familia Burrón"
      },
      {
       "type": "photo",

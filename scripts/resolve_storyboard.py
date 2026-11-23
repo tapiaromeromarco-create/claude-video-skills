@@ -57,6 +57,21 @@ for i, sc in enumerate(scenes):
     end = scenes[i + 1]["t0"] if i + 1 < len(scenes) else T["duration"]
     sc["t1"] = round(end, 3)
     sc["props"] = resolve(sc["props"], sc["t0"] - 0.3, end + 0.5, f"escena {i} ({sc['type']})")
+# Tableros: en cada parada de cámara, la primera pieza de esa zona entra al llegar (sin papel vacío)
+for sc in scenes:
+    if sc["type"] != "board": continue
+    cams = [c for c in sc["props"].get("cams", []) if c.get("at") is not None] or []
+    if not cams: continue
+    cams[0] = dict(cams[0]); cams[0].setdefault("at", sc["t0"])
+    items = sc["props"].get("items", [])
+    def zona(it):
+        cx = it["x"] + it.get("w", 400) / 2; cy = it["y"] + it.get("h", 300) / 2
+        return min(range(len(cams)), key=lambda i: (cams[i]["x"] - cx) ** 2 + (cams[i]["y"] - cy) ** 2)
+    for i, c in enumerate(cams):
+        grupo = sorted([it for it in items if it.get("at") is not None and zona(it) == i and it["type"] not in ("arrow", "circle", "asterisk")], key=lambda it: it["at"])
+        if grupo and grupo[0]["at"] > c["at"] + 1.2:
+            grupo[0]["at"] = round(c["at"] + 0.7, 3)
+
 json.dump(dict(duration=T["duration"], scenes=scenes), open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"{len(scenes)} escenas · {T['duration']:.1f}s")
 short = [f"  {i} {s['type']} {s['t1']-s['t0']:.1f}s" for i, s in enumerate(scenes) if s["t1"] - s["t0"] < 2.0]
