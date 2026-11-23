@@ -3,171 +3,628 @@
  "scenes": [
   {
    "block": "b1",
-   "type": "kinetic",
+   "type": "board",
    "t0": 0,
    "props": {
-    "kicker": "Pregunta",
-    "lines": [
-     "¿Quién diseñó",
-     "el **México moderno**?"
-    ],
-    "marks": {
-     "México moderno": 3.8
-    },
-    "lineAt": [
-     0.76,
-     3.04
-    ],
-    "size": 130
-   },
-   "t1": 5.48
-  },
-  {
-   "block": "b1",
-   "type": "collage",
-   "t0": 5.48,
-   "props": {
     "items": [
      {
-      "kind": "logo",
-      "src": "img/mexico68_emblema.png",
+      "type": "opart",
+      "w": 1100,
+      "h": 760,
+      "rot": 0,
+      "z": 0,
+      "x": -80,
+      "y": 20,
+      "color": "#E4007C"
+     },
+     {
+      "type": "paper",
+      "w": 1300,
+      "h": 820,
+      "variant": "kraft",
+      "rot": -2,
+      "z": 0,
+      "x": 280,
+      "y": 250
+     },
+     {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": -12,
+      "z": 8,
+      "x": 340,
+      "y": 230
+     },
+     {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": 10,
+      "z": 8,
+      "x": 1420,
+      "y": 240
+     },
+     {
+      "type": "rotulo",
+      "text": "QUIÉN\nDISEÑÓ",
+      "size": 150,
+      "rot": 0,
+      "z": 5,
+      "x": 360,
+      "y": 360,
+      "at": 0.76,
+      "color": "#1A1714"
+     },
+     {
+      "type": "label",
+      "text": "el **México moderno**?",
+      "size": 96,
+      "rot": 0,
+      "z": 7,
+      "x": 370,
+      "y": 800,
+      "at": 3.8,
+      "font": "display"
+     },
+     {
+      "type": "hand",
+      "text": "¿?",
+      "size": 170,
+      "rot": 12,
+      "z": 9,
+      "x": 1220,
+      "y": 330,
+      "at": 2.72
+     },
+     {
+      "type": "asterisk",
+      "w": 90,
+      "z": 9,
+      "x": 1500,
+      "y": 920,
+      "at": 3.8
+     },
+     {
+      "type": "tag",
+      "text": "PREGUNTA",
+      "rot": 0,
+      "z": 6,
+      "x": 320,
+      "y": 290
+     },
+     {
+      "type": "paper",
+      "w": 1650,
+      "h": 900,
+      "variant": "page",
+      "rot": 1,
+      "z": 0,
+      "x": 2160,
+      "y": 220,
+      "page": 302
+     },
+     {
+      "type": "photo",
+      "w": 760,
+      "h": 230,
+      "rot": -4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2220,
+      "y": 270,
       "label": "México 68",
-      "x": 120,
-      "y": 140,
-      "scale": 1.3,
-      "rotate": -4,
-      "at": 5.48
+      "src": "img/mexico68_emblema.png",
+      "at": 5.48,
+      "fit": "contain"
      },
      {
-      "kind": "logo",
-      "src": "img/metro_logo.png",
+      "type": "photo",
+      "w": 380,
+      "h": 380,
+      "rot": 6,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3220,
+      "y": 250,
       "label": "Metro",
-      "x": 1180,
-      "y": 110,
-      "scale": 0.9,
-      "rotate": 5,
-      "at": 6.2
+      "src": "img/metro_logo.png",
+      "at": 6.2,
+      "fit": "contain"
      },
      {
-      "kind": "logo",
-      "src": "img/imss_logo.png",
+      "type": "photo",
+      "w": 300,
+      "h": 400,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3390,
+      "y": 660,
       "label": "IMSS",
-      "x": 1480,
-      "y": 520,
-      "scale": 0.85,
-      "rotate": -3,
-      "at": 7.92
+      "src": "img/imss_logo.png",
+      "at": 7.92,
+      "fit": "contain"
      },
      {
-      "kind": "logo",
-      "src": "img/loteria_logo.png",
+      "type": "photo",
+      "w": 560,
+      "h": 200,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2200,
+      "y": 660,
       "label": "Lotería Nacional",
-      "x": 190,
-      "y": 640,
-      "scale": 1.25,
-      "rotate": 3,
-      "at": 8.98
+      "src": "img/loteria_logo.png",
+      "at": 8.98,
+      "fit": "contain"
      },
      {
-      "kind": "photo",
-      "label": "Vista aérea de la CDMX, años 60",
-      "x": 700,
-      "y": 420,
-      "scale": 0.95,
-      "rotate": 2,
+      "type": "photo",
+      "w": 640,
+      "h": 440,
+      "rot": 2,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 2680,
+      "y": 480,
+      "label": "Vista aérea de la Ciudad de México, 1962",
       "at": 10.44
-     }
-    ],
-    "title": "1968 – 1980",
-    "titleAt": 12.94
-   },
-   "t1": 14.42
-  },
-  {
-   "block": "b1",
-   "type": "kinetic",
-   "t0": 14.42,
-   "props": {
-    "lines": [
-     "De ~~simple adorno editorial~~",
-     "a **lenguaje visual**"
-    ],
-    "marks": {
-     "simple adorno editorial": 15.76,
-     "lenguaje visual": 18.46
-    },
-    "lineAt": [
-     14.42,
-     16.72
-    ],
-    "size": 110
-   },
-   "t1": 19.56
-  },
-  {
-   "block": "b1",
-   "type": "list",
-   "t0": 19.56,
-   "props": {
-    "title": "Un lenguaje capaz de…",
-    "items": [
-     {
-      "text": "organizar ciudades",
-      "at": 20.72
      },
      {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": -6,
+      "z": 8,
+      "x": 2900,
+      "y": 460,
+      "at": 10.44
+     },
+     {
+      "type": "hand",
+      "text": "1968 → 1980",
+      "size": 96,
+      "rot": -3,
+      "z": 9,
+      "x": 2800,
+      "y": 960,
+      "at": 12.94
+     },
+     {
+      "type": "circle",
+      "w": 560,
+      "h": 150,
+      "z": 9,
+      "x": 2740,
+      "y": 930,
+      "at": 12.94
+     },
+     {
+      "type": "paper",
+      "w": 980,
+      "h": 860,
+      "variant": "grid",
+      "rot": -1,
+      "z": 0,
+      "x": 4120,
+      "y": 220
+     },
+     {
+      "type": "label",
+      "text": "simple adorno editorial",
+      "size": 58,
+      "rot": 0,
+      "z": 7,
+      "x": 4180,
+      "y": 330,
+      "at": 14.42
+     },
+     {
+      "type": "arrow",
+      "w": 640,
+      "h": 60,
+      "d": "M0 30 C 200 20, 420 40, 640 26",
+      "z": 9,
+      "x": 4170,
+      "y": 350,
+      "at": 15.76
+     },
+     {
+      "type": "hand",
+      "text": "↓",
+      "size": 120,
+      "rot": 0,
+      "z": 9,
+      "x": 4340,
+      "y": 460,
+      "at": 16.72
+     },
+     {
+      "type": "label",
+      "text": "un **lenguaje visual**",
+      "size": 84,
+      "rot": 0,
+      "z": 7,
+      "x": 4180,
+      "y": 620,
+      "at": 18.46,
+      "font": "display"
+     },
+     {
+      "type": "photo",
+      "w": 560,
+      "h": 780,
+      "rot": 4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 5160,
+      "y": 190,
+      "label": "Libertad de expresión, 1968",
+      "src": "img/cartel_libertad_expresion.jpg",
+      "at": 19.56
+     },
+     {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": 8,
+      "z": 8,
+      "x": 5340,
+      "y": 170,
+      "at": 19.56
+     },
+     {
+      "type": "hand",
       "text": "criticar al poder",
+      "size": 72,
+      "rot": -4,
+      "z": 9,
+      "x": 5120,
+      "y": 980,
       "at": 22.2
      },
      {
-      "text": "construir identidad",
-      "at": 22.8
-     }
-    ]
-   },
-   "t1": 25.68
-  },
-  {
-   "block": "b1",
-   "type": "title",
-   "t0": 25.68,
-   "props": {
-    "credits": "con Marco · Lucas · Clau"
-   },
-   "t1": 32.48
-  },
-  {
-   "block": "b1",
-   "type": "list",
-   "t0": 32.48,
-   "props": {
-    "title": "El recorrido",
-    "items": [
+      "type": "arrow",
+      "w": 330,
+      "h": 200,
+      "d": "M10 40 C 120 0, 250 10, 330 90",
+      "z": 9,
+      "x": 5020,
+      "y": 800,
+      "head": "M290 60 L332 92 L285 110",
+      "at": 22.2
+     },
      {
-      "text": "Cómics",
+      "type": "photo",
+      "w": 900,
+      "h": 600,
+      "rot": -3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4180,
+      "y": 1370,
+      "label": "Metro de la Ciudad de México, 1969",
+      "at": 20.72
+     },
+     {
+      "type": "label",
+      "text": "organizar **ciudades**",
+      "size": 70,
+      "rot": 0,
+      "z": 7,
+      "x": 4220,
+      "y": 2010,
+      "at": 20.72
+     },
+     {
+      "type": "photo",
+      "w": 520,
+      "h": 520,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 5190,
+      "y": 1450,
+      "label": "IMSS",
+      "src": "img/imss_logo.png",
+      "at": 22.8,
+      "fit": "contain"
+     },
+     {
+      "type": "label",
+      "text": "construir **identidad**",
+      "size": 70,
+      "rot": 0,
+      "z": 7,
+      "x": 5120,
+      "y": 2010,
+      "at": 22.8
+     },
+     {
+      "type": "asterisk",
+      "w": 90,
+      "z": 9,
+      "x": 5140,
+      "y": 1370,
+      "at": 22.8,
+      "color": "#E4007C"
+     },
+     {
+      "type": "opart",
+      "w": 2280,
+      "h": 1320,
+      "rot": 0,
+      "z": 0,
+      "x": 1860,
+      "y": 1130,
+      "color": "#E4007C"
+     },
+     {
+      "type": "paper",
+      "w": 1460,
+      "h": 800,
+      "variant": "page",
+      "rot": -1,
+      "z": 0,
+      "x": 2270,
+      "y": 1390,
+      "page": 1
+     },
+     {
+      "type": "rotulo",
+      "text": "LA ÉPOCA\nDE ORO",
+      "size": 190,
+      "rot": 0,
+      "z": 5,
+      "x": 2370,
+      "y": 1470,
+      "at": 25.68,
+      "color": "#1A1714"
+     },
+     {
+      "type": "label",
+      "text": "del diseño gráfico en **México**",
+      "size": 74,
+      "rot": 0,
+      "z": 7,
+      "x": 2380,
+      "y": 1940,
+      "at": 25.68,
+      "bg": false
+     },
+     {
+      "type": "rotulo",
+      "text": "1968—1980",
+      "size": 86,
+      "rot": 0,
+      "z": 5,
+      "x": 3220,
+      "y": 2040,
+      "at": 27.12,
+      "color": "#E4007C"
+     },
+     {
+      "type": "hand",
+      "text": "Marco · Lucas · Clau",
+      "size": 56,
+      "rot": -6,
+      "z": 9,
+      "x": 3290,
+      "y": 1510,
+      "at": 27.12,
+      "font": "caveat"
+     },
+     {
+      "type": "paper",
+      "w": 2000,
+      "h": 900,
+      "variant": "kraft",
+      "rot": 0.5,
+      "z": 0,
+      "x": 2000,
+      "y": 2460
+     },
+     {
+      "type": "hand",
+      "text": "el recorrido →",
+      "size": 80,
+      "rot": 0,
+      "z": 9,
+      "x": 2080,
+      "y": 2490,
+      "at": 32.48
+     },
+     {
+      "type": "photo",
+      "w": 300,
+      "h": 410,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2100,
+      "y": 2660,
+      "label": "Cómics",
+      "src": "img/portada_supermachos.jpg",
       "at": 36.26
      },
      {
-      "text": "Carteles culturales",
+      "type": "photo",
+      "w": 320,
+      "h": 320,
+      "rot": 4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2440,
+      "y": 2640,
+      "label": "Carteles",
+      "src": "img/cartel_mexico68_opart.jpg",
       "at": 38.64
      },
      {
-      "text": "Juegos Olímpicos",
-      "at": 40.56
-     },
-     {
-      "text": "Metro",
+      "type": "photo",
+      "w": 330,
+      "h": 320,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2800,
+      "y": 2670,
+      "label": "Juegos Olímpicos",
+      "src": "img/boleto_soccer.jpg",
       "at": 40.94
      },
      {
-      "text": "Museos",
+      "type": "photo",
+      "w": 300,
+      "h": 300,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3170,
+      "y": 2650,
+      "label": "Metro",
+      "src": "img/metro_logo.png",
+      "at": 40.94,
+      "fit": "contain"
+     },
+     {
+      "type": "photo",
+      "w": 360,
+      "h": 270,
+      "rot": -4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 3500,
+      "y": 2660,
+      "label": "Museo Nacional de Antropología",
       "at": 41.66
      },
      {
-      "text": "Billetes",
-      "at": 42.04
+      "type": "photo",
+      "w": 520,
+      "h": 230,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3220,
+      "y": 3000,
+      "label": "Billete de la 4ª serie",
+      "at": 42.62,
+      "tag": "MUESTRA"
+     },
+     {
+      "type": "hand",
+      "text": "cómics",
+      "size": 60,
+      "rot": 4,
+      "z": 9,
+      "x": 2110,
+      "y": 3100,
+      "at": 36.26,
+      "font": "caveat"
+     },
+     {
+      "type": "hand",
+      "text": "carteles",
+      "size": 60,
+      "rot": -4,
+      "z": 9,
+      "x": 2470,
+      "y": 3100,
+      "at": 38.64,
+      "font": "caveat"
+     },
+     {
+      "type": "hand",
+      "text": "olimpiadas",
+      "size": 60,
+      "rot": 4,
+      "z": 9,
+      "x": 2820,
+      "y": 3100,
+      "at": 40.94,
+      "font": "caveat"
+     },
+     {
+      "type": "hand",
+      "text": "Metro",
+      "size": 60,
+      "rot": -4,
+      "z": 9,
+      "x": 3190,
+      "y": 3100,
+      "at": 40.94,
+      "font": "caveat"
+     },
+     {
+      "type": "hand",
+      "text": "museos",
+      "size": 60,
+      "rot": 4,
+      "z": 9,
+      "x": 3540,
+      "y": 2960,
+      "at": 41.66,
+      "font": "caveat"
      }
-    ]
+    ],
+    "cams": [
+     {
+      "at": 0.76,
+      "x": 1000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 5.48,
+      "x": 3000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 14.42,
+      "x": 5000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 20.72,
+      "x": 5000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 25.68,
+      "x": 3000,
+      "y": 1830,
+      "z": 0.95
+     },
+     {
+      "at": 32.48,
+      "x": 3000,
+      "y": 2980,
+      "z": 0.92
+     }
+    ],
+    "era": "1968–80",
+    "title": "La época de oro del diseño gráfico en México",
+    "barAt": 25.68
    },
    "t1": 45.448
   },
@@ -179,297 +636,765 @@
     "num": "01",
     "title": "La historieta crítica y los moneros",
     "years": "1970 – 1980",
-    "color": "#E4007C"
+    "color": "#E2231A"
    },
    "t1": 47.848
   },
   {
    "block": "b2",
-   "type": "year",
+   "type": "board",
    "t0": 47.848,
-   "props": {
-    "year": "1970",
-    "caption": "La narrativa visual vive una auténtica explosión",
-    "captionAt": 52.56,
-    "color": "#E4007C"
-   },
-   "t1": 54.66
-  },
-  {
-   "block": "b2",
-   "type": "collage",
-   "t0": 54.66,
    "props": {
     "items": [
      {
-      "kind": "portrait",
-      "label": "Gabriel Vargas",
-      "sub": "historietista",
-      "x": 260,
+      "type": "paper",
+      "w": 1700,
+      "h": 900,
+      "variant": "page",
+      "rot": -1,
+      "z": 0,
+      "x": 100,
+      "y": 180,
+      "page": 298
+     },
+     {
+      "type": "year",
+      "text": "1970s",
+      "size": 250,
+      "rot": 0,
+      "z": 5,
+      "x": 160,
+      "y": 240,
+      "at": 47.7,
+      "color": "#E2231A"
+     },
+     {
+      "type": "photo",
+      "w": 420,
+      "h": 600,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 1080,
       "y": 220,
-      "scale": 1.15,
-      "rotate": -5,
+      "label": "Los Agachados de Rius",
+      "src": "img/portada_agachados.jpg",
+      "at": 53.0
+     },
+     {
+      "type": "photo",
+      "w": 400,
+      "h": 540,
+      "rot": -6,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 680,
+      "y": 570,
+      "label": "Los Supermachos, 1973",
+      "src": "img/portada_supermachos.jpg",
+      "at": 52.56
+     },
+     {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": 12,
+      "z": 8,
+      "x": 1190,
+      "y": 200,
+      "at": 53.0
+     },
+     {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": -10,
+      "z": 8,
+      "x": 760,
+      "y": 550,
+      "at": 52.56
+     },
+     {
+      "type": "hand",
+      "text": "¡explosión!",
+      "size": 96,
+      "rot": -6,
+      "z": 9,
+      "x": 200,
+      "y": 660,
+      "at": 53.0
+     },
+     {
+      "type": "tag",
+      "text": "ARCHIVO",
+      "rot": 0,
+      "z": 6,
+      "x": 130,
+      "y": 200
+     },
+     {
+      "type": "paper",
+      "w": 1700,
+      "h": 900,
+      "variant": "kraft",
+      "rot": 1,
+      "z": 0,
+      "x": 2140,
+      "y": 200
+     },
+     {
+      "type": "photo",
+      "w": 560,
+      "h": 760,
+      "rot": -4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2220,
+      "y": 260,
+      "label": "La Familia Burrón",
+      "at": 58.68,
+      "tag": "PORTADA"
+     },
+     {
+      "type": "photo",
+      "w": 460,
+      "h": 560,
+      "rot": 3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 3000,
+      "y": 280,
+      "label": "Gabriel Vargas",
+      "at": 59.9,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "ficha",
+      "title": "GABRIEL VARGAS",
+      "rot": 0,
+      "z": 7,
+      "x": 3140,
+      "y": 780,
+      "sub": "historietista",
+      "year": "La Familia Burrón · 1948–2009",
+      "at": 59.9,
+      "color": "#E2231A"
+     },
+     {
+      "type": "hand",
+      "text": "clásico popular",
+      "size": 70,
+      "rot": -5,
+      "z": 9,
+      "x": 2800,
+      "y": 220,
+      "at": 56.22
+     },
+     {
+      "type": "arrow",
+      "w": 330,
+      "h": 150,
+      "d": "M10 40 C 120 0, 250 10, 330 90",
+      "z": 9,
+      "x": 2740,
+      "y": 320,
+      "head": "M290 60 L332 92 L285 110",
       "at": 59.9
      },
      {
-      "kind": "cover",
-      "label": "La Familia Burrón",
-      "sub": "Gabriel Vargas",
-      "year": "1948 – 2009",
-      "x": 1000,
-      "y": 170,
-      "scale": 1.3,
-      "rotate": 4,
-      "at": 58.68
-     }
-    ],
-    "title": "Clásicos de la cultura popular",
-    "titleAt": 56.22
-   },
-   "t1": 61.4
-  },
-  {
-   "block": "b2",
-   "type": "kinetic",
-   "t0": 61.4,
-   "props": {
-    "kicker": "Una nueva generación",
-    "lines": [
-     "súper _crítica_:",
-     "los **“moneros”**"
-    ],
-    "marks": {
-     "“moneros”": 66.22
-    },
-    "lineAt": [
-     63.62,
-     66.22
-    ],
-    "size": 140,
-    "ficha": {
-     "title": "monero",
-     "sub": "caricaturista o historietista político",
-     "at": 66.22
-    }
-   },
-   "t1": 68.32
-  },
-  {
-   "block": "b2",
-   "type": "names",
-   "t0": 68.32,
-   "props": {
-    "title": "Caricaturistas e ilustradores",
-    "items": [
-     {
-      "name": "Rius",
-      "sub": "Eduardo del Río",
-      "at": 69.92
+      "type": "paper",
+      "w": 1100,
+      "h": 960,
+      "variant": "page",
+      "rot": 1.5,
+      "z": 0,
+      "x": 4100,
+      "y": 160,
+      "page": 302
      },
      {
-      "name": "Abel Quezada",
-      "at": 70.6
-     },
-     {
-      "name": "Freyre",
-      "at": 71.9
-     },
-     {
-      "name": "Helioflores",
-      "at": 73.0
-     },
-     {
-      "name": "Naranjo",
-      "at": 73.78
-     },
-     {
-      "name": "Sergio Arau",
-      "at": 74.48
-     }
-    ]
-   },
-   "t1": 75.4
-  },
-  {
-   "block": "b2",
-   "type": "kinetic",
-   "t0": 75.4,
-   "props": {
-    "lines": [
-     "**Sátira política**",
-     "y humor gráfico",
-     "para _cuestionar al sistema_"
-    ],
-    "marks": {
-     "Sátira política": 76.12
-    },
-    "lineAt": [
-     76.12,
-     77.36,
-     78.16
-    ],
-    "size": 110
-   },
-   "t1": 80.14
-  },
-  {
-   "block": "b2",
-   "type": "collage",
-   "t0": 80.14,
-   "props": {
-    "items": [
-     {
-      "kind": "cover",
-      "label": "La Garrapata",
-      "x": 140,
-      "y": 150,
-      "rotate": -6,
-      "at": 81.34
-     },
-     {
-      "kind": "cover",
-      "label": "El Mitote Ilustrado",
-      "x": 560,
-      "y": 260,
-      "rotate": 3,
-      "at": 82.54
-     },
-     {
-      "kind": "cover",
-      "label": "Quecosaedro",
-      "x": 990,
-      "y": 140,
-      "rotate": -2,
-      "at": 84.18
-     },
-     {
-      "kind": "cover",
-      "label": "SNIF",
-      "x": 1420,
+      "type": "photo",
+      "w": 640,
+      "h": 760,
+      "rot": -2,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4300,
       "y": 250,
-      "rotate": 6,
-      "at": 85.58
-     }
-    ],
-    "title": "Espacios de resistencia y opinión pública",
-    "titleAt": 87.04
-   },
-   "t1": 90.62
-  },
-  {
-   "block": "b2",
-   "type": "year",
-   "t0": 90.62,
-   "props": {
-    "year": "1970",
-    "caption": "Se funda el Círculo de Tlacuilos",
-    "captionAt": 93.1,
-    "color": "#F26B1D"
-   },
-   "t1": 97.38
-  },
-  {
-   "block": "b2",
-   "type": "kinetic",
-   "t0": 97.38,
-   "props": {
-    "lines": [
-     "Además de la crítica,",
-     "mucha **experimentación gráfica**"
-    ],
-    "marks": {
-     "experimentación gráfica": 99.72
-    },
-    "lineAt": [
-     97.52,
-     99.46
-    ],
-    "size": 110
-   },
-   "t1": 101.66
-  },
-  {
-   "block": "b2",
-   "type": "collage",
-   "t0": 101.66,
-   "props": {
-    "items": [
+      "label": "Rius",
+      "at": 61.4,
+      "tag": "RETRATO"
+     },
      {
-      "kind": "portrait",
+      "type": "ficha",
+      "title": "RIUS",
+      "rot": 0,
+      "z": 7,
+      "x": 5160,
+      "y": 400,
+      "sub": "(Eduardo del Río)\n– Caricaturista",
+      "at": 64.04,
+      "color": "#E2231A"
+     },
+     {
+      "type": "label",
+      "text": "Los llamados **“moneros”**",
+      "size": 70,
+      "rot": 0,
+      "z": 7,
+      "x": 4640,
+      "y": 950,
+      "at": 66.22
+     },
+     {
+      "type": "hand",
+      "text": "SÁTIRA",
+      "size": 96,
+      "rot": -8,
+      "z": 9,
+      "x": 4080,
+      "y": 360,
+      "at": 63.62,
+      "underline": true
+     },
+     {
+      "type": "arrow",
+      "w": 300,
+      "h": 260,
+      "d": "M10 10 C 60 140, 140 220, 260 240",
+      "z": 9,
+      "x": 4110,
+      "y": 480,
+      "head": "M222 214 L262 242 L215 262",
+      "at": 63.62
+     },
+     {
+      "type": "circle",
+      "w": 560,
+      "h": 300,
+      "z": 9,
+      "x": 5140,
+      "y": 360,
+      "at": 66.22
+     },
+     {
+      "type": "asterisk",
+      "w": 90,
+      "z": 9,
+      "x": 5600,
+      "y": 220,
+      "at": 66.22
+     },
+     {
+      "type": "paper",
+      "w": 1840,
+      "h": 960,
+      "variant": "grid",
+      "rot": -0.5,
+      "z": 0,
+      "x": 4080,
+      "y": 1310
+     },
+     {
+      "type": "hand",
+      "text": "caricaturistas e ilustradores",
+      "size": 72,
+      "rot": 0,
+      "z": 9,
+      "x": 4120,
+      "y": 1340,
+      "at": 68.32
+     },
+     {
+      "type": "photo",
+      "w": 260,
+      "h": 320,
+      "rot": 4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4140,
+      "y": 1480,
+      "label": "Rius",
+      "at": 69.92,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Rius",
+      "size": 58,
+      "rot": 3,
+      "z": 9,
+      "x": 4420,
+      "y": 1620,
+      "at": 69.92,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 260,
+      "h": 320,
+      "rot": -4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4730,
+      "y": 1480,
+      "label": "Abel Quezada",
+      "at": 70.6,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Abel Quezada",
+      "size": 58,
+      "rot": -3,
+      "z": 9,
+      "x": 5010,
+      "y": 1620,
+      "at": 70.6,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 260,
+      "h": 320,
+      "rot": 4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 5320,
+      "y": 1480,
+      "label": "Freyre",
+      "at": 71.9,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Freyre",
+      "size": 58,
+      "rot": 3,
+      "z": 9,
+      "x": 5600,
+      "y": 1620,
+      "at": 71.9,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 260,
+      "h": 320,
+      "rot": -4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4140,
+      "y": 1860,
+      "label": "Helioflores",
+      "at": 73.0,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Helioflores",
+      "size": 58,
+      "rot": -3,
+      "z": 9,
+      "x": 4420,
+      "y": 2000,
+      "at": 73.0,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 260,
+      "h": 320,
+      "rot": 4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4730,
+      "y": 1860,
+      "label": "Naranjo",
+      "at": 73.78,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Naranjo",
+      "size": 58,
+      "rot": 3,
+      "z": 9,
+      "x": 5010,
+      "y": 2000,
+      "at": 73.78,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 260,
+      "h": 320,
+      "rot": -4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 5320,
+      "y": 1860,
+      "label": "Sergio Arau",
+      "at": 74.48,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Sergio Arau",
+      "size": 58,
+      "rot": -3,
+      "z": 9,
+      "x": 5600,
+      "y": 2000,
+      "at": 74.48,
+      "font": "caveat"
+     },
+     {
+      "type": "label",
+      "text": "para cuestionar al **sistema**",
+      "size": 58,
+      "rot": 0,
+      "z": 7,
+      "x": 5040,
+      "y": 2110,
+      "at": 78.16
+     },
+     {
+      "type": "paper",
+      "w": 1800,
+      "h": 880,
+      "variant": "kraft",
+      "rot": 1,
+      "z": 0,
+      "x": 2100,
+      "y": 1350
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 520,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2160,
+      "y": 1420,
+      "label": "La Garrapata",
+      "at": 81.34,
+      "tag": "PORTADA"
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 520,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2590,
+      "y": 1480,
+      "label": "El Mitote Ilustrado",
+      "at": 82.54,
+      "tag": "PORTADA"
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 520,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3020,
+      "y": 1420,
+      "label": "Quecosaedro",
+      "at": 84.18,
+      "tag": "PORTADA"
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 520,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3450,
+      "y": 1480,
+      "label": "SNIF",
+      "at": 85.58,
+      "tag": "PORTADA"
+     },
+     {
+      "type": "label",
+      "text": "espacios de **resistencia** y opinión pública",
+      "size": 60,
+      "rot": 0,
+      "z": 7,
+      "x": 2220,
+      "y": 2070,
+      "at": 87.04
+     },
+     {
+      "type": "paper",
+      "w": 1500,
+      "h": 820,
+      "variant": "page",
+      "rot": -1.5,
+      "z": 0,
+      "x": 180,
+      "y": 1370,
+      "page": 301
+     },
+     {
+      "type": "year",
+      "text": "1970",
+      "size": 280,
+      "rot": 0,
+      "z": 5,
+      "x": 260,
+      "y": 1450,
+      "at": 90.62,
+      "color": "#F26B1D"
+     },
+     {
+      "type": "ficha",
+      "title": "CÍRCULO DE TLACUILOS",
+      "rot": 0,
+      "z": 7,
+      "x": 340,
+      "y": 1890,
+      "sub": "para revalorar la narrativa visual mexicana",
+      "at": 93.1,
+      "color": "#F26B1D",
+      "w": 900
+     },
+     {
+      "type": "asterisk",
+      "w": 90,
+      "z": 9,
+      "x": 1390,
+      "y": 1510,
+      "at": 93.1,
+      "color": "#E2231A"
+     },
+     {
+      "type": "opart",
+      "w": 900,
+      "h": 700,
+      "rot": 0,
+      "z": 0,
+      "x": -80,
+      "y": 2360,
+      "color": "#E2231A"
+     },
+     {
+      "type": "paper",
+      "w": 1600,
+      "h": 960,
+      "variant": "page",
+      "rot": 1,
+      "z": 0,
+      "x": 340,
+      "y": 2460,
+      "page": 297
+     },
+     {
+      "type": "label",
+      "text": "mucha **experimentación gráfica**",
+      "size": 62,
+      "rot": 0,
+      "z": 7,
+      "x": 380,
+      "y": 2500,
+      "at": 99.72
+     },
+     {
+      "type": "photo",
+      "w": 420,
+      "h": 580,
+      "rot": -4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 400,
+      "y": 2630,
+      "label": "Fábulas Pánicas, 1977",
+      "at": 102.96,
+      "tag": "PORTADA"
+     },
+     {
+      "type": "photo",
+      "w": 360,
+      "h": 460,
+      "rot": 3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 860,
+      "y": 2660,
       "label": "Alejandro Jodorowsky",
-      "x": 150,
-      "y": 200,
-      "scale": 1.1,
-      "rotate": -4,
-      "at": 104.02
+      "at": 104.02,
+      "tag": "RETRATO"
      },
      {
-      "kind": "cover",
-      "label": "Fábulas Pánicas",
-      "sub": "Alejandro Jodorowsky",
-      "year": "1977",
-      "x": 620,
-      "y": 150,
-      "scale": 1.15,
-      "rotate": 3,
-      "at": 102.96
+      "type": "photo",
+      "w": 420,
+      "h": 580,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 1300,
+      "y": 2620,
+      "label": "Profesor Planeta, 1974",
+      "at": 107.36,
+      "tag": "PORTADA"
      },
      {
-      "kind": "cover",
-      "label": "Profesor Planeta",
-      "sub": "revista",
-      "year": "1974",
-      "x": 1230,
-      "y": 200,
-      "scale": 1.15,
-      "rotate": -3,
-      "at": 107.36
-     }
-    ]
-   },
-   "t1": 110.6
-  },
-  {
-   "block": "b2",
-   "type": "list",
-   "t0": 110.6,
-   "props": {
-    "title": "Rompían los esquemas mezclando…",
-    "items": [
-     {
+      "type": "hand",
       "text": "psicodelia",
+      "size": 64,
+      "rot": -4,
+      "z": 9,
+      "x": 880,
+      "y": 3160,
       "at": 113.04
      },
      {
+      "type": "hand",
       "text": "ciencia",
+      "size": 64,
+      "rot": 3,
+      "z": 9,
+      "x": 1220,
+      "y": 3230,
       "at": 114.14
      },
      {
-      "text": "montajes visuales",
+      "type": "hand",
+      "text": "montajes",
+      "size": 64,
+      "rot": -3,
+      "z": 9,
+      "x": 1440,
+      "y": 3160,
       "at": 114.68
+     },
+     {
+      "type": "paper",
+      "w": 1500,
+      "h": 700,
+      "variant": "yellow",
+      "rot": -1,
+      "z": 0,
+      "x": 4200,
+      "y": 2600
+     },
+     {
+      "type": "label",
+      "text": "el cómic dejó de ser algo infantil",
+      "size": 58,
+      "rot": 0,
+      "z": 7,
+      "x": 4280,
+      "y": 2700,
+      "at": 117.86,
+      "bg": false
+     },
+     {
+      "type": "arrow",
+      "w": 360,
+      "h": 60,
+      "d": "M0 30 C 120 20, 240 40, 360 26",
+      "z": 9,
+      "x": 4940,
+      "y": 2720,
+      "at": 119.52
+     },
+     {
+      "type": "label",
+      "text": "medio gráfico de **alto impacto**",
+      "size": 78,
+      "rot": 0,
+      "z": 7,
+      "x": 4280,
+      "y": 2920,
+      "at": 122.24,
+      "font": "display"
+     },
+     {
+      "type": "asterisk",
+      "w": 90,
+      "z": 9,
+      "x": 5500,
+      "y": 2660,
+      "at": 122.24
      }
-    ]
-   },
-   "t1": 117.86
-  },
-  {
-   "block": "b2",
-   "type": "kinetic",
-   "t0": 117.86,
-   "props": {
-    "lines": [
-     "El cómic dejó de ser ~~algo infantil~~",
-     "→ medio gráfico de **alto impacto**"
     ],
-    "marks": {
-     "algo infantil": 119.52,
-     "alto impacto": 122.24
-    },
-    "lineAt": [
-     117.86,
-     120.3
+    "cams": [
+     {
+      "at": 47.7,
+      "x": 1000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 54.66,
+      "x": 3000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 61.4,
+      "x": 5000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 68.32,
+      "x": 5000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 80.14,
+      "x": 3000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 90.62,
+      "x": 1000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 97.38,
+      "x": 1000,
+      "y": 2980,
+      "z": 1.0
+     },
+     {
+      "at": 117.86,
+      "x": 5000,
+      "y": 2980,
+      "z": 0.95
+     }
     ],
-    "size": 92
+    "era": "70s",
+    "title": "La historieta crítica y los ‘moneros’"
    },
    "t1": 125.138
   },
@@ -481,299 +1406,705 @@
     "num": "02",
     "title": "Sistemas de identidad: México 68 y México 70",
     "years": "1968 – 1970",
-    "color": "#F26B1D"
+    "color": "#E4007C"
    },
-   "t1": 127.538
+   "t1": 127.54
   },
   {
    "block": "b3",
-   "type": "kinetic",
-   "t0": 127.538,
+   "type": "board",
+   "t0": 127.54,
    "props": {
-    "kicker": "Escala internacional",
-    "lines": [
-     "La verdadera",
-     "**profesionalización**",
-     "llegó con los _grandes sistemas_"
-    ],
-    "marks": {
-     "profesionalización": 128.78
-    },
-    "lineAt": [
-     127.54,
-     128.78,
-     133.22
-    ],
-    "size": 110
-   },
-   "t1": 136.52
-  },
-  {
-   "block": "b3",
-   "type": "year",
-   "t0": 136.52,
-   "props": {
-    "year": "1968",
-    "caption": "México, sede de los Juegos Olímpicos",
-    "captionAt": 139.62,
-    "color": "#E4007C",
-    "image": {
-     "kind": "photo",
-     "label": "Estadio Olímpico Universitario, 1968"
-    }
-   },
-   "t1": 145.36
-  },
-  {
-   "block": "b3",
-   "type": "names",
-   "t0": 145.36,
-   "props": {
-    "title": "Un programa de identidad monumental",
-    "cols": 2,
     "items": [
      {
-      "name": "Pedro Ramírez Vázquez",
-      "sub": "arquitecto, presidente del comité",
-      "at": 146.58
+      "type": "opart",
+      "w": 1300,
+      "h": 900,
+      "rot": 0,
+      "z": 0,
+      "x": -120,
+      "y": 0,
+      "color": "#E4007C"
      },
      {
-      "name": "Eduardo Terrazas",
-      "sub": "arquitecto y diseñador",
-      "at": 149.12
+      "type": "paper",
+      "w": 1500,
+      "h": 820,
+      "variant": "kraft",
+      "rot": -1.5,
+      "z": 0,
+      "x": 240,
+      "y": 240
      },
      {
-      "name": "Beatrice Trueblood",
-      "sub": "diseño editorial",
-      "at": 150.02
+      "type": "label",
+      "text": "la verdadera **profesionalización**",
+      "size": 64,
+      "rot": 0,
+      "z": 7,
+      "x": 300,
+      "y": 300,
+      "at": 128.78
      },
      {
-      "name": "Lance Wyman",
-      "sub": "diseñador gráfico",
+      "type": "rotulo",
+      "text": "MEXICO68",
+      "size": 200,
+      "rot": 0,
+      "z": 5,
+      "x": 320,
+      "y": 460,
+      "at": 133.22,
+      "color": "#1A1714",
+      "bg": "#FBF8F1"
+     },
+     {
+      "type": "photo",
+      "w": 360,
+      "h": 360,
+      "rot": 6,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 1260,
+      "y": 700,
+      "label": "Boleto México 68",
+      "src": "img/boleto_track.jpg",
+      "at": 135.0
+     },
+     {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": -8,
+      "z": 8,
+      "x": 1340,
+      "y": 680,
+      "at": 135.0
+     },
+     {
+      "type": "hand",
+      "text": "a escala internacional",
+      "size": 66,
+      "rot": -3,
+      "z": 9,
+      "x": 340,
+      "y": 800,
+      "at": 130.32
+     },
+     {
+      "type": "paper",
+      "w": 1760,
+      "h": 920,
+      "variant": "page",
+      "rot": 1,
+      "z": 0,
+      "x": 2120,
+      "y": 180,
+      "page": 299
+     },
+     {
+      "type": "year",
+      "text": "1968",
+      "size": 270,
+      "rot": 0,
+      "z": 5,
+      "x": 2160,
+      "y": 240,
+      "at": 136.52,
+      "color": "#E4007C"
+     },
+     {
+      "type": "photo",
+      "w": 720,
+      "h": 500,
+      "rot": 3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 3100,
+      "y": 250,
+      "label": "Estadio Olímpico Universitario, 1968",
+      "at": 139.62
+     },
+     {
+      "type": "label",
+      "text": "sede de los **Juegos Olímpicos**",
+      "size": 64,
+      "rot": 0,
+      "z": 7,
+      "x": 2200,
+      "y": 720,
+      "at": 140.4
+     },
+     {
+      "type": "photo",
+      "w": 330,
+      "h": 330,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3120,
+      "y": 740,
+      "label": "Boleto México 68",
+      "src": "img/boleto_soccer.jpg",
+      "at": 140.4
+     },
+     {
+      "type": "paper",
+      "w": 1840,
+      "h": 1000,
+      "variant": "grid",
+      "rot": -0.5,
+      "z": 0,
+      "x": 4080,
+      "y": 140
+     },
+     {
+      "type": "hand",
+      "text": "un programa de identidad monumental",
+      "size": 64,
+      "rot": 0,
+      "z": 9,
+      "x": 4120,
+      "y": 170,
+      "at": 144.54
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 470,
+      "rot": 3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4130,
+      "y": 310,
+      "label": "Pedro Ramírez Vázquez",
+      "at": 146.58,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Pedro\nRamírez Vázquez",
+      "size": 54,
+      "rot": 2,
+      "z": 9,
+      "x": 4130,
+      "y": 800,
+      "at": 146.58,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 470,
+      "rot": -3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4575,
+      "y": 310,
+      "label": "Eduardo Terrazas",
+      "at": 149.12,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Eduardo\nTerrazas",
+      "size": 54,
+      "rot": -2,
+      "z": 9,
+      "x": 4575,
+      "y": 800,
+      "at": 149.12,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 470,
+      "rot": 3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 5020,
+      "y": 310,
+      "label": "Beatrice Trueblood",
+      "at": 150.02,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Beatrice\nTrueblood",
+      "size": 54,
+      "rot": 2,
+      "z": 9,
+      "x": 5020,
+      "y": 800,
+      "at": 150.02,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 380,
+      "h": 470,
+      "rot": -3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 5465,
+      "y": 310,
+      "label": "Lance Wyman",
+      "at": 151.06,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "hand",
+      "text": "Lance\nWyman",
+      "size": 54,
+      "rot": -2,
+      "z": 9,
+      "x": 5465,
+      "y": 800,
+      "at": 151.06,
+      "font": "caveat"
+     },
+     {
+      "type": "circle",
+      "w": 470,
+      "h": 560,
+      "z": 9,
+      "x": 5440,
+      "y": 280,
       "at": 151.06
-     }
-    ]
-   },
-   "t1": 152.9
-  },
-  {
-   "block": "b3",
-   "type": "kinetic",
-   "t0": 152.9,
-   "props": {
-    "lines": [
-     "+ decenas de **jóvenes dibujantes**",
-     "muchos de la _Universidad Iberoamericana_"
-    ],
-    "marks": {
-     "jóvenes dibujantes": 153.86
-    },
-    "lineAt": [
-     152.9,
-     157.06
-    ],
-    "size": 86
-   },
-   "t1": 160.3
-  },
-  {
-   "block": "b3",
-   "type": "opart",
-   "t0": 160.3,
-   "props": {
-    "text": "El famoso logotipo de México 68",
-    "textAt": 163.14,
-    "emblemAt": 163.14
-   },
-   "t1": 165.16
-  },
-  {
-   "block": "b3",
-   "type": "opart",
-   "t0": 165.16,
-   "props": {
-    "showEmblem": false,
-    "plus": {
-     "a": "OP ART",
-     "b": "ARTE HUICHOL",
-     "at": 166.92
-    },
-    "text": "tablas de estambre de los huicholes",
-    "textAt": 170.6
-   },
-   "t1": 173.26
-  },
-  {
-   "block": "b3",
-   "type": "opart",
-   "t0": 173.26,
-   "props": {
-    "showEmblem": true,
-    "emblemAt": 173.26,
-    "text": "líneas que parecían expandirse al infinito",
-    "textAt": 175.54
-   },
-   "t1": 176.98
-  },
-  {
-   "block": "b3",
-   "type": "kinetic",
-   "t0": 176.98,
-   "props": {
-    "lines": [
-     "Lo más revolucionario:",
-     "los **pictogramas deportivos**"
-    ],
-    "marks": {
-     "pictogramas deportivos": 179.08
-    },
-    "lineAt": [
-     178.0,
-     179.08
-    ],
-    "size": 120
-   },
-   "t1": 181.06
-  },
-  {
-   "block": "b3",
-   "type": "pictograms",
-   "t0": 181.06,
-   "props": {
-    "cross": {
-     "at": 182.1
-    },
-    "icons": [
-     {
-      "name": "box",
-      "label": "guante de box",
-      "at": 190.82
      },
      {
-      "name": "bici",
-      "label": "bicicleta",
-      "at": 192.66
+      "type": "label",
+      "text": "+ decenas de **jóvenes dibujantes** · Universidad Iberoamericana",
+      "size": 50,
+      "rot": 0,
+      "z": 7,
+      "x": 4340,
+      "y": 960,
+      "at": 153.86
      },
      {
-      "name": "aro",
-      "label": "aro de básquetbol",
-      "at": 194.12
-     }
-    ],
-    "caption": "La esencia del objeto, no la figura humana",
-    "captionAt": 188.7
-   },
-   "t1": 195.5
-  },
-  {
-   "block": "b3",
-   "type": "kinetic",
-   "t0": 195.5,
-   "props": {
-    "lines": [
-     "Cualquier visitante podía orientarse",
-     "**sin necesidad de leer español**"
-    ],
-    "marks": {
-     "sin necesidad de leer español": 197.76
-    },
-    "lineAt": [
-     195.72,
-     197.76
-    ],
-    "size": 92
-   },
-   "t1": 200.5
-  },
-  {
-   "block": "b3",
-   "type": "collage",
-   "t0": 200.5,
-   "props": {
-    "items": [
+      "type": "opart",
+      "w": 2300,
+      "h": 1300,
+      "rot": 0,
+      "z": 0,
+      "x": 3840,
+      "y": 1110,
+      "color": "#E4007C"
+     },
      {
-      "kind": "poster",
+      "type": "photo",
+      "w": 740,
+      "h": 720,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 4200,
+      "y": 1360,
+      "label": "Cartel México 68",
+      "src": "img/cartel_mexico68_opart.jpg",
+      "at": 160.3
+     },
+     {
+      "type": "tape",
+      "w": 220,
+      "h": 60,
+      "rot": 6,
+      "z": 8,
+      "x": 4440,
+      "y": 1340,
+      "at": 160.3
+     },
+     {
+      "type": "photo",
+      "w": 760,
+      "h": 220,
+      "rot": 2,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 5090,
+      "y": 1390,
+      "label": "Emblema México 68",
+      "src": "img/mexico68_emblema.png",
+      "at": 163.14,
+      "fit": "contain"
+     },
+     {
+      "type": "label",
+      "text": "**OP ART**",
+      "size": 80,
+      "rot": 0,
+      "z": 7,
+      "x": 5100,
+      "y": 1680,
+      "at": 166.92,
+      "font": "display"
+     },
+     {
+      "type": "hand",
+      "text": "+",
+      "size": 120,
+      "rot": 0,
+      "z": 9,
+      "x": 5500,
+      "y": 1690,
+      "at": 170.6
+     },
+     {
+      "type": "photo",
+      "w": 560,
+      "h": 380,
+      "rot": 4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 5120,
+      "y": 1810,
+      "label": "Tabla de estambre huichol",
+      "at": 170.6
+     },
+     {
+      "type": "label",
+      "text": "líneas que se expanden al **infinito**",
+      "size": 62,
+      "rot": 0,
+      "z": 7,
+      "x": 4240,
+      "y": 2130,
+      "at": 175.54
+     },
+     {
+      "type": "paper",
+      "w": 1840,
+      "h": 980,
+      "variant": "kraft",
+      "rot": 0.5,
+      "z": 0,
+      "x": 2080,
+      "y": 1310
+     },
+     {
+      "type": "label",
+      "text": "los **pictogramas deportivos**",
+      "size": 66,
+      "rot": 0,
+      "z": 7,
+      "x": 2130,
+      "y": 1350,
+      "at": 179.08
+     },
+     {
+      "type": "pictos",
+      "items": [
+       {
+        "name": "figura",
+        "at": 182.1
+       }
+      ],
+      "w": 300,
+      "size": 240,
+      "z": 6,
+      "x": 2140,
+      "y": 1510
+     },
+     {
+      "type": "arrow",
+      "w": 260,
+      "h": 280,
+      "d": "M20 20 L240 260 M240 20 L20 260",
+      "z": 9,
+      "x": 2160,
+      "y": 1480,
+      "at": 184.72
+     },
+     {
+      "type": "hand",
+      "text": "otras olimpiadas",
+      "size": 50,
+      "rot": 0,
+      "z": 9,
+      "x": 2130,
+      "y": 1790,
+      "at": 184.72,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 340,
+      "h": 340,
+      "rot": -4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2500,
+      "y": 1480,
+      "label": "Boleto: ecuestre",
+      "src": "img/boleto_horse.jpg",
+      "at": 188.7
+     },
+     {
+      "type": "pictos",
+      "items": [
+       {
+        "name": "box",
+        "at": 190.82
+       },
+       {
+        "name": "bici",
+        "at": 192.66
+       },
+       {
+        "name": "aro",
+        "at": 194.12
+       }
+      ],
+      "w": 900,
+      "size": 250,
+      "z": 6,
+      "x": 2900,
+      "y": 1500
+     },
+     {
+      "type": "hand",
+      "text": "guante · bicicleta · aro",
+      "size": 56,
+      "rot": 0,
+      "z": 9,
+      "x": 2920,
+      "y": 1810,
+      "at": 194.12,
+      "font": "caveat"
+     },
+     {
+      "type": "label",
+      "text": "la **esencia del objeto**, no la figura humana",
+      "size": 56,
+      "rot": 0,
+      "z": 7,
+      "x": 2500,
+      "y": 1970,
+      "at": 188.7
+     },
+     {
+      "type": "hand",
+      "text": "¡sin necesidad de leer español!",
+      "size": 66,
+      "rot": -2,
+      "z": 9,
+      "x": 2560,
+      "y": 2110,
+      "at": 197.76
+     },
+     {
+      "type": "paper",
+      "w": 1760,
+      "h": 920,
+      "variant": "page",
+      "rot": -1,
+      "z": 0,
+      "x": 120,
+      "y": 1330,
+      "page": 299
+     },
+     {
+      "type": "label",
+      "text": "la **Olimpiada Cultural** llenó la ciudad",
+      "size": 60,
+      "rot": 0,
+      "z": 7,
+      "x": 180,
+      "y": 1370,
+      "at": 201.42
+     },
+     {
+      "type": "photo",
+      "w": 420,
+      "h": 600,
+      "rot": -4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 200,
+      "y": 1510,
       "label": "Cartel de la Olimpiada Cultural",
-      "x": 140,
-      "y": 130,
-      "rotate": -4,
-      "at": 203.16
+      "at": 203.16,
+      "tag": "CARTEL"
      },
      {
-      "kind": "stamp",
+      "type": "photo",
+      "w": 360,
+      "h": 440,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 740,
+      "y": 1530,
       "label": "Estampilla México 68",
-      "x": 700,
-      "y": 200,
-      "scale": 1.2,
-      "rotate": 5,
-      "at": 203.92
+      "at": 203.92,
+      "tag": "ESTAMPILLA"
      },
      {
-      "kind": "coin",
-      "label": "$25 plata",
-      "sub": "moneda conmemorativa",
-      "year": "1968",
-      "x": 1240,
-      "y": 260,
-      "scale": 1.3,
-      "at": 205.72
-     }
-    ],
-    "title": "La Olimpiada Cultural llenó la ciudad",
-    "titleAt": 201.42
-   },
-   "t1": 208.86
-  },
-  {
-   "block": "b3",
-   "type": "year",
-   "t0": 208.86,
-   "props": {
-    "year": "1970",
-    "caption": "Mundial de Fútbol México 70",
-    "captionAt": 210.34,
-    "color": "#F26B1D"
-   },
-   "t1": 212.72
-  },
-  {
-   "block": "b3",
-   "type": "kinetic",
-   "t0": 212.72,
-   "props": {
-    "lines": [
-     "Lance Wyman aplica de nuevo",
-     "la misma **lógica urbana**"
-    ],
-    "marks": {
-     "lógica urbana": 214.36
-    },
-    "lineAt": [
-     213.16,
-     214.36
-    ],
-    "size": 104
-   },
-   "t1": 218.06
-  },
-  {
-   "block": "b3",
-   "type": "collage",
-   "t0": 218.06,
-   "props": {
-    "items": [
+      "type": "photo",
+      "w": 420,
+      "h": 420,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 1220,
+      "y": 1550,
+      "label": "Moneda de plata de $25",
+      "at": 205.72,
+      "tag": "MONEDA"
+     },
      {
-      "kind": "poster",
+      "type": "hand",
+      "text": "25 pesos · plata",
+      "size": 58,
+      "rot": 0,
+      "z": 9,
+      "x": 1240,
+      "y": 2010,
+      "at": 205.72,
+      "font": "caveat"
+     },
+     {
+      "type": "opart",
+      "w": 1000,
+      "h": 800,
+      "rot": 0,
+      "z": 0,
+      "x": 1940,
+      "y": 2340,
+      "color": "#F26B1D"
+     },
+     {
+      "type": "paper",
+      "w": 1560,
+      "h": 900,
+      "variant": "kraft",
+      "rot": 1,
+      "z": 0,
+      "x": 2280,
+      "y": 2500
+     },
+     {
+      "type": "year",
+      "text": "1970",
+      "size": 260,
+      "rot": 0,
+      "z": 5,
+      "x": 2340,
+      "y": 2560,
+      "at": 208.86,
+      "color": "#F26B1D"
+     },
+     {
+      "type": "rotulo",
+      "text": "MEXICO70",
+      "size": 150,
+      "rot": 0,
+      "z": 5,
+      "x": 2340,
+      "y": 2920,
+      "at": 210.34,
+      "color": "#E4007C",
+      "bg": "#FBF8F1"
+     },
+     {
+      "type": "hand",
+      "text": "la misma lógica urbana",
+      "size": 62,
+      "rot": -3,
+      "z": 9,
+      "x": 2360,
+      "y": 3160,
+      "at": 214.36
+     },
+     {
+      "type": "photo",
+      "w": 460,
+      "h": 600,
+      "rot": 4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3240,
+      "y": 2560,
       "label": "Juanito, mascota de México 70",
+      "at": 219.68,
+      "tag": "MASCOTA"
+     },
+     {
+      "type": "ficha",
+      "title": "JUANITO",
+      "rot": 0,
+      "z": 7,
+      "x": 3190,
+      "y": 3160,
       "sub": "Juan González Martínez",
       "year": "1970",
-      "x": 720,
-      "y": 120,
-      "scale": 1.2,
-      "rotate": -3,
-      "at": 219.68
+      "at": 221.12,
+      "color": "#F26B1D"
      }
-    ]
+    ],
+    "cams": [
+     {
+      "at": null,
+      "x": 1000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 136.52,
+      "x": 3000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 145.36,
+      "x": 5000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 160.3,
+      "x": 5000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 176.98,
+      "x": 3000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 200.5,
+      "x": 1000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 208.86,
+      "x": 3000,
+      "y": 2980,
+      "z": 0.95
+     }
+    ],
+    "era": "1968–70",
+    "title": "México 68 y 70 · la revolución de los pictogramas"
    },
    "t1": 222.957
   },
@@ -785,232 +2116,411 @@
     "num": "03",
     "title": "El Metro de la CDMX y la nueva museografía",
     "years": "1964 – 1977",
-    "color": "#1F4E9C"
+    "color": "#F26B1D"
    },
    "t1": 227.38
   },
   {
    "block": "b4",
-   "type": "kinetic",
+   "type": "board",
    "t0": 227.38,
-   "props": {
-    "lines": [
-     "Los pictogramas, clave para",
-     "resolver el **caos urbano**"
-    ],
-    "marks": {
-     "caos urbano": 230.46
-    },
-    "lineAt": [
-     227.38,
-     230.46
-    ],
-    "size": 110
-   },
-   "t1": 231.9
-  },
-  {
-   "block": "b4",
-   "type": "year",
-   "t0": 231.9,
-   "props": {
-    "year": "1969",
-    "caption": "Se inaugura el Sistema de Transporte Colectivo Metro",
-    "captionAt": 234.26,
-    "color": "#F26B1D",
-    "image": {
-     "kind": "photo",
-     "label": "Inauguración del Metro, 1969"
-    }
-   },
-   "t1": 238.38
-  },
-  {
-   "block": "b4",
-   "type": "collage",
-   "t0": 238.38,
    "props": {
     "items": [
      {
-      "kind": "portrait",
-      "label": "Lance Wyman",
-      "sub": "señalética del Metro",
-      "year": "1969",
-      "x": 300,
+      "type": "paper",
+      "w": 1760,
+      "h": 920,
+      "variant": "page",
+      "rot": -1,
+      "z": 0,
+      "x": 120,
+      "y": 180,
+      "page": 300
+     },
+     {
+      "type": "photo",
+      "w": 900,
+      "h": 600,
+      "rot": -2,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 180,
+      "y": 240,
+      "label": "Obras del Metro, 1969",
+      "at": 230.46
+     },
+     {
+      "type": "label",
+      "text": "resolver el **caos urbano**",
+      "size": 66,
+      "rot": 0,
+      "z": 7,
+      "x": 200,
+      "y": 890,
+      "at": 230.46
+     },
+     {
+      "type": "year",
+      "text": "1969",
+      "size": 200,
+      "rot": 0,
+      "z": 5,
+      "x": 1140,
+      "y": 260,
+      "at": 233.22,
+      "color": "#F26B1D"
+     },
+     {
+      "type": "photo",
+      "w": 360,
+      "h": 360,
+      "rot": 5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 1220,
+      "y": 620,
+      "label": "Metro",
+      "src": "img/metro_logo.png",
+      "at": 234.26,
+      "fit": "contain"
+     },
+     {
+      "type": "paper",
+      "w": 1800,
+      "h": 960,
+      "variant": "grid",
+      "rot": 1,
+      "z": 0,
+      "x": 2100,
+      "y": 160
+     },
+     {
+      "type": "photo",
+      "w": 900,
+      "h": 620,
+      "rot": 2,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 2160,
+      "y": 240,
+      "label": "Inauguración del Metro, 1969",
+      "at": 234.26
+     },
+     {
+      "type": "photo",
+      "w": 460,
+      "h": 560,
+      "rot": -4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 3160,
       "y": 220,
-      "scale": 1.3,
-      "rotate": -4,
+      "label": "Lance Wyman",
+      "at": 238.38,
+      "tag": "RETRATO"
+     },
+     {
+      "type": "ficha",
+      "title": "LANCE WYMAN",
+      "rot": 0,
+      "z": 7,
+      "x": 3140,
+      "y": 800,
+      "sub": "toda la señalética del Metro",
+      "year": "1969",
+      "at": 241.62,
+      "color": "#F26B1D"
+     },
+     {
+      "type": "hand",
+      "text": "toda la señalética",
+      "size": 70,
+      "rot": -3,
+      "z": 9,
+      "x": 2240,
+      "y": 920,
+      "at": 240.48
+     },
+     {
+      "type": "arrow",
+      "w": 330,
+      "h": 150,
+      "d": "M10 40 C 120 0, 250 10, 330 90",
+      "z": 9,
+      "x": 2860,
+      "y": 860,
+      "head": "M290 60 L332 92 L285 110",
       "at": 241.62
      },
      {
-      "kind": "photo",
-      "label": "Andén y tren naranja, años 70",
-      "x": 900,
-      "y": 200,
-      "scale": 1.1,
-      "rotate": 3,
-      "at": 240.48
-     }
-    ],
-    "title": "Toda la señalética",
-    "titleAt": 240.48
-   },
-   "t1": 244.24
-  },
-  {
-   "block": "b4",
-   "type": "metroM",
-   "t0": 244.24,
-   "props": {
-    "railsAt": 247.24,
-    "squareAt": 244.24,
-    "arrowAt": 252.18
-   },
-   "t1": 252.96
-  },
-  {
-   "block": "b4",
-   "type": "gestalt",
-   "t0": 252.96,
-   "props": {
-    "text": "Un símbolo único para cada estación",
-    "textAt": 257.88
-   },
-   "t1": 262.34
-  },
-  {
-   "block": "b4",
-   "type": "stations",
-   "t0": 262.34,
-   "props": {
-    "items": [
-     {
-      "name": "Chapultepec",
-      "kind": "chapulin",
-      "at": 263.16
+      "type": "embed",
+      "scene": "metroM",
+      "w": 1700,
+      "z": 4,
+      "x": 4150,
+      "y": 140,
+      "at": 244.24,
+      "props": {
+       "railsAt": 247.24,
+       "squareAt": 244.24,
+       "arrowAt": 252.18
+      }
      },
      {
-      "name": "Merced",
-      "kind": "manzana",
-      "at": 264.78
-     }
-    ],
-    "note": "Reinterpretación ilustrativa de los íconos de L. Wyman"
-   },
-   "t1": 265.8
-  },
-  {
-   "block": "b4",
-   "type": "network",
-   "t0": 265.8,
-   "props": {
-    "text": "Incluso quien no sabía leer podía moverse por toda la red",
-    "textAt": 268.0
-   },
-   "t1": 272.5
-  },
-  {
-   "block": "b4",
-   "type": "kinetic",
-   "t0": 272.5,
-   "props": {
-    "lines": [
-     "Esta visión _didáctica_",
-     "también revolucionó **los museos**"
-    ],
-    "marks": {
-     "los museos": 275.0
-    },
-    "lineAt": [
-     272.5,
-     274.18
-    ],
-    "size": 116
-   },
-   "t1": 275.66
-  },
-  {
-   "block": "b4",
-   "type": "year",
-   "t0": 275.66,
-   "props": {
-    "year": "1964",
-    "caption": "Se inaugura el Museo Nacional de Antropología",
-    "captionAt": 279.36,
-    "color": "#1F4E9C",
-    "image": {
-     "kind": "photo",
-     "label": "Museo Nacional de Antropología, 1964"
-    }
-   },
-   "t1": 281.48
-  },
-  {
-   "block": "b4",
-   "type": "kinetic",
-   "t0": 281.48,
-   "props": {
-    "kicker": "Pedro Ramírez Vázquez",
-    "lines": [
-     "El museo ya no como ~~colección fría~~,",
-     "sino como **espectáculo didáctico**"
-    ],
-    "marks": {
-     "colección fría": 287.3,
-     "espectáculo didáctico": 289.08
-    },
-    "lineAt": [
-     284.24,
-     288.58
-    ],
-    "size": 88,
-    "ficha": {
-     "title": "Museo Nacional de Antropología",
-     "sub": "Coordinación: Pedro Ramírez Vázquez",
-     "year": "17 de septiembre de 1964",
-     "at": 281.48
-    }
-   },
-   "t1": 291.2
-  },
-  {
-   "block": "b4",
-   "type": "collage",
-   "t0": 291.2,
-   "props": {
-    "items": [
+      "type": "embed",
+      "scene": "gestalt",
+      "w": 1700,
+      "z": 4,
+      "x": 4150,
+      "y": 1290,
+      "at": 252.96,
+      "props": {
+       "text": "Un símbolo único para cada estación",
+       "textAt": 257.88
+      }
+     },
      {
-      "kind": "photo",
+      "type": "embed",
+      "scene": "stations",
+      "w": 1700,
+      "z": 4,
+      "x": 2150,
+      "y": 1290,
+      "at": 262.34,
+      "props": {
+       "items": [
+        {
+         "name": "Chapultepec",
+         "kind": "chapulin",
+         "at": 263.16
+        },
+        {
+         "name": "Merced",
+         "kind": "manzana",
+         "at": 264.78
+        }
+       ],
+       "note": "Reinterpretación ilustrativa de los íconos de L. Wyman"
+      }
+     },
+     {
+      "type": "embed",
+      "scene": "network",
+      "w": 1700,
+      "z": 4,
+      "x": 150,
+      "y": 1290,
+      "at": 265.8,
+      "props": {
+       "text": "Incluso quien no sabía leer podía moverse por toda la red",
+       "textAt": 268.0
+      }
+     },
+     {
+      "type": "paper",
+      "w": 1820,
+      "h": 960,
+      "variant": "page",
+      "rot": -1,
+      "z": 0,
+      "x": 100,
+      "y": 2460,
+      "page": 301
+     },
+     {
+      "type": "label",
+      "text": "esta visión didáctica revolucionó **los museos**",
+      "size": 58,
+      "rot": 0,
+      "z": 7,
+      "x": 160,
+      "y": 2500,
+      "at": 275.0
+     },
+     {
+      "type": "year",
+      "text": "1964",
+      "size": 250,
+      "rot": 0,
+      "z": 5,
+      "x": 160,
+      "y": 2620,
+      "at": 275.66,
+      "color": "#009FDA"
+     },
+     {
+      "type": "photo",
+      "w": 860,
+      "h": 560,
+      "rot": 3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 940,
+      "y": 2600,
+      "label": "Museo Nacional de Antropología, 1964",
+      "at": 279.36
+     },
+     {
+      "type": "ficha",
+      "title": "PEDRO RAMÍREZ VÁZQUEZ",
+      "rot": 0,
+      "z": 7,
+      "x": 180,
+      "y": 2960,
+      "sub": "coordinó el museo",
+      "year": "17 · IX · 1964",
+      "at": 281.48,
+      "color": "#009FDA",
+      "w": 700
+     },
+     {
+      "type": "label",
+      "text": "de colección fría a **espectáculo didáctico**",
+      "size": 56,
+      "rot": 0,
+      "z": 7,
+      "x": 200,
+      "y": 3250,
+      "at": 289.08
+     },
+     {
+      "type": "arrow",
+      "w": 330,
+      "h": 60,
+      "d": "M0 34 C 90 20, 200 40, 320 26",
+      "z": 9,
+      "x": 340,
+      "y": 3240,
+      "at": 287.3
+     },
+     {
+      "type": "paper",
+      "w": 1800,
+      "h": 960,
+      "variant": "kraft",
+      "rot": 1,
+      "z": 0,
+      "x": 4100,
+      "y": 2460
+     },
+     {
+      "type": "photo",
+      "w": 620,
+      "h": 420,
+      "rot": -3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4160,
+      "y": 2540,
       "label": "MUCA · Ciudad Universitaria",
-      "x": 120,
-      "y": 180,
-      "scale": 0.85,
-      "rotate": -3,
       "at": 294.12
      },
      {
-      "kind": "photo",
+      "type": "photo",
+      "w": 520,
+      "h": 340,
+      "rot": 4,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 4200,
+      "y": 3000,
       "label": "Galería Aristos",
-      "x": 140,
-      "y": 600,
-      "scale": 0.7,
-      "rotate": 4,
       "at": 295.28
      },
      {
-      "kind": "poster",
-      "label": "“Si los artistas nos vistieran…”",
-      "sub": "MUCA · Acervo Madero-Refosa MUNAL",
-      "year": "1977",
-      "x": 1100,
-      "y": 110,
-      "scale": 1.25,
-      "rotate": 2,
+      "type": "photo",
+      "w": 560,
+      "h": 820,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 4960,
+      "y": 2500,
+      "label": "“Si los artistas nos vistieran…” MUCA, 1977",
+      "at": 302.76,
+      "tag": "CARTEL"
+     },
+     {
+      "type": "hand",
+      "text": "1977",
+      "size": 110,
+      "rot": -8,
+      "z": 9,
+      "x": 5540,
+      "y": 2760,
       "at": 302.76
+     },
+     {
+      "type": "label",
+      "text": "carteles culturales de **vanguardia**",
+      "size": 52,
+      "rot": 0,
+      "z": 7,
+      "x": 4680,
+      "y": 3260,
+      "at": 300.28
      }
     ],
-    "title": "Museografía moderna y carteles de vanguardia",
-    "titleAt": 297.04
+    "cams": [
+     {
+      "at": 227.38,
+      "x": 1000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 238.38,
+      "x": 3000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 244.24,
+      "x": 5000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 252.96,
+      "x": 5000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 262.34,
+      "x": 3000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 265.8,
+      "x": 1000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 272.5,
+      "x": 1000,
+      "y": 2980,
+      "z": 1.0
+     },
+     {
+      "at": 291.2,
+      "x": 5000,
+      "y": 2980,
+      "z": 1.0
+     }
+    ],
+    "era": "1969–77",
+    "title": "El Metro de la CDMX y la nueva museografía"
    },
    "t1": 307.113
   },
@@ -1022,283 +2532,716 @@
     "num": "04",
     "title": "Identidad corporativa, billetes y cierre",
     "years": "1969 – 1980",
-    "color": "#171412"
+    "color": "#1B3B2F"
    },
    "t1": 309.513
   },
   {
    "block": "b5",
-   "type": "kinetic",
+   "type": "board",
    "t0": 309.513,
    "props": {
-    "lines": [
-     "Ya no bastaba un ~~escudito bonito~~",
-     "hacía falta una **personalidad corporativa**"
-    ],
-    "marks": {
-     "escudito bonito": 318.16,
-     "personalidad corporativa": 321.12
-    },
-    "lineAt": [
-     316.42,
-     319.74
-    ],
-    "size": 86,
-    "ficha": {
-     "title": "Joan Costa",
-     "sub": "teórico de la imagen corporativa",
-     "at": 326.36
-    }
-   },
-   "t1": 327.46
-  },
-  {
-   "block": "b5",
-   "type": "collage",
-   "t0": 327.46,
-   "props": {
     "items": [
      {
-      "kind": "logo",
+      "type": "paper",
+      "w": 1700,
+      "h": 880,
+      "variant": "grid",
+      "rot": -1,
+      "z": 0,
+      "x": 140,
+      "y": 200
+     },
+     {
+      "type": "hand",
+      "text": "con todo este aprendizaje…",
+      "size": 60,
+      "rot": -2,
+      "z": 9,
+      "x": 200,
+      "y": 250,
+      "at": 309.9,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 300,
+      "h": 300,
+      "rot": 4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 1220,
+      "y": 250,
+      "label": "Empresas privadas",
+      "at": 311.04,
+      "tag": "LOGOTIPO"
+     },
+     {
+      "type": "photo",
+      "w": 280,
+      "h": 280,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 1490,
+      "y": 400,
+      "label": "Instituciones públicas",
       "src": "img/imss_logo.png",
-      "label": "IMSS",
-      "sub": "Jorge Canales Romo",
-      "year": "ca. 1975",
-      "x": 120,
-      "y": 120,
-      "scale": 0.8,
-      "rotate": -3,
-      "at": 335.44
+      "at": 312.94,
+      "fit": "contain"
      },
      {
-      "kind": "logo",
-      "label": "SEP",
-      "sub": "Almeida · Gleason · Valdés",
-      "year": "1977",
-      "x": 620,
-      "y": 120,
-      "scale": 0.8,
-      "rotate": 2,
-      "at": 338.5
+      "type": "hand",
+      "text": "empresas privadas",
+      "size": 48,
+      "rot": 3,
+      "z": 9,
+      "x": 1220,
+      "y": 570,
+      "at": 311.04,
+      "font": "caveat"
      },
      {
-      "kind": "logo",
-      "label": "IPN",
-      "sub": "Instituto Politécnico Nacional",
+      "type": "hand",
+      "text": "instituciones públicas",
+      "size": 48,
+      "rot": -3,
+      "z": 9,
+      "x": 1440,
+      "y": 700,
+      "at": 312.94,
+      "font": "caveat"
+     },
+     {
+      "type": "label",
+      "text": "ya no bastaba un escudito bonito",
+      "size": 60,
+      "rot": 0,
+      "z": 7,
+      "x": 200,
+      "y": 360,
+      "at": 316.42
+     },
+     {
+      "type": "arrow",
+      "w": 420,
+      "h": 60,
+      "d": "M0 34 C 140 18, 280 44, 420 26",
+      "z": 9,
+      "x": 740,
+      "y": 320,
+      "at": 318.16
+     },
+     {
+      "type": "label",
+      "text": "**personalidad corporativa**",
+      "size": 96,
+      "rot": 0,
+      "z": 7,
+      "x": 200,
+      "y": 520,
+      "at": 321.12,
+      "font": "display"
+     },
+     {
+      "type": "ficha",
+      "title": "JOAN COSTA",
+      "rot": 0,
+      "z": 7,
       "x": 1120,
-      "y": 120,
-      "scale": 0.8,
-      "rotate": -2,
-      "at": 345.06
+      "y": 720,
+      "sub": "teórico de la imagen corporativa",
+      "at": 326.36,
+      "color": "#009FDA"
      },
      {
-      "kind": "logo",
-      "label": "Televisa",
-      "year": "1972",
-      "x": 300,
-      "y": 600,
-      "scale": 0.6,
-      "rotate": 3,
-      "at": 347.06
+      "type": "asterisk",
+      "w": 90,
+      "z": 9,
+      "x": 1540,
+      "y": 260,
+      "at": 321.12,
+      "color": "#E4007C"
      },
      {
-      "kind": "logo",
-      "label": "UAM",
-      "year": "1973",
-      "x": 780,
-      "y": 620,
-      "scale": 0.6,
-      "rotate": -4,
-      "at": 349.64
-     },
-     {
-      "kind": "logo",
-      "src": "img/loteria_logo.png",
-      "label": "Lotería Nacional",
-      "x": 1250,
-      "y": 640,
-      "scale": 1.0,
-      "rotate": 2,
-      "at": 350.66
-     }
-    ],
-    "title": "Logotipos que siguen en nuestro paisaje diario"
-   },
-   "t1": 354.1
-  },
-  {
-   "block": "b5",
-   "type": "kinetic",
-   "t0": 354.1,
-   "props": {
-    "lines": [
-     "La ola gráfica llegó",
-     "hasta **nuestros bolsillos**"
-    ],
-    "marks": {
-     "nuestros bolsillos": 355.24
-    },
-    "lineAt": [
-     354.1,
-     355.24
-    ],
-    "size": 120
-   },
-   "t1": 356.7
-  },
-  {
-   "block": "b5",
-   "type": "year",
-   "t0": 356.7,
-   "props": {
-    "year": "1969",
-    "caption": "Banxico abre su propia fábrica de billetes",
-    "captionAt": 360.44,
-    "color": "#1F4E9C",
-    "image": {
-     "kind": "photo",
-     "label": "Fábrica de Billetes del Banco de México, 1969"
-    }
-   },
-   "t1": 362.34
-  },
-  {
-   "block": "b5",
-   "type": "collage",
-   "t0": 362.34,
-   "props": {
-    "items": [
-     {
-      "kind": "bill",
-      "label": "Sor Juana · $1000",
-      "x": 130,
+      "type": "paper",
+      "w": 1840,
+      "h": 1000,
+      "variant": "page",
+      "rot": 0.5,
+      "z": 0,
+      "x": 2080,
       "y": 140,
-      "rotate": -4,
-      "at": 367.22
+      "page": 302
      },
      {
-      "kind": "bill",
-      "label": "Morelos · $20",
-      "x": 1000,
-      "y": 120,
-      "rotate": 3,
-      "at": 368.4
+      "type": "hand",
+      "text": "logotipos de nuestro paisaje diario",
+      "size": 62,
+      "rot": 0,
+      "z": 9,
+      "x": 2120,
+      "y": 170,
+      "at": 327.46
      },
      {
-      "kind": "bill",
-      "label": "Benito Juárez · $50",
-      "x": 160,
-      "y": 560,
-      "rotate": 2,
-      "at": 369.8
-     },
-     {
-      "kind": "bill",
-      "label": "Carranza · $100",
-      "x": 1030,
-      "y": 560,
-      "rotate": -3,
-      "at": 370.76
-     }
-    ],
-    "title": "Cuarta serie · diseño: Reyes Santana y otros",
-    "titleAt": 365.02
-   },
-   "t1": 372.66
-  },
-  {
-   "block": "b5",
-   "type": "collage",
-   "t0": 372.66,
-   "props": {
-    "items": [
-     {
-      "kind": "stamp",
-      "label": "Rafael Davidson",
-      "sub": "crédito en estampilla",
-      "x": 380,
-      "y": 220,
-      "scale": 1.3,
-      "rotate": -5,
-      "at": 378.28
-     },
-     {
-      "kind": "stamp",
-      "label": "Lance Wyman",
-      "sub": "crédito en estampilla",
-      "x": 1100,
-      "y": 220,
-      "scale": 1.3,
-      "rotate": 4,
-      "at": 379.98
-     }
-    ],
-    "title": "Las estampillas dan crédito a sus diseñadores",
-    "titleAt": 376.0
-   },
-   "t1": 381.96
-  },
-  {
-   "block": "b5",
-   "type": "kinetic",
-   "t0": 381.96,
-   "props": {
-    "kicker": "En conclusión",
-    "lines": [
-     "No solo resolvió problemas visuales:",
-     "**construyó el imaginario**",
-     "_moderno del país_"
-    ],
-    "marks": {
-     "construyó el imaginario": 392.44
-    },
-    "lineAt": [
-     389.6,
-     392.44,
-     393.9
-    ],
-    "size": 100
-   },
-   "t1": 395.6
-  },
-  {
-   "block": "b5",
-   "type": "collage",
-   "t0": 395.6,
-   "props": {
-    "items": [
-     {
-      "kind": "logo",
-      "src": "img/metro_logo.png",
-      "label": "Metro",
-      "x": 160,
-      "y": 260,
-      "scale": 1.0,
-      "rotate": -4,
-      "at": 397.54
-     },
-     {
-      "kind": "logo",
+      "type": "photo",
+      "w": 320,
+      "h": 300,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2140,
+      "y": 300,
+      "label": "IMSS",
       "src": "img/imss_logo.png",
-      "label": "Institución pública",
-      "x": 760,
-      "y": 260,
-      "scale": 1.0,
-      "rotate": 3,
-      "at": 399.84
+      "at": 335.44,
+      "tag": "LOGOTIPO",
+      "fit": "contain"
      },
      {
-      "kind": "bill",
+      "type": "hand",
+      "text": "IMSS\nJorge Canales Romo, ca. 1975",
+      "size": 44,
+      "rot": 2,
+      "z": 9,
+      "x": 2480,
+      "y": 390,
+      "at": 335.44,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 320,
+      "h": 300,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2730,
+      "y": 300,
+      "label": "SEP",
+      "at": 338.5,
+      "tag": "LOGOTIPO",
+      "fit": "contain"
+     },
+     {
+      "type": "hand",
+      "text": "SEP\nAlmeida · Gleason · Valdés, 1977",
+      "size": 44,
+      "rot": -2,
+      "z": 9,
+      "x": 3070,
+      "y": 390,
+      "at": 338.5,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 320,
+      "h": 300,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3320,
+      "y": 300,
+      "label": "IPN",
+      "at": 345.06,
+      "tag": "LOGOTIPO",
+      "fit": "contain"
+     },
+     {
+      "type": "hand",
+      "text": "IPN\nInstituto Politécnico Nacional",
+      "size": 44,
+      "rot": 2,
+      "z": 9,
+      "x": 3660,
+      "y": 390,
+      "at": 345.06,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 320,
+      "h": 300,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2140,
+      "y": 700,
+      "label": "Televisa",
+      "at": 347.06,
+      "tag": "LOGOTIPO",
+      "fit": "contain"
+     },
+     {
+      "type": "hand",
+      "text": "Televisa\n1972",
+      "size": 44,
+      "rot": -2,
+      "z": 9,
+      "x": 2480,
+      "y": 790,
+      "at": 347.06,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 320,
+      "h": 300,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2730,
+      "y": 700,
+      "label": "UAM",
+      "at": 349.64,
+      "tag": "LOGOTIPO",
+      "fit": "contain"
+     },
+     {
+      "type": "hand",
+      "text": "UAM\n1973",
+      "size": 44,
+      "rot": 2,
+      "z": 9,
+      "x": 3070,
+      "y": 790,
+      "at": 349.64,
+      "font": "caveat"
+     },
+     {
+      "type": "photo",
+      "w": 320,
+      "h": 300,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3320,
+      "y": 700,
+      "label": "Lotería Nacional",
+      "src": "img/loteria_logo.png",
+      "at": 350.66,
+      "tag": "LOGOTIPO",
+      "fit": "contain"
+     },
+     {
+      "type": "hand",
+      "text": "Lotería Nacional",
+      "size": 44,
+      "rot": -2,
+      "z": 9,
+      "x": 3660,
+      "y": 790,
+      "at": 350.66,
+      "font": "caveat"
+     },
+     {
+      "type": "circle",
+      "w": 420,
+      "h": 380,
+      "z": 9,
+      "x": 2100,
+      "y": 270,
+      "at": 336.92
+     },
+     {
+      "type": "paper",
+      "w": 1760,
+      "h": 920,
+      "variant": "kraft",
+      "rot": -1,
+      "z": 0,
+      "x": 4120,
+      "y": 180
+     },
+     {
+      "type": "year",
+      "text": "1969",
+      "size": 260,
+      "rot": 0,
+      "z": 5,
+      "x": 4180,
+      "y": 260,
+      "at": 356.7,
+      "color": "#7AB800"
+     },
+     {
+      "type": "photo",
+      "w": 760,
+      "h": 520,
+      "rot": 3,
+      "z": 3,
+      "bw": true,
+      "cutout": false,
+      "x": 5040,
+      "y": 240,
+      "label": "Fábrica de Billetes del Banco de México, 1969",
+      "at": 360.44
+     },
+     {
+      "type": "label",
+      "text": "hasta **nuestros bolsillos**",
+      "size": 70,
+      "rot": 0,
+      "z": 7,
+      "x": 4200,
+      "y": 740,
+      "at": 355.24
+     },
+     {
+      "type": "paper",
+      "w": 1840,
+      "h": 1000,
+      "variant": "page",
+      "rot": 0.5,
+      "z": 0,
+      "x": 4080,
+      "y": 1290,
+      "page": 303
+     },
+     {
+      "type": "label",
+      "text": "la **cuarta serie** · Reyes Santana y otros",
+      "size": 56,
+      "rot": 0,
+      "z": 7,
+      "x": 4140,
+      "y": 1330,
+      "at": 362.52
+     },
+     {
+      "type": "photo",
+      "w": 760,
+      "h": 330,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 4160,
+      "y": 1470,
+      "label": "Sor Juana · $1000",
+      "at": 367.22,
+      "tag": "MUESTRA · SIN VALOR"
+     },
+     {
+      "type": "photo",
+      "w": 760,
+      "h": 330,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 5020,
+      "y": 1470,
+      "label": "Morelos · $20",
+      "at": 368.4,
+      "tag": "MUESTRA · SIN VALOR"
+     },
+     {
+      "type": "photo",
+      "w": 760,
+      "h": 330,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 4160,
+      "y": 1850,
+      "label": "Benito Juárez · $50",
+      "at": 369.8,
+      "tag": "MUESTRA · SIN VALOR"
+     },
+     {
+      "type": "photo",
+      "w": 760,
+      "h": 330,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 5020,
+      "y": 1850,
+      "label": "Carranza · $100",
+      "at": 370.76,
+      "tag": "MUESTRA · SIN VALOR"
+     },
+     {
+      "type": "paper",
+      "w": 1600,
+      "h": 880,
+      "variant": "grid",
+      "rot": -1,
+      "z": 0,
+      "x": 2200,
+      "y": 1350
+     },
+     {
+      "type": "label",
+      "text": "las estampillas dan crédito a sus **diseñadores**",
+      "size": 56,
+      "rot": 0,
+      "z": 7,
+      "x": 2260,
+      "y": 1400,
+      "at": 376.0
+     },
+     {
+      "type": "photo",
+      "w": 400,
+      "h": 480,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 2340,
+      "y": 1550,
+      "label": "Estampilla · Rafael Davidson",
+      "at": 378.28,
+      "tag": "ESTAMPILLA"
+     },
+     {
+      "type": "photo",
+      "w": 400,
+      "h": 480,
+      "rot": 4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 3040,
+      "y": 1550,
+      "label": "Estampilla · Lance Wyman",
+      "at": 379.6,
+      "tag": "ESTAMPILLA"
+     },
+     {
+      "type": "hand",
+      "text": "Rafael Davidson",
+      "size": 60,
+      "rot": 0,
+      "z": 9,
+      "x": 2340,
+      "y": 2070,
+      "at": 378.28,
+      "font": "caveat"
+     },
+     {
+      "type": "hand",
+      "text": "Lance Wyman",
+      "size": 60,
+      "rot": 0,
+      "z": 9,
+      "x": 3040,
+      "y": 2070,
+      "at": 379.6,
+      "font": "caveat"
+     },
+     {
+      "type": "opart",
+      "w": 2320,
+      "h": 1360,
+      "rot": 0,
+      "z": 0,
+      "x": 1840,
+      "y": 2240,
+      "color": "#E4007C"
+     },
+     {
+      "type": "paper",
+      "w": 1520,
+      "h": 840,
+      "variant": "page",
+      "rot": 1,
+      "z": 0,
+      "x": 2240,
+      "y": 2520,
+      "page": 1
+     },
+     {
+      "type": "label",
+      "text": "no solo resolvió problemas visuales",
+      "size": 56,
+      "rot": 0,
+      "z": 7,
+      "x": 2300,
+      "y": 2600,
+      "at": 389.6,
+      "bg": false
+     },
+     {
+      "type": "rotulo",
+      "text": "CONSTRUYÓ EL\nIMAGINARIO",
+      "size": 140,
+      "rot": 0,
+      "z": 5,
+      "x": 2300,
+      "y": 2740,
+      "at": 392.44,
+      "color": "#1A1714"
+     },
+     {
+      "type": "label",
+      "text": "moderno **del país**",
+      "size": 70,
+      "rot": 0,
+      "z": 7,
+      "x": 2300,
+      "y": 3160,
+      "at": 393.9,
+      "bg": false
+     },
+     {
+      "type": "paper",
+      "w": 1800,
+      "h": 960,
+      "variant": "kraft",
+      "rot": -0.5,
+      "z": 0,
+      "x": 4100,
+      "y": 2460
+     },
+     {
+      "type": "photo",
+      "w": 420,
+      "h": 420,
+      "rot": -4,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 4160,
+      "y": 2560,
+      "label": "Metro",
+      "src": "img/metro_logo.png",
+      "at": 397.54,
+      "fit": "contain"
+     },
+     {
+      "type": "photo",
+      "w": 360,
+      "h": 480,
+      "rot": 3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 4720,
+      "y": 2560,
+      "label": "IMSS",
+      "src": "img/imss_logo.png",
+      "at": 399.84,
+      "fit": "contain"
+     },
+     {
+      "type": "photo",
+      "w": 600,
+      "h": 270,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": false,
+      "x": 5220,
+      "y": 2620,
       "label": "Un billete",
-      "x": 1240,
-      "y": 330,
-      "scale": 1.1,
-      "rotate": -2,
-      "at": 402.7
+      "at": 402.7,
+      "tag": "MUESTRA · SIN VALOR"
+     },
+     {
+      "type": "hand",
+      "text": "el Metro",
+      "size": 60,
+      "rot": 0,
+      "z": 9,
+      "x": 4190,
+      "y": 3020,
+      "at": 397.54,
+      "font": "caveat"
+     },
+     {
+      "type": "hand",
+      "text": "una institución",
+      "size": 60,
+      "rot": 0,
+      "z": 9,
+      "x": 4740,
+      "y": 3080,
+      "at": 399.84,
+      "font": "caveat"
+     },
+     {
+      "type": "hand",
+      "text": "un billete",
+      "size": 60,
+      "rot": 0,
+      "z": 9,
+      "x": 5280,
+      "y": 2940,
+      "at": 402.7,
+      "font": "caveat"
+     },
+     {
+      "type": "label",
+      "text": "detrás hay una historia de **diseño mexicano**",
+      "size": 60,
+      "rot": 0,
+      "z": 7,
+      "x": 4240,
+      "y": 3220,
+      "at": 404.58
      }
     ],
-    "title": "Detrás hay una historia de diseño mexicano",
-    "titleAt": 404.58
+    "cams": [
+     {
+      "at": null,
+      "x": 1000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 327.46,
+      "x": 3000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 356.7,
+      "x": 5000,
+      "y": 680,
+      "z": 1.0
+     },
+     {
+      "at": 362.34,
+      "x": 5000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 372.66,
+      "x": 3000,
+      "y": 1830,
+      "z": 1.0
+     },
+     {
+      "at": 381.96,
+      "x": 3000,
+      "y": 2980,
+      "z": 0.95
+     },
+     {
+      "at": 395.6,
+      "x": 5000,
+      "y": 2980,
+      "z": 1.0
+     }
+    ],
+    "era": "1969–80",
+    "title": "Identidad corporativa, billetes y estampillas"
    },
    "t1": 409.04
   },
@@ -1309,7 +3252,7 @@
    "props": {
     "credits": [
      "Voces: Marco · Lucas · Clau",
-     "Imágenes: Wikimedia Commons (ver CREDITOS.csv)",
+     "Imágenes: Wikimedia Commons, Internet Archive, Library of Congress",
      "Referencia bibliográfica: [título del libro]"
     ]
    },
