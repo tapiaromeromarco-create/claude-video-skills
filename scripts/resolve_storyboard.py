@@ -72,7 +72,17 @@ for sc in scenes:
         if grupo and grupo[0]["at"] > c["at"] + 1.2:
             grupo[0]["at"] = round(c["at"] + 0.7, 3)
 
-json.dump(dict(duration=T["duration"], scenes=scenes), open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+# Imágenes a pantalla completa (encima de las escenas): "at" + "until" (frase) o "dur" (s)
+overlays = []
+for i, ov in enumerate(S.get("overlays", [])):
+    b = blocks[ov["block"]]
+    t0 = resolve(ov["at"], b["start"], b["end"], f"pantalla completa {i}")
+    if t0 is None: continue
+    t1 = resolve(ov["until"], t0 + 0.5, b["end"], f"pantalla completa {i} (fin)") if ov.get("until") else None
+    t1 = t1 if t1 is not None else t0 + ov.get("dur", 3.5)
+    overlays.append(dict(block=ov["block"], type="full", t0=round(t0, 3), t1=round(t1, 3), props=resolve(ov.get("props", {}), t0 - 0.3, t1 + 0.3, f"pantalla completa {i}")))
+
+json.dump(dict(duration=T["duration"], scenes=scenes, overlays=overlays), open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"{len(scenes)} escenas · {T['duration']:.1f}s")
 short = [f"  {i} {s['type']} {s['t1']-s['t0']:.1f}s" for i, s in enumerate(scenes) if s["t1"] - s["t0"] < 2.0]
 if short: print("escenas muy cortas (<2 s):\n" + "\n".join(short))

@@ -3268,5 +3268,94 @@
    },
    "t1": 413.268
   }
+ ],
+ "overlays": [
+  {
+   "block": "b1",
+   "type": "full",
+   "t0": 10.44,
+   "t1": 14.04,
+   "props": {
+    "src": "img/full/aerea_cdmx_1962.jpg",
+    "move": "out",
+    "bw": true,
+    "ficha": {
+     "title": "Ciudad de México, noviembre de 1962",
+     "sub": "Archivo Histórico de la Ciudad de México"
+    }
+   }
+  },
+  {
+   "block": "b2",
+   "type": "full",
+   "t0": 47.7,
+   "t1": 51.3,
+   "props": {
+    "src": "img/full/supermachos.jpg",
+    "fit": "contain",
+    "move": "in",
+    "ficha": {
+     "title": "Los Supermachos, núm. 383 · Rius",
+     "sub": "3 de mayo de 1973"
+    }
+   }
+  },
+  {
+   "block": "b2",
+   "type": "full",
+   "t0": 58.68,
+   "t1": 62.08,
+   "props": {
+    "src": "img/full/familia_burron.jpg",
+    "move": "left",
+    "ficha": {
+     "title": "La Familia Burrón · Gabriel Vargas",
+     "sub": "Fachada del Museo del Estanquillo, CDMX"
+    },
+    "nota": {
+     "text": "¡clásico popular!",
+     "x": 1180,
+     "y": 120
+    }
+   }
+  },
+  {
+   "block": "b3",
+   "type": "full",
+   "t0": 140.4,
+   "t1": 143.6,
+   "props": {
+    "src": "img/full/boleto_soccer.jpg",
+    "fit": "contain",
+    "move": "in",
+    "nota": {
+     "text": "Estadio\nAzteca\n22·X·1968",
+     "x": 1580,
+     "y": 300,
+     "rot": -6
+    },
+    "circulo": {
+     "x": 400,
+     "y": 230,
+     "w": 290,
+     "h": 270
+    }
+   }
+  },
+  {
+   "block": "b3",
+   "type": "full",
+   "t0": 173.26,
+   "t1": 178.0,
+   "props": {
+    "src": "img/full/cartel_mexico68.jpg",
+    "fit": "contain",
+    "move": "in",
+    "ficha": {
+     "title": "Cartel oficial de México 68",
+     "sub": "Programa de identidad · Library of Congress"
+    }
+   }
+  }
  ]
 }

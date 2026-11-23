@@ -6,6 +6,7 @@ import {Grain} from './components/base';
 import {FondoCapitulo} from './components/fondos';
 import {TEMAS, TemaCtx} from './theme';
 import {BoardScene} from './components/board';
+import {FullScene} from './components/full';
 import {
 	ChapterScene,
 	CollageScene,
@@ -56,6 +57,16 @@ const Franjas: React.FC<{children: React.ReactNode; on: boolean}> = ({children, 
 	return <AbsoluteFill style={{maskImage: mask, WebkitMaskImage: mask}}>{children}</AbsoluteFill>;
 };
 
+/* Salida por franjas (inversa) para las imágenes a pantalla completa */
+const SalidaFranjas: React.FC<{children: React.ReactNode; dur: number}> = ({children, dur}) => {
+	const frame = useCurrentFrame();
+	const q = interpolate(frame, [dur - TR, dur], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+	if (q >= 1) return <AbsoluteFill>{children}</AbsoluteFill>;
+	const w = 64;
+	const mask = `repeating-linear-gradient(115deg, #000 0px, #000 ${(q * w).toFixed(1)}px, transparent ${(q * w).toFixed(1)}px, transparent ${w}px)`;
+	return <AbsoluteFill style={{maskImage: mask, WebkitMaskImage: mask}}>{children}</AbsoluteFill>;
+};
+
 export const VideoEnsayo: React.FC = () => {
 	const {fps} = useVideoConfig();
 	const scenes = data.scenes as Scene[];
@@ -85,6 +96,20 @@ export const VideoEnsayo: React.FC = () => {
 								<Comp t0={s.t0} {...s.props} />
 							</Franjas>
 						</TemaCtx.Provider>
+					</Sequence>
+				);
+			})}
+			{/* Imágenes a pantalla completa: encima del tablero, sin cortar su recorrido */}
+			{((data as unknown as {overlays?: Scene[]}).overlays ?? []).map((s, i) => {
+				const from = Math.round(s.t0 * fps);
+				const dur = Math.max(1, Math.round(s.t1 * fps) - from) + TR;
+				return (
+					<Sequence key={`ov${i}`} name={`pantalla completa ${i}`} from={from} durationInFrames={dur}>
+						<Franjas on>
+							<SalidaFranjas dur={dur}>
+								<FullScene t0={s.t0} t1={s.t1} {...(s.props as {src: string})} />
+							</SalidaFranjas>
+						</Franjas>
 					</Sequence>
 				);
 			})}

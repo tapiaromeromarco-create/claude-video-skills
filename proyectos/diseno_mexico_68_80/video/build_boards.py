@@ -365,5 +365,19 @@ for sc in scenes:
             if os.path.exists(os.path.join("remotion/public", st)):
                 it["src"] = st; it["cutout"] = True
 
-json.dump(dict(_doc=__doc__, scenes=scenes), open("storyboard_src.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+# ============================== IMÁGENES A PANTALLA COMPLETA ==============================
+overlays = [
+    dict(block="b1", at="@diseño gráfico", dur=3.6, props=dict(src="img/full/aerea_cdmx_1962.jpg", move="out", bw=True,
+         ficha=dict(title="Ciudad de México, noviembre de 1962", sub="Archivo Histórico de la Ciudad de México"))),
+    dict(block="b2", at="@Arrancamos", dur=3.6, props=dict(src="img/full/supermachos.jpg", fit="contain", move="in",
+         ficha=dict(title="Los Supermachos, núm. 383 · Rius", sub="3 de mayo de 1973"))),
+    dict(block="b2", at="@Familia Burrón", dur=3.4, props=dict(src="img/full/familia_burron.jpg", move="left",
+         ficha=dict(title="La Familia Burrón · Gabriel Vargas", sub="Fachada del Museo del Estanquillo, CDMX"), nota=dict(text="¡clásico popular!", x=1180, y=120))),
+    dict(block="b3", at="@Juegos Olímpicos", dur=3.2, props=dict(src="img/full/boleto_soccer.jpg", fit="contain", move="in",
+         nota=dict(text="Estadio\nAzteca\n22·X·1968", x=1580, y=300, rot=-6), circulo=dict(x=400, y=230, w=290, h=270))),
+    dict(block="b3", at="@creando líneas", until="@revolucionario", props=dict(src="img/full/cartel_mexico68.jpg", fit="contain", move="in",
+         ficha=dict(title="Cartel oficial de México 68", sub="Programa de identidad · Library of Congress"))),
+]
+
+json.dump(dict(_doc=__doc__, scenes=scenes, overlays=overlays), open("storyboard_src.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(len(scenes), "escenas;", sum(len(s["props"].get("items", [])) for s in scenes), "piezas")
