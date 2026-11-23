@@ -354,5 +354,15 @@ t.cam("@Al mismo tiempo", "E"); t.cam("@En conclusión", "H", 0.95); t.cam("@La 
 scenes.append(dict(block="b5", at="@Con todo este", type="board", props=dict(items=t.items, cams=t.cams, era="1969–80", title="Identidad corporativa, billetes y estampillas")))
 scenes.append(dict(block="b5", at="@Muchas gracias", type="end", props=dict(credits=["Voces: Marco · Lucas · Clau", "Imágenes: Wikimedia Commons, Internet Archive, Library of Congress", "Referencia bibliográfica: [título del libro]"])))
 
+# Imágenes reales -> versión sticker (recorte con delineado blanco) en img/st/*.png
+import os
+for sc in scenes:
+    for it in sc["props"].get("items", []):
+        src = it.get("src")
+        if it.get("type") == "photo" and src and not src.startswith("img/st/"):
+            st = "img/st/" + os.path.splitext(os.path.basename(src))[0] + ".png"
+            if os.path.exists(os.path.join("remotion/public", st)):
+                it["src"] = st; it["cutout"] = True
+
 json.dump(dict(_doc=__doc__, scenes=scenes), open("storyboard_src.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(len(scenes), "escenas;", sum(len(s["props"].get("items", [])) for s in scenes), "piezas")

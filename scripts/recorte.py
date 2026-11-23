@@ -5,6 +5,9 @@ Uso:
   recorte.py entrada.jpg salida.png [--borde 18] [--semitono] [--sin-ia]
   --sin-ia   no quita fondo: recorta el rectángulo de la foto con borde irregular (para fotos completas)
   --semitono convierte la figura a semitono (puntos) en tinta, estilo impreso
+  --delineado N  contorno blanco suave de N px siguiendo la silueta (estilo sticker)
+  --alfa     usa la transparencia que ya trae el PNG (logotipos) en lugar de la IA
+  --rect     la imagen es rectangular (portada, cartel, boleto): delineado fino pegado a la orilla
 Salida: PNG con transparencia, listo para el video."""
 import argparse, os
 import numpy as np
@@ -54,11 +57,40 @@ def borde_tijera(mask, ancho, seed=7):
     rough = small.resize(big.size, Image.BILINEAR).filter(ImageFilter.GaussianBlur(2)).point(lambda v: 255 if v > 128 else 0)
     return Image.fromarray(np.maximum(np.asarray(rough), np.asarray(big)))
 
+def delineado(mask, ancho):
+    """Contorno blanco redondeado: dilatación suave (blur + umbral)."""
+    pad = ancho + 4
+    m = ImageOps.expand(mask, pad, fill=0)
+    d = m.filter(ImageFilter.GaussianBlur(ancho * 0.6)).point(lambda v: 255 if v > 18 else 0)
+    d = d.filter(ImageFilter.GaussianBlur(1.2))
+    return m, d, pad
+
+def sticker(img, mask, ancho):
+    m, d, pad = delineado(mask, ancho)
+    big = ImageOps.expand(img.convert("RGB"), pad, fill=(255, 255, 255))
+    blanco = Image.new("RGB", big.size, (255, 255, 255))
+    fig = Image.composite(big, blanco, m.filter(ImageFilter.GaussianBlur(0.6)))
+    out = fig.convert("RGBA"); out.putalpha(d)
+    bb = d.getbbox(); return out.crop(bb) if bb else out
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("entrada"); ap.add_argument("salida")
     ap.add_argument("--borde", type=int, default=18); ap.add_argument("--semitono", action="store_true")
     ap.add_argument("--sin-ia", action="store_true"); ap.add_argument("--max", type=int, default=1600)
+    ap.add_argument("--delineado", type=int, default=0); ap.add_argument("--alfa", action="store_true"); ap.add_argument("--rect", action="store_true")
     a = ap.parse_args()
+    if a.delineado:
+        src = Image.open(a.entrada); src.thumbnail((a.max, a.max))
+        if a.alfa and src.mode in ("RGBA", "LA", "P"):
+            src = src.convert("RGBA"); mask = src.getchannel("A").point(lambda v: 255 if v > 100 else 0); img = src.convert("RGB")
+        elif a.rect:
+            img = src.convert("RGB"); mask = Image.new("L", img.size, 255)
+        else:
+            img = ImageOps.expand(src.convert("RGB"), 20, fill=(255, 255, 255))
+            mask = mascara_ia(img).point(lambda v: 255 if v > 120 else 0)
+            mask = mask.filter(ImageFilter.MedianFilter(5))
+            if a.semitono: img = semitono(img, mask)
+        out = sticker(img, mask, a.delineado); out.save(a.salida, optimize=True); print(a.salida, out.size); return
     img = Image.open(a.entrada).convert("RGB"); img.thumbnail((a.max, a.max))
     if a.sin_ia:
         pad = a.borde; base = Image.new("RGB", (img.width + 2 * pad, img.height + 2 * pad), (251, 248, 241))
