@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, random, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Highlight, StrikeThrough, Underline} from '@remotion/rough-notation';
-import {C, fontDisplay, fontMono, fontSans, fontSerif, step12} from '../theme';
+import {Highlight} from '@remotion/rough-notation';
+import {C, fontDisplay, fontMono, fontSans, fontSerif, fontOp, fontComic, useTema} from '../theme';
 import {Ficha, HandArrow, Kicker, Paper, Sticker, StickerItem, usePop} from './base';
 
 /* Todas las escenas reciben t0 (s) y anclas absolutas en segundos; convertimos a frames locales. */
@@ -33,6 +33,7 @@ export type KineticProps = Base & {
 	lines: string[];
 	marks?: Record<string, number>; // segundo absoluto en que se dibuja cada marca
 	lineAt?: number[]; // segundo absoluto en que aparece cada línea
+	wordTimes?: (number | null)[][]; // segundo de cada palabra (sincronía con la voz)
 	kicker?: string;
 	size?: number;
 	dark?: boolean;
@@ -40,67 +41,80 @@ export type KineticProps = Base & {
 	align?: 'left' | 'center';
 };
 
-export const KineticScene: React.FC<KineticProps> = ({t0, lines, marks = {}, lineAt = [], kicker, size = 96, dark, ficha, align = 'left'}) => {
+/* Texto en bloques sólidos (como letreros y carteles de la época); cada palabra entra al decirse. */
+export const KineticScene: React.FC<KineticProps> = ({t0, lines, marks = {}, lineAt = [], wordTimes = [], kicker, size = 96, ficha}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
+	const T = useTema();
 	const L = useLocal(t0);
-	const sf = step12(frame, fps);
+	const drift = interpolate(frame, [0, 10 * fps], [0, -30], clamp);
+	const tk = interpolate(frame, [0, 10], [0, 1], clamp);
 	return (
-		<AbsoluteFill>
-			{dark ? <AbsoluteFill style={{background: C.ink}} /> : <Paper />}
-			<AbsoluteFill style={{padding: '120px 150px', justifyContent: 'center', alignItems: align === 'center' ? 'center' : 'flex-start', textAlign: align}}>
-				{kicker ? <Kicker text={kicker} color={dark ? C.marker : C.rosa} style={{marginBottom: 28}} /> : null}
-				{lines.map((line, i) => {
-					const start = L(lineAt[i], i * 0.5);
-					const p = interpolate(sf - start, [0, 6], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
-					return (
-						<div
-							key={i}
+		<AbsoluteFill style={{padding: '110px 140px', justifyContent: 'center', translate: `${drift}px 0px`}}>
+			{kicker ? (
+				<div style={{fontFamily: fontMono, fontSize: 28, letterSpacing: 5, textTransform: 'uppercase', color: T.acento, marginBottom: 26, opacity: tk}}>{kicker}</div>
+			) : null}
+			{lines.map((line, i) => {
+				const wt = wordTimes[i] ?? [];
+				const lineStart = L(lineAt[i] ?? (wt.find((x) => x != null) ?? undefined), i * 0.6);
+				const bp = interpolate(frame - lineStart + 4, [0, 10], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
+				let w = 0;
+				return (
+					<div key={i} style={{marginBottom: 14}}>
+						<span
 							style={{
+								display: 'inline-block',
+								background: T.bloque,
+								color: T.textoBloque,
 								fontFamily: fontDisplay,
 								fontSize: size,
-								lineHeight: 1.12,
-								color: dark ? C.white : C.ink,
-								opacity: p,
-								translate: `0px ${(1 - p) * 30}px`,
-								marginBottom: 10,
-								maxWidth: 1620,
+								lineHeight: 1.14,
+								padding: '6px 26px 12px',
+								clipPath: `inset(0 ${(1 - bp) * 100}% 0 0)`,
+								maxWidth: 1640,
+								boxShadow: `10px 10px 0 ${T.acento}`,
 							}}
 						>
-							{parse(line).map((tk, j) => {
-								const at = L(tk.key ? marks[tk.key] : undefined, i * 0.5 + 0.7);
-								const prog = interpolate(frame, [at, at + Math.round(0.45 * fps)], [0, 1], clamp);
-								if (tk.mode === 'hl')
+							{parse(line).map((tok, j) => {
+								const at = L(tok.key ? marks[tok.key] : undefined, i * 0.6 + 0.8);
+								const prog = interpolate(frame, [at, at + Math.round(0.4 * fps)], [0, 1], clamp);
+								const words = tok.t.split(/(\s+)/);
+								const inner = words.map((wd, k) => {
+									if (!wd.trim()) return <span key={k}>{wd}</span>;
+									const tw = wt[w++];
+									const st = tw != null ? L(tw) : lineStart + w * 3;
+									const op = interpolate(frame - st, [-2, 5], [0, 1], clamp);
 									return (
-										<Highlight key={j} color={C.markerRGBA} progress={prog} iterations={1} padding={{left: 6, right: 6}}>
-											<span style={{color: C.ink}}>{tk.t}</span>
-										</Highlight>
-									);
-								if (tk.mode === 'strike')
-									return (
-										<StrikeThrough key={j} color={C.rosa} strokeWidth={9} progress={prog} iterations={1}>
-											<span style={{opacity: interpolate(prog, [0, 1], [1, 0.55])}}>{tk.t}</span>
-										</StrikeThrough>
-									);
-								if (tk.mode === 'ul')
-									return (
-										<Underline key={j} color={C.metro} strokeWidth={8} progress={prog} iterations={1}>
-											<span>{tk.t}</span>
-										</Underline>
-									);
-								if (tk.mode === 'serif')
-									return (
-										<span key={j} style={{fontFamily: fontSerif, fontWeight: 400, color: dark ? C.marker : C.rosa, fontSize: size * 1.12}}>
-											{tk.t}
+										<span key={k} style={{opacity: op, display: 'inline-block', translate: `0px ${(1 - op) * 18}px`}}>
+											{wd}
 										</span>
 									);
-								return <span key={j}>{tk.t}</span>;
+								});
+								if (tok.mode === 'hl')
+									return (
+										<span key={j} style={{backgroundImage: `linear-gradient(${T.marcador}, ${T.marcador})`, backgroundSize: `${prog * 100}% 100%`, backgroundRepeat: 'no-repeat', color: prog > 0.3 ? C.ink : T.textoBloque, padding: '0 8px'}}>
+											{inner}
+										</span>
+									);
+								if (tok.mode === 'strike')
+									return (
+										<span key={j} style={{backgroundImage: `linear-gradient(transparent 46%, ${T.acento === C.ink ? C.rosa : T.acento} 46%, ${T.acento === C.ink ? C.rosa : T.acento} 60%, transparent 60%)`, backgroundSize: `${prog * 100}% 100%`, backgroundRepeat: 'no-repeat', opacity: 1 - prog * 0.35}}>
+											{inner}
+										</span>
+									);
+								if (tok.mode === 'serif' || tok.mode === 'ul')
+									return (
+										<span key={j} style={{fontFamily: fontSerif, fontSize: size * 1.12, color: T.marcador}}>
+											{inner}
+										</span>
+									);
+								return <span key={j}>{inner}</span>;
 							})}
-						</div>
-					);
-				})}
-				{ficha ? <FichaPop t0={t0} {...ficha} /> : null}
-			</AbsoluteFill>
+						</span>
+					</div>
+				);
+			})}
+			{ficha ? <FichaPop t0={t0} {...ficha} /> : null}
 		</AbsoluteFill>
 	);
 };
@@ -116,61 +130,76 @@ const FichaPop: React.FC<{t0: number; title: string; sub?: string; year?: string
 	);
 };
 
-/* ============ Título principal ============ */
-export const TitleScene: React.FC<Base & {credits?: string}> = ({t0, credits}) => {
+/* ============ Título principal: rotulación de líneas paralelas, como MEXICO68 ============ */
+export const TitleScene: React.FC<Base & {credits?: string}> = ({credits}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const sf = step12(frame, fps);
-	const a = interpolate(sf, [0, 8], [0, 1], clamp);
-	const b = interpolate(sf, [6, 14], [0, 1], clamp);
-	const hl = interpolate(frame, [16, 30], [0, 1], clamp);
+	const a = interpolate(frame, [0, 14], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
+	const b = interpolate(frame, [10, 26], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
+	const hl = interpolate(frame, [26, 40], [0, 1], clamp);
+	const push = interpolate(frame, [0, 8 * fps], [1, 1.05], clamp);
 	return (
-		<AbsoluteFill>
-			<Paper />
-			<OpArtBand opacity={0.18} />
-			<AbsoluteFill style={{padding: '0 150px', justifyContent: 'center'}}>
-				<Kicker text="Video-ensayo · Diseño gráfico" color={C.rosa} style={{opacity: a, marginBottom: 20}} />
-				<div style={{fontFamily: fontDisplay, fontSize: 132, lineHeight: 1.0, color: C.ink, opacity: a, translate: `0px ${(1 - a) * 40}px`}}>
-					La Época de Oro
-				</div>
-				<div style={{fontFamily: fontSerif, fontSize: 120, lineHeight: 1.05, color: C.rosa, opacity: b}}>del diseño gráfico</div>
-				<div style={{fontFamily: fontDisplay, fontSize: 132, lineHeight: 1.0, color: C.ink, opacity: b}}>
-					en{' '}
-					<Highlight color={C.markerRGBA} progress={hl} iterations={1} padding={{left: 8, right: 8}}>
-						México
-					</Highlight>
-				</div>
-				<div style={{display: 'flex', gap: 30, alignItems: 'center', marginTop: 40, opacity: b}}>
-					<div style={{fontFamily: fontMono, fontSize: 40, background: C.ink, color: C.white, padding: '8px 20px'}}>1968 — 1980</div>
-					{credits ? <div style={{fontFamily: fontMono, fontSize: 30, color: C.inkSoft}}>{credits}</div> : null}
-				</div>
-			</AbsoluteFill>
+		<AbsoluteFill style={{padding: '0 140px', justifyContent: 'center', scale: String(push)}}>
+			<div style={{fontFamily: fontMono, fontSize: 28, letterSpacing: 6, color: C.rosa, opacity: a, marginBottom: 10}}>VIDEO-ENSAYO · DISEÑO GRÁFICO MEXICANO</div>
+			<div style={{fontFamily: fontOp, fontSize: 168, lineHeight: 1.0, color: C.ink, opacity: a, translate: `${(1 - a) * -60}px 0px`}}>LA ÉPOCA</div>
+			<div style={{fontFamily: fontOp, fontSize: 168, lineHeight: 1.0, color: C.rosa, opacity: a, translate: `${(1 - a) * 60}px 0px`}}>DE ORO</div>
+			<div style={{fontFamily: fontSerif, fontSize: 92, color: C.ink, opacity: b, marginTop: 6}}>
+				del diseño gráfico en{' '}
+				<Highlight color={C.markerRGBA} progress={hl} iterations={1} padding={{left: 8, right: 8}}>
+					México
+				</Highlight>
+			</div>
+			<div style={{display: 'flex', gap: 30, alignItems: 'center', marginTop: 30, opacity: b}}>
+				<div style={{fontFamily: fontOp, fontSize: 70, color: C.ink, background: C.white, padding: '4px 22px', boxShadow: `8px 8px 0 ${C.rosa}`}}>1968—1980</div>
+				{credits ? <div style={{fontFamily: fontMono, fontSize: 30, color: C.inkSoft}}>{credits}</div> : null}
+			</div>
 		</AbsoluteFill>
 	);
 };
 
-/* ============ Tarjeta de capítulo ============ */
+/* ============ Tarjeta de capítulo (tipografía y color de la época) ============ */
 export const ChapterScene: React.FC<Base & {num: string; title: string; years: string; color?: string}> = ({num, title, years, color = C.metro}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const sf = step12(frame, fps);
-	const wipe = interpolate(sf, [0, 8], [0, 100], {...clamp, easing: Easing.out(Easing.cubic)});
-	const t = interpolate(sf, [4, 12], [0, 1], clamp);
-	const ul = interpolate(frame, [14, 30], [0, 1], clamp);
+	const T = useTema();
+	const wipe = interpolate(frame, [0, 12], [0, 100], {...clamp, easing: Easing.inOut(Easing.cubic)});
+	const t = interpolate(frame, [8, 22], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
+	const bar = interpolate(frame, [18, 34], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
+	const push = interpolate(frame, [0, 4 * fps], [1, 1.04], clamp);
+	const comic = T.titulo === fontComic;
 	return (
 		<AbsoluteFill>
-			<Paper />
 			<AbsoluteFill style={{background: color, clipPath: `inset(0 ${100 - wipe}% 0 0)`}} />
-			<AbsoluteFill style={{padding: '0 160px', justifyContent: 'center'}}>
-				<div style={{fontFamily: fontDisplay, fontSize: 280, color: C.white, opacity: 0.25 * t, position: 'absolute', right: 140, top: 90}}>{num}</div>
-				<Kicker text={`Capítulo ${num}`} color={C.white} style={{opacity: t, marginBottom: 24}} />
-				<div style={{fontFamily: fontDisplay, fontSize: 104, lineHeight: 1.05, color: C.white, opacity: t, translate: `${(1 - t) * -40}px 0px`, maxWidth: 1500}}>
+			{comic ? (
+				<AbsoluteFill style={{clipPath: `inset(0 ${100 - wipe}% 0 0)`, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.28) 3px, transparent 3.5px)', backgroundSize: '22px 22px'}} />
+			) : (
+				<svg width="1920" height="1080" style={{position: 'absolute', inset: 0, opacity: 0.18 * t, clipPath: `inset(0 ${100 - wipe}% 0 0)`}}>
+					{Array.from({length: 18}).map((_, i) => (
+						<rect key={i} x={1500 - i * 40} y={540 - i * 40} width={i * 80 + 40} height={i * 80 + 40} rx={i * 40} fill="none" stroke="#fff" strokeWidth={12} />
+					))}
+				</svg>
+			)}
+			<AbsoluteFill style={{padding: '0 150px', justifyContent: 'center', scale: String(push)}}>
+				<div style={{fontFamily: fontOp, fontSize: 300, color: '#fff', opacity: 0.35 * t, position: 'absolute', right: 120, top: 70}}>{num}</div>
+				<div style={{fontFamily: fontMono, fontSize: 30, letterSpacing: 6, color: '#fff', opacity: t, marginBottom: 20}}>CAPÍTULO {num}</div>
+				<div
+					style={{
+						fontFamily: T.titulo,
+						fontSize: T.titulo === fontOp ? 112 : comic ? 140 : 100,
+						lineHeight: 1.04,
+						color: '#fff',
+						opacity: t,
+						translate: `${(1 - t) * -50}px 0px`,
+						maxWidth: 1450,
+						textShadow: comic ? `6px 6px 0 ${C.ink}` : undefined,
+						WebkitTextStroke: comic ? `3px ${C.ink}` : undefined,
+						letterSpacing: comic ? 2 : undefined,
+					}}
+				>
 					{title}
 				</div>
-				<div style={{height: 12, width: 520, background: C.ink, marginTop: 18, scale: `${ul} 1`, transformOrigin: 'left center', opacity: t}} />
-				<div style={{fontFamily: fontMono, fontSize: 40, color: C.ink, marginTop: 30, opacity: t, background: C.marker, alignSelf: 'flex-start', padding: '6px 16px'}}>
-					{years}
-				</div>
+				<div style={{height: 14, width: 560, background: C.ink, marginTop: 22, scale: `${bar} 1`, transformOrigin: 'left center'}} />
+				<div style={{fontFamily: fontMono, fontSize: 40, color: C.ink, marginTop: 24, opacity: t, background: C.marker, alignSelf: 'flex-start', padding: '6px 16px'}}>{years}</div>
 			</AbsoluteFill>
 		</AbsoluteFill>
 	);
@@ -179,9 +208,8 @@ export const ChapterScene: React.FC<Base & {num: string; title: string; years: s
 /* ============ Año gigante ============ */
 export const YearScene: React.FC<Base & {year: string; caption?: string; captionAt?: number; color?: string; image?: StickerItem}> = ({t0, year, caption, captionAt, color = C.rosa, image}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const sf = step12(frame, fps);
+	const sf = frame;
 	const digits = year.split('');
 	const cp = interpolate(sf - L(captionAt, 0.8), [0, 6], [0, 1], clamp);
 	return (
@@ -219,7 +247,7 @@ export const CollageScene: React.FC<Base & {items: CollageItem[]; title?: string
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const tp = interpolate(step12(frame, fps) - Math.min(L(titleAt, 0), Math.round(0.4 * fps)), [0, 6], [0, 1], clamp); // el título entra al inicio
+	const tp = interpolate(frame - Math.min(L(titleAt, 0), Math.round(0.4 * fps)), [0, 6], [0, 1], clamp); // el título entra al inicio
 	// cámara suave (parallax / Ken Burns del conjunto)
 	const cam = interpolate(frame, [0, 12 * fps], [1, 1.06], clamp);
 	return (
@@ -244,9 +272,8 @@ export const CollageScene: React.FC<Base & {items: CollageItem[]; title?: string
 /* ============ Lista de nombres con retratos ============ */
 export const NamesScene: React.FC<Base & {title: string; items: {name: string; sub?: string; at?: number; src?: string}[]; cols?: number}> = ({t0, title, items, cols = 3}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const tp = interpolate(step12(frame, fps), [0, 6], [0, 1], clamp);
+	const tp = interpolate(frame, [0, 6], [0, 1], clamp);
 	const cellW = 1600 / cols;
 	return (
 		<AbsoluteFill>
@@ -280,9 +307,8 @@ export const NamesScene: React.FC<Base & {title: string; items: {name: string; s
 /* ============ Lista con casillas (hoja de ruta) ============ */
 export const ListScene: React.FC<Base & {title: string; items: {text: string; at?: number}[]}> = ({t0, title, items}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const sf = step12(frame, fps);
+	const sf = frame;
 	return (
 		<AbsoluteFill>
 			<Paper />
@@ -326,9 +352,8 @@ export const OpArtBand: React.FC<{opacity?: number; color?: string}> = ({opacity
 
 export const OpArtScene: React.FC<Base & {text?: string; textAt?: number; emblemAt?: number; showEmblem?: boolean; plus?: {a: string; b: string; at?: number}}> = ({t0, text, textAt, emblemAt, showEmblem = true, plus}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const sf = step12(frame, fps);
+	const sf = frame;
 	const e = interpolate(sf - L(emblemAt, 0.3), [0, 8], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.4))});
 	const tp = interpolate(sf - L(textAt, 1.5), [0, 6], [0, 1], clamp);
 	const pp = interpolate(sf - L(plus?.at, 0.5), [0, 8], [0, 1], clamp);
@@ -404,9 +429,8 @@ const Icon: React.FC<{name: string; color: string}> = ({name, color}) => {
 
 export const PictogramScene: React.FC<Base & {cross?: {at?: number}; icons: {name: string; label: string; at?: number}[]; caption?: string; captionAt?: number}> = ({t0, cross, icons, caption, captionAt}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const sf = step12(frame, fps);
+	const sf = frame;
 	const colors = [C.rosa, C.metro, C.blue, C.ink];
 	const crossP = interpolate(frame - L(cross?.at, 0.8), [0, 10], [0, 1], clamp);
 	const cp = interpolate(sf - L(captionAt, 3), [0, 6], [0, 1], clamp);
@@ -448,9 +472,8 @@ export const PictogramScene: React.FC<Base & {cross?: {at?: number}; icons: {nam
 /* ============ La "M" del Metro: rieles -> símbolo -> esquina redondeada ============ */
 export const MetroMScene: React.FC<Base & {railsAt?: number; squareAt?: number; arrowAt?: number}> = ({t0, railsAt, squareAt, arrowAt}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const sf = step12(frame, fps);
+	const sf = frame;
 	const r = interpolate(sf - L(railsAt, 0.3), [0, 14], [0, 1], clamp);
 	const lg = interpolate(sf - L(squareAt, 3), [0, 8], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.3))});
 	return (
@@ -497,9 +520,8 @@ const Manzanas: React.FC<{fill: string}> = ({fill}) => (
 
 export const GestaltScene: React.FC<Base & {text?: string; textAt?: number}> = ({t0, text, textAt}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const sf = step12(frame, fps);
+	const sf = frame;
 	const a = interpolate(sf, [0, 8], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.5))});
 	const b = interpolate(sf, [10, 18], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.5))});
 	const tp = interpolate(sf - L(textAt, 3), [0, 6], [0, 1], clamp);
@@ -599,7 +621,6 @@ const PopWrap: React.FC<{start: number; seed: string; children: React.ReactNode}
 /* ============ Red del Metro animada (líneas genéricas) ============ */
 export const NetworkScene: React.FC<Base & {text?: string; textAt?: number}> = ({t0, text, textAt}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
 	const lines = [
 		{c: '#E9468F', d: 'M120 300 L700 300 L900 500 L1800 500'},
@@ -608,7 +629,7 @@ export const NetworkScene: React.FC<Base & {text?: string; textAt?: number}> = (
 		{c: '#F7A600', d: 'M1100 950 L1100 700 L1300 500 L1500 200'},
 		{c: '#1F4E9C', d: 'M150 750 L800 700 L1300 700 L1800 820'},
 	];
-	const tp = interpolate(step12(frame, fps) - L(textAt, 2), [0, 6], [0, 1], clamp);
+	const tp = interpolate(frame - L(textAt, 2), [0, 6], [0, 1], clamp);
 	return (
 		<AbsoluteFill>
 			<Paper />
@@ -639,8 +660,7 @@ export const NetworkScene: React.FC<Base & {text?: string; textAt?: number}> = (
 /* ============ Cierre ============ */
 export const EndScene: React.FC<Base & {credits: string[]}> = ({credits}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-	const sf = step12(frame, fps);
+	const sf = frame;
 	const a = interpolate(sf, [0, 8], [0, 1], clamp);
 	const hl = interpolate(frame, [10, 26], [0, 1], clamp);
 	return (

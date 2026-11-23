@@ -3,7 +3,7 @@ import {AbsoluteFill, Img, interpolate, random, staticFile, useCurrentFrame, use
 import {C, fontMono, fontSans, fontDisplay, step12} from '../theme';
 
 /* ---------- Fondo: papel reciclado + cuadrícula milimétrica ---------- */
-export const Paper: React.FC<{grid?: boolean; tone?: string}> = ({grid = true, tone = C.paper}) => (
+export const Paper: React.FC<{grid?: boolean; tone?: string; solid?: boolean}> = ({grid = true, tone = C.paper, solid = false}) => !solid ? null : (
 	<AbsoluteFill style={{backgroundColor: tone}}>
 		<svg width="100%" height="100%" style={{position: 'absolute', inset: 0, opacity: 0.55, mixBlendMode: 'multiply'}}>
 			<filter id="paperNoise">
@@ -68,9 +68,9 @@ export const roughPolygon = (seed: string, jag = 1.2, n = 9) => {
 export const usePop = (startFrame: number, seed: string, dur = 8) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const f = step12(frame, fps) - startFrame;
-	const p = interpolate(f, [0, dur], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.6))});
-	const jitter = (random(`${seed}-${Math.floor(step12(frame, fps) / 4)}`) - 0.5) * 1.2; // vibración de recorte
+	const f = frame - startFrame;
+	const p = interpolate(f, [0, dur + 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.3))});
+	const jitter = (random(`${seed}-${Math.floor(step12(frame, fps) / 6)}`) - 0.5) * 0.6; // leve vibración de recorte a 12 fps
 	return {p, visible: f >= 0, jitter};
 };
 

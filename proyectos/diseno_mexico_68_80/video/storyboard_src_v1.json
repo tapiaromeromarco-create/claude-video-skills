@@ -1,0 +1,148 @@
+{
+ "_doc": "Escenas ancladas a frases del audio. 'at' = frase donde empieza la escena (dentro de 'block'). Cualquier valor que empiece con '@' es una frase que se convierte en segundos. 'start' en vez de 'at' = segundos desde el inicio del bloque (negativo = antes). Correr resolve_storyboard.py tras cambiar audio.",
+ "scenes": [
+  {"block": "b1", "start": -0.8, "type": "kinetic", "props": {"kicker": "Pregunta", "lines": ["¿Quién diseñó", "el **México moderno**?"], "marks": {"México moderno": "@México moderno"}, "lineAt": ["@Alguna vez", "@quién diseñó"], "size": 130}},
+  {"block": "b1", "at": "@Entre el final", "type": "collage", "props": {"items": [
+     {"kind": "logo", "src": "img/mexico68_emblema.png", "label": "México 68", "x": 120, "y": 140, "scale": 1.3, "rotate": -4, "at": "@Entre el final"},
+     {"kind": "logo", "src": "img/metro_logo.png", "label": "Metro", "x": 1180, "y": 110, "scale": 0.9, "rotate": 5, "at": "@los años"},
+     {"kind": "logo", "src": "img/imss_logo.png", "label": "IMSS", "x": 1480, "y": 520, "scale": 0.85, "rotate": -3, "at": "@la década"},
+     {"kind": "logo", "src": "img/loteria_logo.png", "label": "Lotería Nacional", "x": 190, "y": 640, "scale": 1.25, "rotate": 3, "at": "@de los 80"},
+     {"kind": "photo", "label": "Vista aérea de la CDMX, años 60", "x": 700, "y": 420, "scale": 0.95, "rotate": 2, "at": "@diseño gráfico"}
+   ], "title": "1968 – 1980", "titleAt": "@salto gigante"}},
+  {"block": "b1", "at": "@dejó de ser", "type": "kinetic", "props": {"lines": ["De ~~simple adorno editorial~~", "a **lenguaje visual**"], "marks": {"simple adorno editorial": "@adorno editorial", "lenguaje visual": "@lenguaje visual"}, "lineAt": ["@dejó de ser", "@para convertirse"], "size": 110}},
+  {"block": "b1", "at": "@capaz de organizar", "type": "list", "props": {"title": "Un lenguaje capaz de…", "items": [
+     {"text": "organizar ciudades", "at": "@organizar ciudades"},
+     {"text": "criticar al poder", "at": "@enteras"},
+     {"text": "construir identidad", "at": "@construir nuestra"}
+   ]}},
+  {"block": "b1", "at": "@Hoy junto", "type": "title", "props": {"credits": "con Marco · Lucas · Clau"}},
+  {"block": "b1", "at": "@Vamos a ver", "type": "list", "props": {"title": "El recorrido", "items": [
+     {"text": "Cómics", "at": "@cómics"},
+     {"text": "Carteles culturales", "at": "@carteles culturales"},
+     {"text": "Juegos Olímpicos", "at": "@Juegos Olímpicos"},
+     {"text": "Metro", "at": "@olímpicos"},
+     {"text": "Museos", "at": "@y los billetes"},
+     {"text": "Billetes", "at": "@los billetes"}
+   ]}},
+
+  {"block": "b2", "start": 0, "type": "chapter", "props": {"num": "01", "title": "La historieta crítica y los moneros", "years": "1970 – 1980", "color": "#E4007C"}},
+  {"block": "b2", "at": "@Arrancamos", "type": "year", "props": {"year": "1970", "caption": "La narrativa visual vive una auténtica explosión", "captionAt": "@auténtica explosión", "color": "#E4007C"}},
+  {"block": "b2", "at": "@Por un lado", "type": "collage", "props": {"items": [
+     {"kind": "portrait", "label": "Gabriel Vargas", "sub": "historietista", "x": 260, "y": 220, "scale": 1.15, "rotate": -5, "at": "@Gabriel Vargas"},
+     {"kind": "cover", "label": "La Familia Burrón", "sub": "Gabriel Vargas", "year": "1948 – 2009", "x": 1000, "y": 170, "scale": 1.3, "rotate": 4, "at": "@Familia Burrón"}
+   ], "title": "Clásicos de la cultura popular", "titleAt": "@clásicos"}},
+  {"block": "b2", "at": "@al mismo tiempo", "type": "kinetic", "props": {"kicker": "Una nueva generación", "lines": ["súper _crítica_:", "los **“moneros”**"], "marks": {"“moneros”": "@moneros"}, "lineAt": ["@súper crítica", "@moneros"], "size": 140, "ficha": {"title": "monero", "sub": "caricaturista o historietista político", "at": "@moneros"}}},
+  {"block": "b2", "at": "@Caricaturistas", "type": "names", "props": {"title": "Caricaturistas e ilustradores", "items": [
+     {"name": "Rius", "sub": "Eduardo del Río", "at": "@Rius"},
+     {"name": "Abel Quezada", "at": "@Abel"},
+     {"name": "Freyre", "at": "@Freire"},
+     {"name": "Helioflores", "at": "@Flores"},
+     {"name": "Naranjo", "at": "@Naranjo"},
+     {"name": "Sergio Arau", "at": "@Sergio Arau"}
+   ]}},
+  {"block": "b2", "at": "@usaron la sátira", "type": "kinetic", "props": {"lines": ["**Sátira política**", "y humor gráfico", "para _cuestionar al sistema_"], "marks": {"Sátira política": "@sátira política"}, "lineAt": ["@sátira", "@humor", "@cuestionar"], "size": 110}},
+  {"block": "b2", "at": "@Revistas como", "type": "collage", "props": {"items": [
+     {"kind": "cover", "label": "La Garrapata", "x": 140, "y": 150, "rotate": -6, "at": "@Garrapata"},
+     {"kind": "cover", "label": "El Mitote Ilustrado", "x": 560, "y": 260, "rotate": 3, "at": "@Mitote"},
+     {"kind": "cover", "label": "Quecosaedro", "x": 990, "y": 140, "rotate": -2, "at": "@Que Cosa"},
+     {"kind": "cover", "label": "SNIF", "x": 1420, "y": 250, "rotate": 6, "at": "@SNIF"}
+   ], "title": "Espacios de resistencia y opinión pública", "titleAt": "@espacios de resistencia"}},
+  {"block": "b2", "at": "@Incluso en", "type": "year", "props": {"year": "1970", "caption": "Se funda el Círculo de Tlacuilos", "captionAt": "@Círculo", "color": "#F26B1D"}},
+  {"block": "b2", "at": "@Y a la par", "type": "kinetic", "props": {"lines": ["Además de la crítica,", "mucha **experimentación gráfica**"], "marks": {"experimentación gráfica": "@experimentación"}, "lineAt": ["@a la par", "@mucha experimentación"], "size": 110}},
+  {"block": "b2", "at": "@Ahí", "type": "collage", "props": {"items": [
+     {"kind": "portrait", "label": "Alejandro Jodorowsky", "x": 150, "y": 200, "scale": 1.1, "rotate": -4, "at": "@Jodorowsky"},
+     {"kind": "cover", "label": "Fábulas Pánicas", "sub": "Alejandro Jodorowsky", "year": "1977", "x": 620, "y": 150, "scale": 1.15, "rotate": 3, "at": "@pánicas"},
+     {"kind": "cover", "label": "Profesor Planeta", "sub": "revista", "year": "1974", "x": 1230, "y": 200, "scale": 1.15, "rotate": -3, "at": "@Profesor Planeta"}
+   ]}},
+  {"block": "b2", "at": "@que rompían", "type": "list", "props": {"title": "Rompían los esquemas mezclando…", "items": [
+     {"text": "psicodelia", "at": "@psicodelia"},
+     {"text": "ciencia", "at": "@ciencia"},
+     {"text": "montajes visuales", "at": "@montajes"}
+   ]}},
+  {"block": "b2", "at": "@El cómic dejó", "type": "kinetic", "props": {"lines": ["El cómic dejó de ser ~~algo infantil~~", "→ medio gráfico de **alto impacto**"], "marks": {"algo infantil": "@infantil", "alto impacto": "@alto impacto"}, "lineAt": ["@El cómic", "@consolidarse"], "size": 92}},
+
+  {"block": "b3", "start": 0, "type": "chapter", "props": {"num": "02", "title": "Sistemas de identidad: México 68 y México 70", "years": "1968 – 1970", "color": "#F26B1D"}},
+  {"block": "b3", "at": "@Pero la verdadera", "type": "kinetic", "props": {"kicker": "Escala internacional", "lines": ["La verdadera", "**profesionalización**", "llegó con los _grandes sistemas_"], "marks": {"profesionalización": "@profesionalización"}, "lineAt": ["@la verdadera", "@profesionalización", "@grandes sistemas"], "size": 110}},
+  {"block": "b3", "at": "@En 1968", "type": "year", "props": {"year": "1968", "caption": "México, sede de los Juegos Olímpicos", "captionAt": "@sede", "color": "#E4007C", "image": {"kind": "photo", "label": "Estadio Olímpico Universitario, 1968"}}},
+  {"block": "b3", "at": "@dirigido por", "type": "names", "props": {"title": "Un programa de identidad monumental", "cols": 2, "items": [
+     {"name": "Pedro Ramírez Vázquez", "sub": "arquitecto, presidente del comité", "at": "@Pedro"},
+     {"name": "Eduardo Terrazas", "sub": "arquitecto y diseñador", "at": "@Terrazas"},
+     {"name": "Beatrice Trueblood", "sub": "diseño editorial", "at": "@Beatriz"},
+     {"name": "Lance Wyman", "sub": "diseñador gráfico", "at": "@Lance"}
+   ]}},
+  {"block": "b3", "at": "@junto con decenas", "type": "kinetic", "props": {"lines": ["+ decenas de **jóvenes dibujantes**", "muchos de la _Universidad Iberoamericana_"], "marks": {"jóvenes dibujantes": "@jóvenes dibujantes"}, "lineAt": ["@junto con decenas", "@Universidad"], "size": 86}},
+  {"block": "b3", "at": "@El resultado", "type": "opart", "props": {"text": "El famoso logotipo de México 68", "textAt": "@famoso logotipo", "emblemAt": "@famoso logotipo"}},
+  {"block": "b3", "at": "@combinó", "type": "opart", "props": {"showEmblem": false, "plus": {"a": "OP ART", "b": "ARTE HUICHOL", "at": "@op art"}, "text": "tablas de estambre de los huicholes", "textAt": "@estambre"}},
+  {"block": "b3", "at": "@creando líneas", "type": "opart", "props": {"showEmblem": true, "emblemAt": "@creando líneas", "text": "líneas que parecían expandirse al infinito", "textAt": "@infinito"}},
+  {"block": "b3", "at": "@Pero lo más revolucionario", "type": "kinetic", "props": {"lines": ["Lo más revolucionario:", "los **pictogramas deportivos**"], "marks": {"pictogramas deportivos": "@pictogramas"}, "lineAt": ["@revolucionario", "@pictogramas"], "size": 120}},
+  {"block": "b3", "at": "@En lugar de dibujar", "type": "pictograms", "props": {"cross": {"at": "@figura humana"}, "icons": [
+     {"name": "box", "label": "guante de box", "at": "@guante"},
+     {"name": "bici", "label": "bicicleta", "at": "@bicicleta"},
+     {"name": "aro", "label": "aro de básquetbol", "at": "@basquetbol"}
+   ], "caption": "La esencia del objeto, no la figura humana", "captionAt": "@esencia"}},
+  {"block": "b3", "at": "@así cualquier", "type": "kinetic", "props": {"lines": ["Cualquier visitante podía orientarse", "**sin necesidad de leer español**"], "marks": {"sin necesidad de leer español": "@sin necesidad"}, "lineAt": ["@cualquier visitante", "@sin necesidad"], "size": 92}},
+  {"block": "b3", "at": "@Además", "type": "collage", "props": {"items": [
+     {"kind": "poster", "label": "Cartel de la Olimpiada Cultural", "x": 140, "y": 130, "rotate": -4, "at": "@carteles"},
+     {"kind": "stamp", "label": "Estampilla México 68", "x": 700, "y": 200, "scale": 1.2, "rotate": 5, "at": "@estampillas"},
+     {"kind": "coin", "label": "$25 plata", "sub": "moneda conmemorativa", "year": "1968", "x": 1240, "y": 260, "scale": 1.3, "at": "@moneda"}
+   ], "title": "La Olimpiada Cultural llenó la ciudad", "titleAt": "@Olimpiada Cultural"}},
+  {"block": "b3", "at": "@Dos años", "type": "year", "props": {"year": "1970", "caption": "Mundial de Fútbol México 70", "captionAt": "@Mundial", "color": "#F26B1D"}},
+  {"block": "b3", "at": "@Lance Wiman volvió", "type": "kinetic", "props": {"lines": ["Lance Wyman aplica de nuevo", "la misma **lógica urbana**"], "marks": {"lógica urbana": "@lógica urbana"}, "lineAt": ["@volvió", "@lógica urbana"], "size": 104}},
+  {"block": "b3", "at": "@acompañado", "type": "collage", "props": {"items": [
+     {"kind": "poster", "label": "Juanito, mascota de México 70", "sub": "Juan González Martínez", "year": "1970", "x": 720, "y": 120, "scale": 1.2, "rotate": -3, "at": "@Juanito"}
+   ]}},
+
+  {"block": "b4", "start": -0.2, "type": "chapter", "props": {"num": "03", "title": "El Metro de la CDMX y la nueva museografía", "years": "1964 – 1977", "color": "#1F4E9C"}},
+  {"block": "b4", "at": "@sistema de pictogramas", "type": "kinetic", "props": {"lines": ["Los pictogramas, clave para", "resolver el **caos urbano**"], "marks": {"caos urbano": "@caos urbano"}, "lineAt": ["@sistema de pictogramas", "@caos urbano"], "size": 110}},
+  {"block": "b4", "at": "@Cuando se inauguró", "type": "year", "props": {"year": "1969", "caption": "Se inaugura el Sistema de Transporte Colectivo Metro", "captionAt": "@transporte", "color": "#F26B1D", "image": {"kind": "photo", "label": "Inauguración del Metro, 1969"}}},
+  {"block": "b4", "at": "@le encargó", "type": "collage", "props": {"items": [
+     {"kind": "portrait", "label": "Lance Wyman", "sub": "señalética del Metro", "year": "1969", "x": 300, "y": 220, "scale": 1.3, "rotate": -4, "at": "@Lance Wyman"},
+     {"kind": "photo", "label": "Andén y tren naranja, años 70", "x": 900, "y": 200, "scale": 1.1, "rotate": 3, "at": "@señalética"}
+   ], "title": "Toda la señalética", "titleAt": "@señalética"}},
+  {"block": "b4", "at": "@famosa M", "type": "metroM", "props": {"railsAt": "@rieles", "squareAt": "@famosa", "arrowAt": "@guía la vista"}},
+  {"block": "b4", "at": "@Siguiendo", "type": "gestalt", "props": {"text": "Un símbolo único para cada estación", "textAt": "@símbolo único"}},
+  {"block": "b4", "at": "@como el", "type": "stations", "props": {"items": [
+     {"name": "Chapultepec", "kind": "chapulin", "at": "@Chapultepec"},
+     {"name": "Merced", "kind": "manzana", "at": "@Merced"}
+   ], "note": "Reinterpretación ilustrativa de los íconos de L. Wyman"}},
+  {"block": "b4", "at": "@Gracias a esto", "type": "network", "props": {"text": "Incluso quien no sabía leer podía moverse por toda la red", "textAt": "@no sabían leer"}},
+  {"block": "b4", "at": "@visión didáctica", "type": "kinetic", "props": {"lines": ["Esta visión _didáctica_", "también revolucionó **los museos**"], "marks": {"los museos": "@museos"}, "lineAt": ["@visión didáctica", "@revolucionó"], "size": 116}},
+  {"block": "b4", "at": "@En septiembre", "type": "year", "props": {"year": "1964", "caption": "Se inaugura el Museo Nacional de Antropología", "captionAt": "@Museo Nacional", "color": "#1F4E9C", "image": {"kind": "photo", "label": "Museo Nacional de Antropología, 1964"}}},
+  {"block": "b4", "at": "@coordinado", "type": "kinetic", "props": {"kicker": "Pedro Ramírez Vázquez", "lines": ["El museo ya no como ~~colección fría~~,", "sino como **espectáculo didáctico**"], "marks": {"colección fría": "@colección fría", "espectáculo didáctico": "@espectáculo"}, "lineAt": ["@principio", "@sino un"], "size": 88, "ficha": {"title": "Museo Nacional de Antropología", "sub": "Coordinación: Pedro Ramírez Vázquez", "year": "17 de septiembre de 1964", "at": "@coordinado"}}},
+  {"block": "b4", "at": "@Mientras tanto", "type": "collage", "props": {"items": [
+     {"kind": "photo", "label": "MUCA · Ciudad Universitaria", "x": 120, "y": 180, "scale": 0.85, "rotate": -3, "at": "@MUCA"},
+     {"kind": "photo", "label": "Galería Aristos", "x": 140, "y": 600, "scale": 0.7, "rotate": 4, "at": "@Aristos"},
+     {"kind": "poster", "label": "“Si los artistas nos vistieran…”", "sub": "MUCA · Acervo Madero-Refosa MUNAL", "year": "1977", "x": 1100, "y": 110, "scale": 1.25, "rotate": 2, "at": "@Si los artistas"}
+   ], "title": "Museografía moderna y carteles de vanguardia", "titleAt": "@museografía moderna"}},
+
+  {"block": "b5", "start": 0, "type": "chapter", "props": {"num": "04", "title": "Identidad corporativa, billetes y cierre", "years": "1969 – 1980", "color": "#171412"}},
+  {"block": "b5", "at": "@Con todo este", "type": "kinetic", "props": {"lines": ["Ya no bastaba un ~~escudito bonito~~", "hacía falta una **personalidad corporativa**"], "marks": {"escudito bonito": "@escudito", "personalidad corporativa": "@personalidad"}, "lineAt": ["@no bastaba", "@necesitaban"], "size": 86, "ficha": {"title": "Joan Costa", "sub": "teórico de la imagen corporativa", "at": "@Costa"}}},
+  {"block": "b5", "at": "@De esta etapa", "type": "collage", "props": {"items": [
+     {"kind": "logo", "src": "img/imss_logo.png", "label": "IMSS", "sub": "Jorge Canales Romo", "year": "ca. 1975", "x": 120, "y": 120, "scale": 0.8, "rotate": -3, "at": "@IMSS"},
+     {"kind": "logo", "label": "SEP", "sub": "Almeida · Gleason · Valdés", "year": "1977", "x": 620, "y": 120, "scale": 0.8, "rotate": 2, "at": "@emblema"},
+     {"kind": "logo", "label": "IPN", "sub": "Instituto Politécnico Nacional", "x": 1120, "y": 120, "scale": 0.8, "rotate": -2, "at": "@Politécnico"},
+     {"kind": "logo", "label": "Televisa", "year": "1972", "x": 300, "y": 600, "scale": 0.6, "rotate": 3, "at": "@Televisa"},
+     {"kind": "logo", "label": "UAM", "year": "1973", "x": 780, "y": 620, "scale": 0.6, "rotate": -4, "at": "@UAM"},
+     {"kind": "logo", "src": "img/loteria_logo.png", "label": "Lotería Nacional", "x": 1250, "y": 640, "scale": 1.0, "rotate": 2, "at": "@Lotería"}
+   ], "title": "Logotipos que siguen en nuestro paisaje diario"}},
+  {"block": "b5", "at": "@llegó hasta", "type": "kinetic", "props": {"lines": ["La ola gráfica llegó", "hasta **nuestros bolsillos**"], "marks": {"nuestros bolsillos": "@bolsillos"}, "lineAt": ["@llegó hasta", "@bolsillos"], "size": 120}},
+  {"block": "b5", "at": "@en 1969", "type": "year", "props": {"year": "1969", "caption": "Banxico abre su propia fábrica de billetes", "captionAt": "@fábrica", "color": "#1F4E9C", "image": {"kind": "photo", "label": "Fábrica de Billetes del Banco de México, 1969"}}},
+  {"block": "b5", "at": "@la cuarta serie", "type": "collage", "props": {"items": [
+     {"kind": "bill", "label": "Sor Juana · $1000", "x": 130, "y": 140, "rotate": -4, "at": "@Sor Juana"},
+     {"kind": "bill", "label": "Morelos · $20", "x": 1000, "y": 120, "rotate": 3, "at": "@Morelos"},
+     {"kind": "bill", "label": "Benito Juárez · $50", "x": 160, "y": 560, "rotate": 2, "at": "@Juárez"},
+     {"kind": "bill", "label": "Carranza · $100", "x": 1030, "y": 560, "rotate": -3, "at": "@Carranza"}
+   ], "title": "Cuarta serie · diseño: Reyes Santana y otros", "titleAt": "@Reyes Santana"}},
+  {"block": "b5", "at": "@Al mismo tiempo", "type": "collage", "props": {"items": [
+     {"kind": "stamp", "label": "Rafael Davidson", "sub": "crédito en estampilla", "x": 380, "y": 220, "scale": 1.3, "rotate": -5, "at": "@Davidson"},
+     {"kind": "stamp", "label": "Lance Wyman", "sub": "crédito en estampilla", "x": 1100, "y": 220, "scale": 1.3, "rotate": 4, "at": "@Lance"}
+   ], "title": "Las estampillas dan crédito a sus diseñadores", "titleAt": "@crédito oficial"}},
+  {"block": "b5", "at": "@En conclusión", "type": "kinetic", "props": {"kicker": "En conclusión", "lines": ["No solo resolvió problemas visuales:", "**construyó el imaginario**", "_moderno del país_"], "marks": {"construyó el imaginario": "@construyó"}, "lineAt": ["@no solo", "@construyó", "@moderno"], "size": 100}},
+  {"block": "b5", "at": "@La próxima vez", "type": "collage", "props": {"items": [
+     {"kind": "logo", "src": "img/metro_logo.png", "label": "Metro", "x": 160, "y": 260, "scale": 1.0, "rotate": -4, "at": "@Metro"},
+     {"kind": "logo", "src": "img/imss_logo.png", "label": "Institución pública", "x": 760, "y": 260, "scale": 1.0, "rotate": 3, "at": "@institución"},
+     {"kind": "bill", "label": "Un billete", "x": 1240, "y": 330, "scale": 1.1, "rotate": -2, "at": "@billete"}
+   ], "title": "Detrás hay una historia de diseño mexicano", "titleAt": "@detrás"}},
+  {"block": "b5", "at": "@Muchas gracias", "type": "end", "props": {"credits": ["Voces: Marco · Lucas · Clau", "Imágenes: Wikimedia Commons (ver CREDITOS.csv)", "Referencia bibliográfica: [título del libro]"]}}
+ ]
+}
