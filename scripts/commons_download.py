@@ -65,6 +65,6 @@ def main(spec, out):
                     csv.DictWriter(f, fieldnames=FIELDS).writerow(dict(bloque=block, archivo=fname,
                         **{k: meta[k] for k in FIELDS[2:]}))
                 done[(block, meta["title"])] = fname
-            time.sleep(3)
+            time.sleep(1.5 if os.environ.get('WIKIMEDIA_CONTACT') else 3)
 
 if __name__ == "__main__": main(*sys.argv[1:3])

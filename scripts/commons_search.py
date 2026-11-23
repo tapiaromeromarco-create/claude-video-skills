@@ -2,7 +2,11 @@
 """Busca archivos en Wikimedia Commons y muestra licencia/autor/tamaño.
 Uso: commons_search.py "consulta" [limite]"""
 import json, sys, time, urllib.error, urllib.parse, urllib.request, re
-UA = "video-essay-asset-search/0.1 (educational research)"
+import os
+# Wikimedia pide un contacto en el User-Agent de programas automáticos.
+# Defínelo tú al correr el script: WIKIMEDIA_CONTACT="tu-correo" python3 ...
+UA = "video-essay-asset-search/0.2 (educational documentary" + (
+    "; contact: " + os.environ["WIKIMEDIA_CONTACT"] if os.environ.get("WIKIMEDIA_CONTACT") else "") + ")"
 API = "https://commons.wikimedia.org/w/api.php"
 
 def get(params):

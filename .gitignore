@@ -31,3 +31,4 @@ proyectos/*/audio/
 proyectos/*/render/
 __pycache__/
 proyectos/*/video/render/
+.models/
