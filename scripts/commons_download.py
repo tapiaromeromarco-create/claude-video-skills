@@ -7,13 +7,12 @@ from commons_search import get, search, UA
 
 def info(title):
     d = get({"action": "query", "titles": title, "prop": "imageinfo",
-             "iiprop": "url|size|extmetadata|mime", "iiurlwidth": 3840})
+             "iiprop": "url|size|extmetadata|mime", "iiurlwidth": 1920})  # miniatura estándar: pesa menos y provoca menos 429
     p = next(iter(d["query"]["pages"].values()))
     if "imageinfo" not in p: return None
     ii = p["imageinfo"][0]; m = ii.get("extmetadata", {})
     g = lambda k: re.sub(r"<[^>]+>", "", m.get(k, {}).get("value", "")).strip()
-    big = ii["mime"] in ("image/svg+xml", "image/tiff")  # Commons solo sirve miniaturas en anchos estándar
-    return dict(title=p["title"], url=ii["thumburl"] if big else ii["url"], page=ii["descriptionurl"],
+    return dict(title=p["title"], url=ii.get("thumburl") or ii["url"], page=ii["descriptionurl"],
                 license=g("LicenseShortName"), artist=g("Artist"), date=g("DateTimeOriginal"),
                 credit=g("Credit"), w=ii.get("width"), h=ii.get("height"))
 
