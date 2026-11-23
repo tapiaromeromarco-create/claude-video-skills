@@ -37,7 +37,12 @@ def stretch(x, tempo):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("src"); ap.add_argument("edl"); ap.add_argument("out")
-    ap.add_argument("--islas"); a = ap.parse_args()
+    ap.add_argument("--islas")
+    ap.add_argument("--pausas", help="p.ej. c=0.06,s=0.12,p=0.2 (segundos)")
+    ap.add_argument("--nivelar", type=float, help="igualar cada fragmento a este RMS en dBFS, p.ej. -20")
+    a = ap.parse_args()
+    if a.pausas:
+        for kv in a.pausas.split(","): k, v = kv.split("="); GAPS[k] = float(v)
     y, _ = librosa.load(a.src, sr=SR, mono=True)
     E = json.load(open(a.edl, encoding="utf-8"))
     islas = json.load(open(a.islas, encoding="utf-8")) if a.islas else []
@@ -65,6 +70,15 @@ def main():
         sps = len(x) / SR / syl(g["txt"])
         tempo = min(TEMPO_MAX, sps / SPS_TARGET) if sps > SPS_MAX and not g.get("sin_acelerar") else 1.0
         x = stretch(x, tempo); stats.append((g["txt"], sps, tempo))
+        if a.nivelar is not None:  # mismo volumen para todos los fragmentos + arranque suave
+            fr = librosa.feature.rms(y=x, frame_length=1024, hop_length=256)[0]
+            voz = fr[fr > fr.max() * 0.1]
+            rms_db = 20 * np.log10(np.sqrt(np.mean(voz ** 2)) + 1e-9)
+            x = x * 10 ** (np.clip(a.nivelar - rms_db, -9, 9) / 20)
+            # arranque fuerte: si los primeros 120 ms superan el promedio, se suavizan
+            n0 = int(0.12 * SR); pico = np.abs(x[:n0]).max() if len(x) > n0 else 0
+            ref = np.sqrt(np.mean(x ** 2)) * 4
+            if pico > ref: x[:n0] *= np.linspace(ref / pico, 1, n0)
         fi = int(g.get("fi", 0.012) * SR); fi = min(fi, len(x) // 3)
         if "fin" in g:  # final de frase difuminado: sólo sobre la cola natural de la voz
             fo = min(int(min(FADE_OUT, g["fin"] / tempo + 0.015) * SR), len(x) // 4)

@@ -10,6 +10,12 @@
 - Finales de frase difuminados sobre la cola natural de la voz.
 - 27 tramos dichos muy lento acelerados (máx. ×1.25, sin cambiar el tono). "Lance Wyman" sin acelerar.
 
+## Versión pareja (v3) — `audio/marco/marco_smooth.(wav|mp3)` · 1 min 19 s
+- Pausas mínimas: coma 0.07 s, oración 0.14 s, párrafo 0.22 s (la más larga: ~0.3 s).
+- Cada fragmento igualado al mismo volumen antes de unir; arranques fuertes suavizados.
+- Nivelación agresiva (`scripts/voice_smooth_parejo.sh`): variación de volumen 11.8 → 7.2 dB (p5–p95).
+- Comando: `assemble_edl.py marco_original.wav edl_marco.json salida.wav --islas islands.json --pausas "c=0.07,s=0.14,p=0.22" --nivelar -20`
+
 ## Qué se quitó
 - Muletillas: todos los "pues" (~25), "eh", "este", "así que", "tú solo", el "y" al inicio de oraciones.
 - Tomas falladas y repeticiones: 6 intentos de "Pero la verdadera profesionalización",
