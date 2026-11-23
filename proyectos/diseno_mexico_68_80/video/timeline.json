@@ -1,0 +1,134 @@
+{
+ "duration": 413.268,
+ "blocks": [
+  {
+   "id": "b1",
+   "title": null,
+   "years": "Introducción",
+   "start": 0.8,
+   "segments": [
+    {
+     "file": "marco_intro",
+     "speaker": "marco",
+     "start": 0.8,
+     "dur": 43.748
+    }
+   ],
+   "end": 45.448
+  },
+  {
+   "id": "b2",
+   "title": "La historieta crítica y los moneros",
+   "years": "1970–1980",
+   "start": 45.448,
+   "segments": [
+    {
+     "file": "lucas_primer",
+     "speaker": "lucas",
+     "start": 47.648,
+     "dur": 20.111
+    },
+    {
+     "file": "lucas_segundo",
+     "speaker": "lucas",
+     "start": 68.209,
+     "dur": 28.687
+    },
+    {
+     "file": "lucas_tercer",
+     "speaker": "lucas",
+     "start": 97.346,
+     "dur": 26.891
+    }
+   ],
+   "end": 125.138
+  },
+  {
+   "id": "b3",
+   "title": "Sistemas de identidad: México 68 y México 70",
+   "years": "1968–1970",
+   "start": 125.138,
+   "segments": [
+    {
+     "file": "marco_mexico68",
+     "speaker": "marco",
+     "start": 127.338,
+     "dur": 32.45
+    },
+    {
+     "file": "lucas_cuarto",
+     "speaker": "lucas",
+     "start": 160.488,
+     "dur": 39.531
+    },
+    {
+     "file": "lucas_quinto",
+     "speaker": "lucas",
+     "start": 200.469,
+     "dur": 21.787
+    }
+   ],
+   "end": 223.157
+  },
+  {
+   "id": "b4",
+   "title": "El Metro de la CDMX y la nueva museografía",
+   "years": "1964–1977",
+   "start": 223.157,
+   "segments": [
+    {
+     "file": "clau_titulo",
+     "speaker": "clau",
+     "start": 223.157,
+     "dur": 2.961
+    },
+    {
+     "file": "clau_primer",
+     "speaker": "clau",
+     "start": 226.568,
+     "dur": 26.48
+    },
+    {
+     "file": "clau_segundo",
+     "speaker": "clau",
+     "start": 253.498,
+     "dur": 18.238
+    },
+    {
+     "file": "clau_tercer",
+     "speaker": "clau",
+     "start": 272.186,
+     "dur": 34.026
+    }
+   ],
+   "end": 307.113
+  },
+  {
+   "id": "b5",
+   "title": "Identidad corporativa, billetes y cierre",
+   "years": "1969–1980",
+   "start": 307.113,
+   "segments": [
+    {
+     "file": "marco_identidad",
+     "speaker": "marco",
+     "start": 309.313,
+     "dur": 17.45
+    },
+    {
+     "file": "clau_cuarto",
+     "speaker": "clau",
+     "start": 327.463,
+     "dur": 53.574
+    },
+    {
+     "file": "marco_cierre",
+     "speaker": "marco",
+     "start": 381.736,
+     "dur": 29.132
+    }
+   ],
+   "end": 411.768
+  }
+ ]
+}
