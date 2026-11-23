@@ -16,6 +16,10 @@ File:Borola.jpg
 File:BoletoMetroCDMXfamiliaBurron.png
 #! Alejandro Jodorowsky
 q: Alejandro Jodorowsky :: 1
+#! Moneros: Rius, Abel Quezada, Sergio Arau
+File:Eduardo del Río (Rius).jpg
+File:Abel Quezada.tif
+File:Director Película "Un día sin mexicanos" Sergio Arau.jpg
 ## Bloque_3_Olimpiadas
 #! Estadio Olímpico Universitario, 1968
 q: Opening Ceremony Mexico University Stadium :: 2
@@ -29,6 +33,11 @@ q: moneda 25 pesos 1968 plata :: 2
 #! Juanito, mascota México 70
 File:Juanito Mexico 70.JPG
 File:Juanito mexico70.jpg
+#! Autores del cartel y del diseño de México 68
+File:Arq. Ramírez Vázquez.jpg
+File:Hans Ulrich Obrist and Eduardo Terrazas.jpg
+#! Arte huichol
+q: Huichol yarn painting :: 2
 ## Bloque_4_Metro_Museos
 #! Inauguración del Metro, 1969
 q: INAUGURACION DEL METRO 1969 :: 2
@@ -40,6 +49,8 @@ q: Metro de la Ciudad de México tren MP-68 :: 2
 q: MUSEO NACIONAL DE ANTROPOLOGIA 1964 :: 2
 #! MUCA · Ciudad Universitaria
 q: Museo Universitario de Ciencias y Arte UNAM :: 1
+#! Obras del Metro, 1969
+q: TRABAJOS DEL METRO 1969 :: 2
 ## Bloque_5_Identidad_Billetes
 #! Logos SEP, IPN, UAM
 File:SEP logo.svg
