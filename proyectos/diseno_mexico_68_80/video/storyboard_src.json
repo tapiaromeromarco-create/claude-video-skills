@@ -124,7 +124,7 @@
      {"kind": "logo", "label": "Televisa", "year": "1972", "x": 300, "y": 600, "scale": 0.6, "rotate": 3, "at": "@Televisa"},
      {"kind": "logo", "label": "UAM", "year": "1973", "x": 780, "y": 620, "scale": 0.6, "rotate": -4, "at": "@UAM"},
      {"kind": "logo", "src": "img/loteria_logo.png", "label": "Lotería Nacional", "x": 1250, "y": 640, "scale": 1.0, "rotate": 2, "at": "@Lotería"}
-   ]}},
+   ], "title": "Logotipos que siguen en nuestro paisaje diario"}},
   {"block": "b5", "at": "@llegó hasta", "type": "kinetic", "props": {"lines": ["La ola gráfica llegó", "hasta **nuestros bolsillos**"], "marks": {"nuestros bolsillos": "@bolsillos"}, "lineAt": ["@llegó hasta", "@bolsillos"], "size": 120}},
   {"block": "b5", "at": "@en 1969", "type": "year", "props": {"year": "1969", "caption": "Banxico abre su propia fábrica de billetes", "captionAt": "@fábrica", "color": "#1F4E9C", "image": {"kind": "photo", "label": "Fábrica de Billetes del Banco de México, 1969"}}},
   {"block": "b5", "at": "@la cuarta serie", "type": "collage", "props": {"items": [

@@ -219,7 +219,7 @@ export const CollageScene: React.FC<Base & {items: CollageItem[]; title?: string
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const L = useLocal(t0);
-	const tp = interpolate(step12(frame, fps) - L(titleAt, 0), [0, 6], [0, 1], clamp);
+	const tp = interpolate(step12(frame, fps) - Math.min(L(titleAt, 0), Math.round(0.4 * fps)), [0, 6], [0, 1], clamp); // el título entra al inicio
 	// cámara suave (parallax / Ken Burns del conjunto)
 	const cam = interpolate(frame, [0, 12 * fps], [1, 1.06], clamp);
 	return (
