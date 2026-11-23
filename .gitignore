@@ -20,3 +20,13 @@ render/
 .vscode/
 .idea/
 .env
+# activos pesados de los proyectos de video (se documentan en CREDITOS.csv)
+proyectos/*/assets/**/*.jpg
+proyectos/*/assets/**/*.jpeg
+proyectos/*/assets/**/*.JPG
+proyectos/*/assets/**/*.png
+proyectos/*/assets/**/*.tif
+proyectos/*/assets/**/*.webp
+proyectos/*/audio/
+proyectos/*/render/
+__pycache__/
