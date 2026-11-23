@@ -1,8 +1,14 @@
 # Edición de voz — Marco (bloques 3, 5 y cierre)
 
 - **Original:** `WhatsApp Audio 2026-11-22 at 10.20.03 PM` · 8 min 32 s
-- **Editado:** `audio/marco/marco_editado.(wav|mp3)` · 1 min 32 s · −16 LUFS
+- **Editado:** `audio/marco/marco_fluido.(wav|mp3)` · 1 min 23 s · −16 LUFS
 - **Lista de cortes:** `ediciones/edl_marco.json` (79 fragmentos; se rearma con `scripts/assemble_edl.py`)
+
+## Fluidez (versión 2)
+- 79 fragmentos → 55 empalmes: las frases dichas de corrido se dejaron enteras.
+- Entre palabras, fundido cruzado sin silencio; microsilencio de 30 ms solo antes de t/p/k/b/d/g para no perder la consonante.
+- Finales de frase difuminados sobre la cola natural de la voz.
+- 27 tramos dichos muy lento acelerados (máx. ×1.25, sin cambiar el tono). "Lance Wyman" sin acelerar.
 
 ## Qué se quitó
 - Muletillas: todos los "pues" (~25), "eh", "este", "así que", "tú solo", el "y" al inicio de oraciones.
