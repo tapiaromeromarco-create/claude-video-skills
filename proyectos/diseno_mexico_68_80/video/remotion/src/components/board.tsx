@@ -35,7 +35,8 @@ export type BoardItem = {
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 /* ---------- Cámara: viajes suaves entre paradas + deriva leve permanente ---------- */
-const useCam = (t0: number, cams: Cam[]) => {
+type Golpe = {at: number; fuerza: number; sacude?: boolean};
+const useCam = (t0: number, cams: Cam[], golpes: Golpe[] = []) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = t0 + frame / fps;
@@ -44,9 +45,9 @@ const useCam = (t0: number, cams: Cam[]) => {
 	let x = cur.x, y = cur.y, z = cur.z;
 	for (let i = 1; i < cs.length; i++) {
 		const c = cs[i];
-		const dur = c.dur ?? Math.min(2.2, Math.max(1.2, 1.0 + Math.hypot(c.x - cur.x, c.y - cur.y) / 2400));
+		const dur = c.dur ?? Math.min(1.3, Math.max(0.75, 0.6 + Math.hypot(c.x - cur.x, c.y - cur.y) / 3500));
 		if (t >= c.at) {
-			const p = interpolate(t, [c.at, c.at + dur], [0, 1], {...clamp, easing: Easing.bezier(0.65, 0, 0.35, 1)});
+			const p = interpolate(t, [c.at, c.at + dur], [0, 1], {...clamp, easing: Easing.bezier(0.8, 0, 0.2, 1)});
 			x = cur.x + (c.x - cur.x) * p;
 			y = cur.y + (c.y - cur.y) * p;
 			// la cámara se aleja un poco a mitad del viaje (sensación de recorrido)
@@ -60,7 +61,30 @@ const useCam = (t0: number, cams: Cam[]) => {
 	z *= 1 + Math.min(since, 12) * 0.004;
 	x += Math.sin(t * 0.35) * 14;
 	y += Math.cos(t * 0.27) * 9;
-	return {x, y, z, t};
+	// golpes al ritmo: empujón de zoom que decae + sacudida breve en los golpes fuertes
+	let shx = 0, shy = 0;
+	for (const g of golpes) {
+		const dt = t - g.at;
+		if (dt < 0 || dt > 0.8) continue;
+		z *= 1 + g.fuerza * Math.exp(-dt * 7) * Math.min(1, dt * 30);
+		if (g.sacude && dt < 0.25) {
+			const k = (1 - dt / 0.25) * 9;
+			shx += Math.sin(dt * 140) * k;
+			shy += Math.cos(dt * 120) * k * 0.7;
+		}
+	}
+	// velocidad (para el desenfoque de movimiento en los viajes)
+	const tp = t - 1 / fps;
+	let vx = 0;
+	for (let i = 1; i < cs.length; i++) {
+		const c = cs[i], prev = cs[i - 1];
+		const dur = c.dur ?? Math.min(1.3, Math.max(0.75, 0.6 + Math.hypot(c.x - prev.x, c.y - prev.y) / 3500));
+		if (t >= c.at && t <= c.at + dur) {
+			const e = (tt: number) => Easing.bezier(0.8, 0, 0.2, 1)(Math.max(0, Math.min(1, (tt - c.at) / dur)));
+			vx = Math.hypot(c.x - prev.x, c.y - prev.y) * (e(t) - e(tp));
+		}
+	}
+	return {x: x + shx, y: y + shy, z, t, v: vx};
 };
 
 /* ---------- Entrada animada de cada pieza ---------- */
@@ -470,12 +494,16 @@ export const BarraCapitulo: React.FC<{era: string; title: string; t0: number; sh
 
 /* ---------- Escena tablero ---------- */
 export const BoardScene: React.FC<{t0: number; items: BoardItem[]; cams: Cam[]; era?: string; title?: string; barAt?: number}> = ({t0, items, cams, era, title, barAt}) => {
-	const cam = useCam(t0, cams);
+	const golpes: Golpe[] = items
+		.filter((it) => it.at != null && ['photo', 'year', 'rotulo', 'label', 'pictos'].includes(it.type))
+		.map((it) => ({at: it.at as number, fuerza: it.type === 'year' || it.type === 'rotulo' ? 0.035 : 0.018, sacude: it.type === 'year' || it.type === 'rotulo'}));
+	const cam = useCam(t0, cams, golpes);
+	const blur = Math.min(5, cam.v * 0.045);
 	const tx = 960 - cam.x * cam.z;
 	const ty = 540 - cam.y * cam.z;
 	return (
 		<AbsoluteFill style={{overflow: 'hidden', background: '#E9E5DC'}}>
-			<div style={{position: 'absolute', left: 0, top: 0, width: CANVAS.w, height: CANVAS.h, transformOrigin: '0 0', transform: `translate(${tx}px, ${ty}px) scale(${cam.z})`}}>
+			<div style={{position: 'absolute', left: 0, top: 0, width: CANVAS.w, height: CANVAS.h, transformOrigin: '0 0', transform: `translate(${tx}px, ${ty}px) scale(${cam.z})`, filter: blur > 0.6 ? `blur(${blur.toFixed(1)}px)` : undefined}}>
 				<Img src={staticFile('img/papel_arrugado.jpg')} style={{position: 'absolute', inset: 0, width: CANVAS.w, height: CANVAS.h}} />
 				<div style={{position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(120,140,160,0.10) 2px, transparent 2px), linear-gradient(90deg, rgba(120,140,160,0.10) 2px, transparent 2px)', backgroundSize: '60px 60px'}} />
 				{[...items].sort((a, b) => (a.z ?? 1) - (b.z ?? 1)).map((it, i) => (
