@@ -12,6 +12,8 @@ Te adjunto un audio con mi voz (referencia_voz_marco.mp3, 1:42, voz limpia). Usa
    - Formato: MP3 44.1 kHz, 192 kbps.
 
 3. Genera cada párrafo como un archivo aparte (así se puede regenerar uno sin rehacer todo), con estos nombres:
+   - marco_00_intro_a.mp3
+   - marco_00_intro_b.mp3
    - marco_01_mexico68.mp3
    - marco_02_identidad.mp3
    - marco_03_cierre_a.mp3
@@ -22,11 +24,18 @@ Te adjunto un audio con mi voz (referencia_voz_marco.mp3, 1:42, voz limpia). Usa
    - "Beatrice Trueblood" → "Beatris Trúblud"
    - "Joan Costa" → como en catalán, "Yuán Costa"
    - "1968" → "mil novecientos sesenta y ocho"; "1980" → "mil novecientos ochenta"
+   - "Clau" → "Cláu" (una sola sílaba, como diminutivo de Claudia)
    Si alguna palabra sale mal, escríbela así en el texto y regenera solo ese párrafo.
 
 5. Al final dame los archivos para descargar.
 
 TEXTO
+
+[marco_00_intro_a]
+¿Alguna vez te has detenido a pensar quién diseñó el México moderno? Entre finales de los años sesenta y la década de los ochenta, el diseño gráfico en nuestro país dio un salto gigante: dejó de ser un simple adorno editorial para convertirse en un lenguaje visual capaz de organizar ciudades enteras, criticar al poder y construir nuestra identidad como nación.
+
+[marco_00_intro_b]
+Hoy, junto con Lucas y Clau, vamos a hacer un recorrido por esta época dorada. Vamos a ver cómo el diseño transformó desde los cómics más irreverentes y los carteles culturales, hasta los Juegos Olímpicos, el Metro, los museos y los billetes que usamos todos los días.
 
 [marco_01_mexico68]
 Pero la verdadera profesionalización a escala internacional llegó con los grandes sistemas de comunicación visual. En mil novecientos sesenta y ocho, México fue sede de los Juegos Olímpicos y se desarrolló un programa de identidad monumental dirigido por Pedro Ramírez Vázquez, Eduardo Terrazas, Beatrice Trueblood y Lance Wyman, junto con decenas de jóvenes dibujantes, muchos de ellos de la Universidad Iberoamericana.
