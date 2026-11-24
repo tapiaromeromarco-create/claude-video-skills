@@ -2461,31 +2461,32 @@
       "at": 291.9
      },
      {
-      "type": "photo",
-      "w": 520,
-      "h": 340,
-      "rot": 4,
+      "type": "embed",
+      "scene": "museografia",
+      "w": 700,
       "z": 3,
-      "bw": true,
-      "cutout": false,
-      "x": 4200,
-      "y": 3000,
-      "label": "Galería Aristos",
-      "at": 295.28
+      "x": 4160,
+      "y": 2990,
+      "at": 295.28,
+      "props": {
+       "text": "MUCA y Aristos: museografía moderna",
+       "textAt": 297.04
+      }
      },
      {
-      "type": "photo",
-      "w": 560,
-      "h": 820,
-      "rot": 3,
+      "type": "embed",
+      "scene": "cartelVestir",
+      "w": 520,
+      "sceneW": 1000,
+      "sceneH": 1464,
       "z": 3,
-      "bw": false,
-      "cutout": false,
       "x": 4960,
       "y": 2500,
-      "label": "“Si los artistas nos vistieran…” MUCA, 1977",
+      "rot": 3,
       "at": 302.76,
-      "tag": "CARTEL"
+      "props": {
+       "year": "1977"
+      }
      },
      {
       "type": "hand",

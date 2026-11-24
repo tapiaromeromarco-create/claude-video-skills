@@ -685,3 +685,157 @@ export const EndScene: React.FC<Base & {credits: string[]}> = ({credits}) => {
 		</AbsoluteFill>
 	);
 };
+
+/* ============ MUCA + Galería Aristos: museografía moderna (ilustración animada, elevación de sala) ============ */
+export const MuseografiaScene: React.FC<Base & {text?: string; textAt?: number}> = ({t0, text, textAt}) => {
+	const frame = useCurrentFrame();
+	const L = useLocal(t0);
+	const pop = (s: number) => interpolate(frame - s, [0, 10], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.4))});
+	const fade = (s: number, d = 8) => interpolate(frame - s, [0, d], [0, 1], clamp);
+	const lamps = [410, 830, 1280, 1700];
+	const walk = interpolate(frame, [34, 130], [150, 1560], {...clamp, easing: Easing.inOut(Easing.quad)});
+	const bob = Math.sin(frame * 0.55) * 6;
+	const tp = interpolate(frame - L(textAt, 3), [0, 6], [0, 1], clamp);
+	const label = (x: number, y: number, s: number) => (
+		<g opacity={fade(s)}>
+			<rect x={x} y={y} width={120} height={22} fill={C.paperDark} stroke={C.inkSoft} strokeWidth={2} />
+			<line x1={x + 12} y1={y + 8} x2={x + 98} y2={y + 8} stroke={C.inkSoft} strokeWidth={3} />
+			<line x1={x + 12} y1={y + 15} x2={x + 70} y2={y + 15} stroke={C.inkSoft} strokeWidth={3} />
+		</g>
+	);
+	return (
+		<AbsoluteFill>
+			<Paper />
+			<div style={{position: 'absolute', left: 130, top: 70, display: 'flex', gap: 28, whiteSpace: 'nowrap'}}>
+				{['MUCA', 'Galería Aristos'].map((n, i) => (
+					<div key={n} style={{scale: String(pop(4 + i * 8)), rotate: i ? '2deg' : '-3deg', fontFamily: fontDisplay, fontSize: 64, background: i ? C.blue : C.metro, color: '#fff', padding: '6px 26px', boxShadow: '0 8px 18px rgba(0,0,0,0.25)'}}>
+						{n}
+					</div>
+				))}
+			</div>
+			<svg width="1920" height="1080" style={{position: 'absolute', inset: 0}}>
+				{/* sala: pared, piso, riel de luces */}
+				<rect x={110} y={250} width={1700} height={560} fill={C.white} stroke={C.ink} strokeWidth={6} opacity={fade(0, 10)} />
+				<rect x={110} y={810} width={1700} height={190} fill="#8E8576" opacity={fade(2, 10)} />
+				<line x1={110} y1={810} x2={1810} y2={810} stroke={C.ink} strokeWidth={8} opacity={fade(2, 10)} />
+				<line x1={110} y1={225} x2={1810} y2={225} stroke={C.ink} strokeWidth={10} opacity={fade(4, 10)} />
+				{/* focos y conos de luz */}
+				{lamps.map((x, i) => (
+					<g key={x} opacity={fade(14 + i * 6, 10)}>
+						<polygon points={`${x - 16},232 ${x + 16},232 ${x + 190},800 ${x - 190},800`} fill="rgba(255,236,150,0.30)" />
+						<rect x={x - 22} y={225} width={44} height={34} rx={8} fill={C.ink} />
+					</g>
+				))}
+				{/* obra 1: op-art concéntrico */}
+				<g opacity={fade(12)}>
+					<rect x={220} y={330} width={380} height={360} fill={C.rosa} stroke={C.ink} strokeWidth={8} />
+					{[150, 120, 90, 60, 30].map((r, i) => (
+						<circle key={r} cx={410} cy={510} r={r * (0.85 + 0.15 * pop(12))} fill={i % 2 ? C.rosa : C.white} stroke={C.ink} strokeWidth={4} />
+					))}
+				</g>
+				{label(290, 712, 20)}
+				{/* obra 2: rayas azules */}
+				<g opacity={fade(20)}>
+					<rect x={700} y={380} width={260} height={340} fill={C.blue} stroke={C.ink} strokeWidth={8} />
+					{Array.from({length: 7}).map((_, i) => (
+						<rect key={i} x={716} y={398 + i * 46} width={228} height={14} fill={i % 2 ? C.marker : C.white} />
+					))}
+				</g>
+				{label(770, 742, 28)}
+				{/* obras 3: grupo de cuadros pequeños (salón) */}
+				{[
+					[1060, 340, '#7AB800'],
+					[1270, 340, C.metro],
+					[1060, 520, C.marker],
+					[1270, 520, C.ink],
+				].map(([x, y, f], i) => (
+					<g key={i} opacity={fade(26 + i * 5)}>
+						<rect x={x as number} y={y as number} width={190} height={150} fill={f as string} stroke={C.ink} strokeWidth={6} />
+						<circle cx={(x as number) + 95} cy={(y as number) + 75} r={34} fill="none" stroke={C.white} strokeWidth={8} />
+					</g>
+				))}
+				{label(1130, 690, 46)}
+				{/* obra 4: sol negro sobre amarillo */}
+				<g opacity={fade(34)}>
+					<rect x={1580} y={340} width={230} height={380} fill="#F7A600" stroke={C.ink} strokeWidth={8} />
+					<circle cx={1695} cy={470} r={70} fill={C.ink} />
+					<rect x={1630} y={600} width={130} height={20} fill={C.ink} />
+				</g>
+				{label(1635, 742, 52)}
+				{/* visitante recorriendo la sala */}
+				<g transform={`translate(${walk}, ${bob})`} opacity={fade(30)}>
+					<ellipse cx={0} cy={992 - bob} rx={60} ry={12} fill="rgba(0,0,0,0.25)" />
+					<circle cx={0} cy={724} r={34} fill={C.ink} />
+					<path d="M-44 770 H44 L58 960 H-58 Z" fill={C.ink} />
+					<path d="M-26 960 V990 M26 960 V990" stroke={C.ink} strokeWidth={16} strokeLinecap="round" />
+				</g>
+			</svg>
+			{text ? (
+				<div style={{position: 'absolute', left: 0, right: 0, bottom: 20, textAlign: 'center', opacity: tp}}>
+					<span style={{fontFamily: fontSans, fontWeight: 800, fontSize: 56, background: C.marker, padding: '6px 26px'}}>{text}</span>
+				</div>
+			) : null}
+		</AbsoluteFill>
+	);
+};
+
+/* ============ "Si los artistas nos vistieran…" (1977): ilustración explicativa, NO es el cartel original ============ */
+export const CartelVestirScene: React.FC<Base & {year?: string}> = ({year = '1977'}) => {
+	const frame = useCurrentFrame();
+	const pop = (s: number, d = 10) => interpolate(frame - s, [0, d], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.3))});
+	const fade = (s: number, d = 8) => interpolate(frame - s, [0, d], [0, 1], clamp);
+	const lines = [
+		['SI LOS', C.ink],
+		['ARTISTAS', C.rosa],
+		['NOS', C.ink],
+		['VISTIERAN…', C.blue],
+	] as const;
+	const tunic = 'M360 60 L440 40 Q500 100 560 40 L640 60 L770 210 L695 255 L655 200 L665 650 L335 650 L345 200 L305 255 L230 210 Z';
+	return (
+		<AbsoluteFill style={{background: C.white}}>
+			<div style={{position: 'absolute', inset: 36, border: `8px solid ${C.ink}`}} />
+			<div style={{position: 'absolute', left: 80, top: 74, fontFamily: fontMono, fontWeight: 600, fontSize: 34, letterSpacing: 4, opacity: fade(0)}}>MUCA · UNAM · {year}</div>
+			<div style={{position: 'absolute', left: 80, top: 140, fontFamily: fontDisplay, fontSize: 118, lineHeight: 0.94}}>
+				{lines.map(([t, c], i) => (
+					<div key={t} style={{color: c, clipPath: `inset(-10% ${(1 - interpolate(frame - (4 + i * 7), [0, 12], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)})) * 100}% -10% 0)`}}>
+						{t}
+					</div>
+				))}
+			</div>
+			<svg width="880" height="669" viewBox="0 0 1000 760" style={{position: 'absolute', left: 60, top: 600}}>
+				<defs>
+					<clipPath id="tunica">
+						<path d={tunic} transform="translate(0,100)" />
+					</clipPath>
+				</defs>
+				<g opacity={fade(30)} transform={`translate(0, ${(1 - pop(30)) * -60})`}>
+					<path d="M500 140 Q500 70 548 70 Q585 70 585 108" fill="none" stroke={C.ink} strokeWidth={10} strokeLinecap="round" />
+					<path d="M500 140 L330 205 M500 140 L670 205" stroke={C.ink} strokeWidth={10} strokeLinecap="round" />
+					<path d={tunic} transform="translate(0,100)" fill={C.paperDark} stroke={C.ink} strokeWidth={10} strokeLinejoin="round" />
+					{/* estampado: las obras se vuelven tela */}
+					<g clipPath="url(#tunica)">
+						<g opacity={fade(44)} transform={`translate(0, ${(1 - fade(44, 14)) * 30})`}>
+							{Array.from({length: 7}).map((_, i) => (
+								<rect key={i} x={200} y={200 + i * 62} width={600} height={22} fill={i % 2 ? C.metro : C.marker} />
+							))}
+						</g>
+						<g transform={`translate(500, 420) scale(${pop(54)})`}>
+							{[170, 135, 100, 66, 34].map((r, i) => (
+								<circle key={r} r={r} fill={i % 2 ? C.rosa : C.white} stroke={C.ink} strokeWidth={5} />
+							))}
+						</g>
+						<polygon points="330,760 400,610 470,760" fill={C.blue} stroke={C.ink} strokeWidth={5} opacity={fade(64)} />
+						<circle cx={640} cy={330} r={46} fill="#7AB800" stroke={C.ink} strokeWidth={5} opacity={fade(70)} />
+					</g>
+					<path d={tunic} transform="translate(0,100)" fill="none" stroke={C.ink} strokeWidth={10} strokeLinejoin="round" />
+				</g>
+			</svg>
+			<div style={{position: 'absolute', left: 80, right: 80, bottom: 70, textAlign: 'center', opacity: fade(80)}}>
+				<span style={{fontFamily: fontSerif, fontSize: 52, color: C.rosa}}>el arte sale del museo y se lleva puesto</span>
+			</div>
+			<div style={{position: 'absolute', right: 60, top: 70, rotate: '4deg', fontFamily: fontMono, fontWeight: 600, fontSize: 28, letterSpacing: 3, background: C.ink, color: '#fff', padding: '4px 14px', opacity: fade(2)}}>
+				ILUSTRACIÓN
+			</div>
+		</AbsoluteFill>
+	);
+};
