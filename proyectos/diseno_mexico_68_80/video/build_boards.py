@@ -365,6 +365,64 @@ t.cam("@Al mismo tiempo", "E"); t.cam("@En conclusión", "H", 0.95); t.cam("@La 
 scenes.append(dict(block="b5", at="@Con todo este", type="board", props=dict(items=t.items, cams=t.cams, era="1969–80", title="Identidad corporativa, billetes y estampillas")))
 scenes.append(dict(block="b5", at="@Muchas gracias", type="end", props=dict(credits=["Voces: Marco · Lucas · Clau", "Imágenes: Wikimedia Commons, Internet Archive, Library of Congress", "Referencia bibliográfica: [título del libro]"])))
 
+# ============================== ANTI-ENCIMES: los textos no tapan fotos ni personas ==============================
+import re as _re
+def _caja(it):
+    """Caja aproximada (x0, y0, x1, y1) de cada pieza en el lienzo."""
+    t = it["type"]; x, y = it["x"], it["y"]
+    if t in ("photo", "embed", "pictos", "opart", "paper"):
+        w = it.get("w", 400); h = it.get("h", 300)
+        if t == "embed": h = w * it.get("sceneH", 1080) / it.get("sceneW", 1920)
+        if t == "pictos": h = it.get("size", 230) * (1 + (len(it.get("items", [])) * (it.get("size", 230) + 34) > it.get("w", 900)))
+        return (x, y, x + w, y + h)
+    txt = _re.sub(r"\*\*", "", str(it.get("text", it.get("title", "")))); lines = txt.split("\n"); L = max(len(l) for l in lines) if lines else 1
+    size = it.get("size", 60)
+    if t == "label": return (x, y, x + L * size * (0.62 if it.get("font") == "display" else 0.56) + 52, y + size * 1.25 * len(lines) + 20)
+    if t == "hand":  return (x, y, x + L * size * (0.42 if it.get("font") == "caveat" else 0.62), y + size * 1.05 * len(lines))
+    if t == "ficha":
+        sub = str(it.get("sub") or ""); return (x, y, x + min(it.get("w") or 560, 60 + max(len(it["title"]) * 26, len(sub) * 18)), y + 90 + 40 * (sub.count("\n") + 1) + (40 if it.get("year") else 0))
+    if t == "tag":   return (x, y, x + L * 20 + 40, y + 50)
+    if t in ("year", "rotulo"): return (x, y, x + L * size * 0.82, y + size * 0.95 * len(lines))
+    return None
+
+def _inter(a, b):
+    w = min(a[2], b[2]) - max(a[0], b[0]); h = min(a[3], b[3]) - max(a[1], b[1])
+    return max(0, w) * max(0, h)
+
+TEXTOS = ("label", "hand", "ficha", "tag", "year", "rotulo")
+movidos = 0
+for sc in scenes:
+    items = sc["props"].get("items", [])
+    if not items: continue
+    fotos = [it for it in items if it["type"] in ("photo", "embed", "pictos")]
+    # esquina superior izquierda de cada zona reservada para la etiqueta de capítulo
+    colocados = [(zx - 960, zy - 540, zx - 960 + 470, zy - 540 + 125) for zx, zy in ZONAS.values()] if sc["type"] == "board" else []
+    for it in items:
+        if it["type"] not in TEXTOS: continue
+        c = _caja(it)
+        if not c: continue
+        area = (c[2] - c[0]) * (c[3] - c[1])
+        def choque(cc):
+            return sum(_inter(cc, _caja(f)) for f in fotos) + sum(_inter(cc, o) * (1.0 if k < 9 else 0.5) for k, o in enumerate(colocados))
+        if choque(c) <= area * 0.06:
+            colocados.append(c); continue
+        # zona a la que pertenece (para no salir de su encuadre)
+        zc = min(ZONAS.values(), key=lambda z: (z[0] - (c[0] + c[2]) / 2) ** 2 + (z[1] - (c[1] + c[3]) / 2) ** 2)
+        bx0, by0, bx1, by1 = zc[0] - 930, zc[1] - 510, zc[0] + 930, zc[1] + 510
+        mejor = None
+        for r in range(40, 900, 40):
+            for dx, dy in ((0, r), (0, -r), (r, 0), (-r, 0), (r, r), (-r, r), (r, -r), (-r, -r)):
+                cc = (c[0] + dx, c[1] + dy, c[2] + dx, c[3] + dy)
+                if cc[0] < bx0 or cc[1] < by0 or cc[2] > bx1 or cc[3] > by1: continue
+                if choque(cc) <= area * 0.06:
+                    mejor = (dx, dy); break
+            if mejor: break
+        if mejor:
+            it["x"] += mejor[0]; it["y"] += mejor[1]; movidos += 1
+            c = (c[0] + mejor[0], c[1] + mejor[1], c[2] + mejor[0], c[3] + mejor[1])
+        colocados.append(c)
+print("textos reacomodados para no tapar fotos:", movidos)
+
 # Imágenes reales -> versión sticker (recorte con delineado blanco) en img/st/*.png
 import os
 for sc in scenes:

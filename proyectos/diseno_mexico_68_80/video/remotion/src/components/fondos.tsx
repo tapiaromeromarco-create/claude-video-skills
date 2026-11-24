@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate} from 'remotion';
+import {AbsoluteFill, interpolate} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from '../time';
 import {Tema} from '../theme';
 
 /* Fondos continuos por capítulo: se animan durante todo el bloque, sin reiniciarse entre escenas. */

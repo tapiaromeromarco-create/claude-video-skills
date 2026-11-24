@@ -1,5 +1,7 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, interpolate, random, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, random, Sequence, staticFile} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from '../time';
+import {useVideoConfig as useConfigReal} from 'remotion';
 import {C, fontDisplay, fontMono, fontSans, fontOp} from '../theme';
 import {roughPolygon} from './base';
 import {CartelVestirScene, GestaltScene, MetroMScene, MuseografiaScene, NetworkScene, StationsScene} from './scenes';
@@ -393,12 +395,12 @@ const Anio: React.FC<{it: BoardItem; t0: number}> = ({it, t0}) => {
 /* Escenas especiales incrustadas en el tablero (se renderizan en una caja 1920x1080) */
 const EMBED: Record<string, React.FC<any>> = {metroM: MetroMScene, gestalt: GestaltScene, stations: StationsScene, network: NetworkScene, museografia: MuseografiaScene, cartelVestir: CartelVestirScene};
 const Incrustada: React.FC<{it: BoardItem; t0: number}> = ({it, t0}) => {
-	const {fps} = useVideoConfig();
 	const Comp = EMBED[it.scene as string];
 	const w = it.w ?? 1920;
 	const lw = (it.sceneW as number | undefined) ?? 1920; // tamaño lógico de la escena (por defecto 1920x1080)
 	const lh = (it.sceneH as number | undefined) ?? 1080;
-	const st = Math.round(((it.at ?? t0) - t0) * fps);
+	const {fps: fpsReal} = useConfigReal();
+	const st = Math.round(((it.at ?? t0) - t0) * fpsReal); // Sequence trabaja en fotogramas reales
 	return (
 		<div style={{width: w, height: (w * lh) / lw, overflow: 'hidden', position: 'relative'}}>
 			<div style={{width: lw, height: lh, scale: String(w / lw), transformOrigin: '0 0', position: 'absolute'}}>

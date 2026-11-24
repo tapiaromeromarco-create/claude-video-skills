@@ -7,7 +7,7 @@ import './theme';
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
-			<Composition id="VideoEnsayo" component={VideoEnsayo} durationInFrames={Math.ceil(data.duration * 30)} fps={30} width={1920} height={1080} />
+			<Composition id="VideoEnsayo" component={VideoEnsayo} durationInFrames={Math.ceil(data.duration * 60)} fps={60} width={1920} height={1080} />
 		</>
 	);
 };

@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, interpolate, random, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, random, staticFile} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from '../time';
 
 /* =====================================================================================
    TRANSICIONES CREATIVAS (con la estética de cada capítulo) y "GOLPES" de palabra.
@@ -138,11 +139,11 @@ export const Golpe: React.FC<{text: string; color?: string; fondo?: string; font
 	const sh = f >= 6 && f < 14 ? Math.sin(f * 2.2) * (14 - f) * 1.4 : 0;
 	const ff = font === 'op' ? 'Monoton' : font === 'comic' ? 'Bangers' : 'Archivo Black';
 	return (
-		<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', pointerEvents: 'none'}}>
+		<AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 70, pointerEvents: 'none'}}>
 			<div
 				style={{
 					fontFamily: ff,
-					fontSize: font === 'op' ? 150 : 170,
+					fontSize: font === 'op' ? 110 : 124,
 					lineHeight: 1,
 					color,
 					background: fondo,

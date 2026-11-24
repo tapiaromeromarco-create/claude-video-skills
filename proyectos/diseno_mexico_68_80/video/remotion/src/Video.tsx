@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Easing, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, Sequence, staticFile, useVideoConfig} from 'remotion';
+import {useCurrentFrame, BASE_FPS} from './time';
 import {Audio} from '@remotion/media';
 import data from './data/storyboard.json';
 import {Grain} from './components/base';
@@ -46,7 +47,7 @@ const REGISTRY: Record<string, React.FC<any>> = {
 	end: EndScene,
 };
 
-const TR = 14; // frames de transición (las escenas se encadenan, sin cortes secos)
+const TR = 14; // fotogramas lógicos (30 fps) de transición por franjas
 
 /* Transición de franjas: la escena nueva entra por bandas diagonales que se abren (op art) */
 const Franjas: React.FC<{children: React.ReactNode; on: boolean}> = ({children, on}) => {
@@ -59,7 +60,7 @@ const Franjas: React.FC<{children: React.ReactNode; on: boolean}> = ({children, 
 };
 
 /* Salida por franjas (inversa) para las imágenes a pantalla completa */
-const SalidaFranjas: React.FC<{children: React.ReactNode; dur: number}> = ({children, dur}) => {
+const SalidaFranjas: React.FC<{children: React.ReactNode; dur: number}> = ({children, dur}) => { // dur en fotogramas lógicos
 	const frame = useCurrentFrame();
 	const q = interpolate(frame, [dur - TR, dur], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
 	if (q >= 1) return <AbsoluteFill>{children}</AbsoluteFill>;
@@ -89,7 +90,7 @@ export const VideoEnsayo: React.FC = () => {
 			{blocks.map((b) => {
 				const ss = scenes.filter((s) => s.block === b);
 				const from = Math.round(ss[0].t0 * fps);
-				const to = Math.round(ss[ss.length - 1].t1 * fps) + TR;
+				const to = Math.round(ss[ss.length - 1].t1 * fps) + Math.round((TR * fps) / BASE_FPS);
 				return (
 					<Sequence key={b} name={`fondo ${b}`} from={from} durationInFrames={to - from}>
 						<FondoCapitulo t={TEMAS[b]} />
@@ -100,7 +101,7 @@ export const VideoEnsayo: React.FC = () => {
 			{scenes.map((s, i) => {
 				const Comp = REGISTRY[s.type];
 				const from = Math.round(s.t0 * fps);
-				const dur = Math.max(1, Math.round(s.t1 * fps) - from) + (i + 1 < scenes.length ? TR : 0);
+				const dur = Math.max(1, Math.round(s.t1 * fps) - from) + (i + 1 < scenes.length ? Math.round((TR * fps) / BASE_FPS) : 0);
 				return (
 					<Sequence key={i} name={`${String(i).padStart(2, '0')} ${s.block} ${s.type}`} from={from} durationInFrames={dur}>
 						<TemaCtx.Provider value={TEMAS[s.block]}>
@@ -116,7 +117,7 @@ export const VideoEnsayo: React.FC = () => {
 				const kind = transicionDe(scenes, i);
 				if (!kind) return null;
 				return (
-					<Sequence key={`tr${i}`} name={`transición ${kind}`} from={Math.round(s.t0 * fps) - DUR_TR / 2} durationInFrames={DUR_TR}>
+					<Sequence key={`tr${i}`} name={`transición ${kind}`} from={Math.round(s.t0 * fps - (DUR_TR * fps) / BASE_FPS / 2)} durationInFrames={Math.round((DUR_TR * fps) / BASE_FPS)}>
 						<Transicion kind={kind} />
 					</Sequence>
 				);
@@ -130,11 +131,11 @@ export const VideoEnsayo: React.FC = () => {
 			{/* Imágenes a pantalla completa: encima del tablero, sin cortar su recorrido */}
 			{((data as unknown as {overlays?: Scene[]}).overlays ?? []).filter((s) => s.type !== 'golpe').map((s, i) => {
 				const from = Math.round(s.t0 * fps);
-				const dur = Math.max(1, Math.round(s.t1 * fps) - from) + TR;
+				const dur = Math.max(1, Math.round(s.t1 * fps) - from) + Math.round((TR * fps) / BASE_FPS);
 				return (
 					<Sequence key={`ov${i}`} name={`pantalla completa ${i}`} from={from} durationInFrames={dur}>
 						<Franjas on>
-							<SalidaFranjas dur={dur}>
+							<SalidaFranjas dur={(dur * BASE_FPS) / fps}>
 								<FullScene t0={s.t0} t1={s.t1} {...(s.props as {src: string})} />
 							</SalidaFranjas>
 						</Franjas>

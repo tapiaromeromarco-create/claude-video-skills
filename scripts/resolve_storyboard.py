@@ -104,7 +104,7 @@ for sc in scenes:
             t = max(t, it["at"] + 0.8)
             if t > t_next - 3.0: break
             h = it.get("h", 300) if it["type"] != "year" else it.get("size", 300)
-            z = max(1.25, min(1.75, 0.72 * 1080 / max(h, 200)))
+            z = max(1.2, min(1.5, 0.6 * 1080 / max(h, 200)))  # deja margen para nombres y notas
             extra.append(dict(at=round(t, 3), x=it["x"] + it.get("w", 400) / 2, y=it["y"] + h / 2, z=round(z, 2), dur=1.4, kind="zoom"))
             vuelta = t + 2.6
             if vuelta < t_next - 1.6:

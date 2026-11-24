@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, interpolate, random, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, random, staticFile} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from '../time';
 import {Highlight} from '@remotion/rough-notation';
 import {C, fontDisplay, fontMono, fontSans, fontSerif, fontOp, fontComic, useTema} from '../theme';
 import {Ficha, HandArrow, Kicker, Paper, Sticker, StickerItem, usePop} from './base';

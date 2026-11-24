@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, staticFile} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from '../time';
 
 /* Imagen a pantalla completa (respiro entre collages): Ken Burns, grano, viñeta, ficha y nota a mano. */
 type Props = {

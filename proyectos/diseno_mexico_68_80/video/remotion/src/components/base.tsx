@@ -1,5 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Img, interpolate, random, staticFile, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
+import {AbsoluteFill, Img, interpolate, random, staticFile, Easing} from 'remotion';
+import {useCurrentFrame, useVideoConfig} from '../time';
 import {C, fontMono, fontSans, fontDisplay, step12} from '../theme';
 
 /* ---------- Fondo: papel reciclado + cuadrícula milimétrica ---------- */
