@@ -306,14 +306,15 @@
      {
       "type": "photo",
       "w": 900,
-      "h": 600,
+      "h": 595,
       "rot": -3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4180,
       "y": 1370,
       "label": "Metro de la Ciudad de México, 1969",
+      "src": "img/st/metro_1969_b.png",
       "at": 20.72
      },
      {
@@ -504,15 +505,16 @@
      },
      {
       "type": "photo",
-      "w": 360,
+      "w": 380,
       "h": 270,
       "rot": -4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 3500,
       "y": 2660,
       "label": "Museo Nacional de Antropología",
+      "src": "img/st/mna_1974.png",
       "at": 41.66
      },
      {
@@ -770,17 +772,31 @@
      },
      {
       "type": "photo",
-      "w": 460,
-      "h": 560,
+      "w": 380,
+      "h": 620,
       "rot": 3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
-      "x": 3000,
-      "y": 280,
-      "label": "Gabriel Vargas",
-      "at": 59.9,
-      "tag": "RETRATO"
+      "bw": false,
+      "cutout": true,
+      "x": 3040,
+      "y": 250,
+      "label": "Borola Burrón",
+      "src": "img/st/borola.png",
+      "at": 59.9
+     },
+     {
+      "type": "photo",
+      "w": 330,
+      "h": 254,
+      "rot": -6,
+      "z": 3,
+      "bw": false,
+      "cutout": true,
+      "x": 3460,
+      "y": 400,
+      "label": "Boleto del Metro · La Familia Burrón",
+      "src": "img/st/boleto_burron.png",
+      "at": 55.36
      },
      {
       "type": "ficha",
@@ -802,7 +818,7 @@
       "z": 9,
       "x": 2800,
       "y": 220,
-      "at": 55.36
+      "at": 56.22
      },
      {
       "type": "arrow",
@@ -828,17 +844,17 @@
      },
      {
       "type": "photo",
-      "w": 640,
-      "h": 760,
+      "w": 740,
+      "h": 740,
       "rot": -2,
       "z": 3,
-      "bw": true,
-      "cutout": false,
-      "x": 4300,
+      "bw": false,
+      "cutout": true,
+      "x": 4260,
       "y": 250,
       "label": "Rius",
-      "at": 61.4,
-      "tag": "RETRATO"
+      "src": "img/st/rius.png",
+      "at": 61.4
      },
      {
       "type": "ficha",
@@ -926,11 +942,12 @@
       "h": 320,
       "rot": 4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4140,
       "y": 1480,
       "label": "Rius",
+      "src": "img/st/rius.png",
       "at": 69.92,
       "tag": "RETRATO"
      },
@@ -951,11 +968,12 @@
       "h": 320,
       "rot": -4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4730,
       "y": 1480,
       "label": "Abel Quezada",
+      "src": "img/st/abel_quezada.png",
       "at": 70.6,
       "tag": "RETRATO"
      },
@@ -1051,11 +1069,12 @@
       "h": 320,
       "rot": -4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 5320,
       "y": 1860,
       "label": "Sergio Arau",
+      "src": "img/st/sergio_arau.png",
       "at": 74.48,
       "tag": "RETRATO"
      },
@@ -1246,17 +1265,17 @@
      },
      {
       "type": "photo",
-      "w": 360,
-      "h": 460,
+      "w": 380,
+      "h": 510,
       "rot": 3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 860,
-      "y": 2660,
+      "y": 2630,
       "label": "Alejandro Jodorowsky",
-      "at": 104.02,
-      "tag": "RETRATO"
+      "src": "img/st/jodorowsky.png",
+      "at": 104.02
      },
      {
       "type": "photo",
@@ -1527,14 +1546,15 @@
      {
       "type": "photo",
       "w": 720,
-      "h": 500,
+      "h": 462,
       "rot": 3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 3100,
       "y": 250,
       "label": "Estadio Olímpico Universitario, 1968",
+      "src": "img/st/estadio_1968_a.png",
       "at": 139.62
      },
      {
@@ -1587,11 +1607,12 @@
       "h": 470,
       "rot": 3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4130,
       "y": 310,
       "label": "Pedro Ramírez Vázquez",
+      "src": "img/st/ramirez_vazquez.png",
       "at": 146.58,
       "tag": "RETRATO"
      },
@@ -1612,11 +1633,12 @@
       "h": 470,
       "rot": -3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4575,
       "y": 310,
       "label": "Eduardo Terrazas",
+      "src": "img/st/terrazas.png",
       "at": 149.12,
       "tag": "RETRATO"
      },
@@ -1662,11 +1684,12 @@
       "h": 470,
       "rot": -3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 5465,
       "y": 310,
       "label": "Lance Wyman",
+      "src": "img/st/lance_wyman.png",
       "at": 151.06,
       "tag": "RETRATO"
      },
@@ -1772,15 +1795,16 @@
      },
      {
       "type": "photo",
-      "w": 560,
-      "h": 380,
+      "w": 420,
+      "h": 418,
       "rot": 4,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 5120,
-      "y": 1810,
+      "cutout": true,
+      "x": 5160,
+      "y": 1770,
       "label": "Tabla de estambre huichol",
+      "src": "img/st/huichol_cuadro.png",
       "at": 170.6
      },
      {
@@ -1952,17 +1976,17 @@
      },
      {
       "type": "photo",
-      "w": 360,
-      "h": 440,
+      "w": 460,
+      "h": 292,
       "rot": 5,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 740,
-      "y": 1530,
-      "label": "Estampilla México 68",
-      "at": 203.92,
-      "tag": "ESTAMPILLA"
+      "cutout": true,
+      "x": 700,
+      "y": 1570,
+      "label": "Estampilla México 68 · Wyman",
+      "src": "img/st/estampilla_wyman.png",
+      "at": 203.92
      },
      {
       "type": "photo",
@@ -2045,16 +2069,16 @@
      {
       "type": "photo",
       "w": 460,
-      "h": 600,
+      "h": 590,
       "rot": 4,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 3240,
-      "y": 2560,
+      "cutout": true,
+      "x": 3260,
+      "y": 2540,
       "label": "Juanito, mascota de México 70",
-      "at": 219.68,
-      "tag": "MASCOTA"
+      "src": "img/st/juanito_cartel.png",
+      "at": 219.68
      },
      {
       "type": "ficha",
@@ -2150,14 +2174,15 @@
      {
       "type": "photo",
       "w": 900,
-      "h": 600,
+      "h": 590,
       "rot": -2,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 180,
       "y": 240,
-      "label": "Obras del Metro, 1969",
+      "label": "Obras del Metro en el Zócalo, 1969",
+      "src": "img/st/obras_metro_zocalo.png",
       "at": 228.08
      },
      {
@@ -2209,29 +2234,30 @@
      {
       "type": "photo",
       "w": 900,
-      "h": 620,
+      "h": 580,
       "rot": 2,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 2160,
       "y": 240,
-      "label": "Inauguración del Metro, 1969",
+      "label": "El Metro funcionando, septiembre de 1969",
+      "src": "img/st/metro_1969_a.png",
       "at": 234.26
      },
      {
       "type": "photo",
-      "w": 460,
-      "h": 560,
+      "w": 600,
+      "h": 484,
       "rot": -4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
-      "x": 3160,
-      "y": 220,
+      "bw": false,
+      "cutout": true,
+      "x": 3120,
+      "y": 240,
       "label": "Lance Wyman",
-      "at": 238.38,
-      "tag": "RETRATO"
+      "src": "img/st/lance_wyman.png",
+      "at": 238.38
      },
      {
       "type": "ficha",
@@ -2364,15 +2390,16 @@
      },
      {
       "type": "photo",
-      "w": 860,
-      "h": 560,
+      "w": 820,
+      "h": 580,
       "rot": 3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 940,
       "y": 2600,
-      "label": "Museo Nacional de Antropología, 1964",
+      "label": "Museo Nacional de Antropología",
+      "src": "img/st/mna_1974.png",
       "at": 279.36
      },
      {
@@ -2421,14 +2448,15 @@
      {
       "type": "photo",
       "w": 620,
-      "h": 420,
+      "h": 417,
       "rot": -3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4160,
       "y": 2540,
       "label": "MUCA · Ciudad Universitaria",
+      "src": "img/st/muca_expo.png",
       "at": 291.9
      },
      {
@@ -2708,7 +2736,7 @@
       "y": 300,
       "label": "IMSS",
       "src": "img/st/imss_logo.png",
-      "at": 335.44,
+      "at": 331.12,
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
@@ -2720,7 +2748,7 @@
       "z": 9,
       "x": 2480,
       "y": 390,
-      "at": 335.44,
+      "at": 331.12,
       "font": "caveat"
      },
      {
@@ -2730,10 +2758,11 @@
       "rot": -3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 2730,
       "y": 300,
       "label": "SEP",
+      "src": "img/st/sep_logo.png",
       "at": 338.5,
       "tag": "LOGOTIPO",
       "fit": "contain"
@@ -2756,10 +2785,11 @@
       "rot": 3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3320,
       "y": 300,
       "label": "IPN",
+      "src": "img/st/ipn_logo.png",
       "at": 345.06,
       "tag": "LOGOTIPO",
       "fit": "contain"
@@ -2808,10 +2838,11 @@
       "rot": 3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 2730,
       "y": 700,
       "label": "UAM",
+      "src": "img/st/uam_logo.png",
       "at": 349.64,
       "tag": "LOGOTIPO",
       "fit": "contain"
@@ -2887,14 +2918,15 @@
      {
       "type": "photo",
       "w": 760,
-      "h": 520,
+      "h": 570,
       "rot": 3,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 5040,
       "y": 240,
-      "label": "Fábrica de Billetes del Banco de México, 1969",
+      "label": "Banco de México",
+      "src": "img/st/banxico_edificio.png",
       "at": 360.44
      },
      {
@@ -3020,17 +3052,17 @@
      },
      {
       "type": "photo",
-      "w": 400,
-      "h": 480,
+      "w": 600,
+      "h": 381,
       "rot": 4,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 3040,
-      "y": 1550,
+      "cutout": true,
+      "x": 2940,
+      "y": 1590,
       "label": "Estampilla · Lance Wyman",
-      "at": 379.6,
-      "tag": "ESTAMPILLA"
+      "src": "img/st/estampilla_wyman.png",
+      "at": 379.6
      },
      {
       "type": "hand",
@@ -3322,23 +3354,102 @@
   {
    "block": "b3",
    "type": "full",
-   "t0": 140.4,
-   "t1": 143.6,
+   "t0": 139.62,
+   "t1": 143.02,
    "props": {
-    "src": "img/full/boleto_soccer.jpg",
+    "src": "img/full/estadio_1968_a.jpg",
+    "move": "right",
+    "ficha": {
+     "title": "Ceremonia inaugural, 12 de octubre de 1968",
+     "sub": "Estadio Olímpico Universitario"
+    }
+   }
+  },
+  {
+   "block": "b3",
+   "type": "full",
+   "t0": 170.6,
+   "t1": 173.0,
+   "props": {
+    "src": "img/full/huichol_cuadro.jpg",
     "fit": "contain",
     "move": "in",
-    "nota": {
-     "text": "Estadio\nAzteca\n22·X·1968",
-     "x": 1580,
-     "y": 300,
-     "rot": -6
-    },
-    "circulo": {
-     "x": 400,
-     "y": 230,
-     "w": 290,
-     "h": 270
+    "ficha": {
+     "title": "Arte huichol (wixárika)",
+     "sub": "cuadro de estambre"
+    }
+   }
+  },
+  {
+   "block": "b3",
+   "type": "full",
+   "t0": 219.68,
+   "t1": 222.68,
+   "props": {
+    "src": "img/full/juanito.jpg",
+    "fit": "contain",
+    "move": "in",
+    "ficha": {
+     "title": "Juanito, mascota de México 70",
+     "sub": "Juan González Martínez"
+    }
+   }
+  },
+  {
+   "block": "b4",
+   "type": "full",
+   "t0": 230.46,
+   "t1": 233.46,
+   "props": {
+    "src": "img/full/obras_metro_zocalo.jpg",
+    "move": "out",
+    "bw": true,
+    "ficha": {
+     "title": "Obras del Metro en el Zócalo, 1969",
+     "sub": "Archivo Histórico de la Ciudad de México"
+    }
+   }
+  },
+  {
+   "block": "b4",
+   "type": "full",
+   "t0": 237.5,
+   "t1": 240.7,
+   "props": {
+    "src": "img/full/metro_1969_a.jpg",
+    "move": "left",
+    "bw": true,
+    "ficha": {
+     "title": "El Metro funcionando, 5 de septiembre de 1969",
+     "sub": "Archivo Histórico de la Ciudad de México"
+    }
+   }
+  },
+  {
+   "block": "b4",
+   "type": "full",
+   "t0": 275.66,
+   "t1": 279.06,
+   "props": {
+    "src": "img/full/mna_1974.jpg",
+    "move": "in",
+    "ficha": {
+     "title": "Museo Nacional de Antropología",
+     "sub": "inaugurado el 17 de septiembre de 1964"
+    }
+   }
+  },
+  {
+   "block": "b5",
+   "type": "full",
+   "t0": 360.44,
+   "t1": 363.44,
+   "props": {
+    "src": "img/full/banxico_edificio.jpg",
+    "move": "out",
+    "ficha": {
+     "title": "Banco de México",
+     "sub": "en 1969 abre su propia fábrica de billetes"
     }
    }
   },

@@ -89,7 +89,7 @@ t.tape("C", 1300, 70, rot=8, at="@capaz de organizar")
 t.hand("C", 1080, 880, "criticar al poder", at="@enteras", size=72, rot=-4)
 t.arrow("C", 980, 700, 330, 200, *FLECHA_DER, at="@enteras")
 # F · organizar ciudades / construir identidad
-t.photo("F", 140, 120, 900, 600, "Metro de la Ciudad de México, 1969", at="@organizar", rot=-3, bw=True)
+t.photo("F", 140, 120, 900, 595, "Metro de la Ciudad de México, 1969", src="img/st/metro_1969_b.png", cutout=True, at="@organizar", rot=-3)
 t.label("F", 180, 760, "organizar **ciudades**", at="@organizar", size=70)
 t.photo("F", 1150, 200, 520, 520, "IMSS", src="img/imss_logo.png", fit="contain", at="@construir", rot=5)
 t.label("F", 1080, 760, "construir **identidad**", at="@construir", size=70)
@@ -108,7 +108,7 @@ t.photo("H", 60, 260, 300, 410, "Cómics", src="img/portada_supermachos.jpg", at
 t.photo("H", 400, 240, 320, 320, "Carteles", src="img/cartel_mexico68_opart.jpg", at="@carteles", rot=4)
 t.photo("H", 760, 270, 330, 320, "Juegos Olímpicos", src="img/boleto_soccer.jpg", at="@olímpicos", rot=-3)
 t.photo("H", 1130, 250, 300, 300, "Metro", src="img/metro_logo.png", fit="contain", at="@olímpicos", rot=5)
-t.photo("H", 1460, 260, 360, 270, "Museo Nacional de Antropología", at="@y los billetes", rot=-4, bw=True)
+t.photo("H", 1460, 260, 380, 270, "Museo Nacional de Antropología", src="img/st/mna_1974.png", cutout=True, at="@y los billetes", rot=-4)
 t.photo("H", 1180, 600, 520, 230, "Billete de la 4ª serie", tag="MUESTRA", at="@billetes", rot=3)
 for i, (x, txt, a) in enumerate([(70, "cómics", "@cómics"), (430, "carteles", "@carteles"), (780, "olimpiadas", "@olímpicos"), (1150, "Metro", "@olímpicos"), (1500, "museos", "@y los billetes")]):
     t.hand("H", x, 700 if i < 4 else 560, txt, at=a, size=60, font="caveat", rot=(-1) ** i * 4)
@@ -135,13 +135,14 @@ t.tag("A", 90, 100, "ARCHIVO")
 t.paper("B", 100, 100, 1700, 900, "kraft", rot=1)
 t.photo("B", 140, 200, 800, 560, "La Familia Burrón", src="img/st/familia_burron_estanquillo.png", cutout=True, at="@Familia Burrón", rot=-4)
 t.tag("B", 160, 780, "MUSEO DEL ESTANQUILLO · CDMX", at="@Familia Burrón")
-t.photo("B", 960, 180, 460, 560, "Gabriel Vargas", tag="RETRATO", at="@Gabriel Vargas", rot=3, bw=True)
+t.photo("B", 1000, 150, 380, 620, "Borola Burrón", src="img/st/borola.png", cutout=True, at="@Gabriel Vargas", rot=3)
+t.photo("B", 1420, 300, 330, 254, "Boleto del Metro · La Familia Burrón", src="img/st/boleto_burron.png", cutout=True, at="@clásicos", rot=-6)
 t.ficha("B", 1100, 680, "GABRIEL VARGAS", "historietista", "La Familia Burrón · 1948–2009", at="@Gabriel Vargas", color="#E2231A")
 t.hand("B", 760, 120, "clásico popular", at="@clásicos", size=70, rot=-5)
 t.arrow("B", 700, 220, 330, 150, *FLECHA_DER, at="@Gabriel Vargas")
 # C · los moneros
 t.paper("C", 60, 60, 1100, 960, "page", rot=1.5, page=302)
-t.photo("C", 260, 150, 640, 760, "Rius", tag="RETRATO", at="@al mismo tiempo", rot=-2, bw=True)
+t.photo("C", 220, 150, 740, 740, "Rius", src="img/st/rius.png", cutout=True, at="@al mismo tiempo", rot=-2)
 t.ficha("C", 1120, 300, "RIUS", "(Eduardo del Río)\n– Caricaturista", at="@crítica", color="#E2231A")
 t.label("C", 600, 850, "Los llamados **“moneros”**", at="@moneros", size=70)
 t.hand("C", 40, 260, "SÁTIRA", at="@súper crítica", size=96, rot=-8, underline=True)
@@ -153,7 +154,8 @@ t.paper("F", 40, 60, 1840, 960, "grid", rot=-0.5)
 t.hand("F", 80, 90, "caricaturistas e ilustradores", at="@Caricaturistas", size=72)
 for i, (nm, a) in enumerate([("Rius", "@Rius"), ("Abel Quezada", "@Abel"), ("Freyre", "@Freire"), ("Helioflores", "@Flores"), ("Naranjo", "@Naranjo"), ("Sergio Arau", "@Sergio Arau")]):
     x = 100 + (i % 3) * 590; y = 230 + (i // 3) * 380
-    t.photo("F", x, y, 260, 320, nm, tag="RETRATO", at=a, rot=(-1) ** i * 4, bw=True)
+    sr = {"Rius": "rius", "Abel Quezada": "abel_quezada", "Sergio Arau": "sergio_arau"}.get(nm)
+    t.photo("F", x, y, 260, 320, nm, tag="RETRATO", at=a, rot=(-1) ** i * 4, bw=not sr, **({"src": f"img/st/{sr}.png", "cutout": True} if sr else {}))
     t.hand("F", x + 280, y + 140, nm, at=a, size=58, font="caveat", rot=(-1) ** i * 3)
 t.label("F", 1000, 860, "para cuestionar al **sistema**", at="@cuestionar", size=58)
 # E · revistas
@@ -171,7 +173,7 @@ t.opart("G", -120, -40, 900, 700, color="#E2231A", z=0)
 t.paper("G", 300, 60, 1600, 960, "page", rot=1, page=297)
 t.label("G", 340, 100, "mucha **experimentación gráfica**", at="@experimentación", size=62)
 t.photo("G", 360, 230, 420, 580, "Fábulas Pánicas, 1977", tag="PORTADA", at="@pánicas", rot=-4)
-t.photo("G", 820, 260, 360, 460, "Alejandro Jodorowsky", tag="RETRATO", at="@Jodorowsky", rot=3, bw=True)
+t.photo("G", 820, 230, 380, 510, "Alejandro Jodorowsky", src="img/st/jodorowsky.png", cutout=True, at="@Jodorowsky", rot=3)
 t.photo("G", 1260, 220, 420, 580, "Profesor Planeta, 1974", tag="PORTADA", at="@Profesor Planeta", rot=5)
 t.hand("G", 840, 760, "psicodelia", at="@psicodelia", size=64, rot=-4)
 t.hand("G", 1180, 830, "ciencia", at="@ciencia", size=64, rot=3)
@@ -200,7 +202,7 @@ t.hand("A", 300, 700, "a escala internacional", at="@escala", size=66, rot=-3)
 # B · 1968: sede olímpica
 t.paper("B", 80, 80, 1760, 920, "page", rot=1, page=299)
 t.year("B", 120, 140, "1968", at="@En 1968", size=270, color=ROSA)
-t.photo("B", 1060, 150, 720, 500, "Estadio Olímpico Universitario, 1968", at="@sede", rot=3, bw=True)
+t.photo("B", 1060, 150, 720, 462, "Estadio Olímpico Universitario, 1968", src="img/st/estadio_1968_a.png", cutout=True, at="@sede", rot=3)
 t.label("B", 160, 620, "sede de los **Juegos Olímpicos**", at="@Juegos Olímpicos", size=64)
 t.photo("B", 1080, 640, 330, 330, "Boleto México 68", src="img/boleto_soccer.jpg", at="@Juegos Olímpicos", rot=-5)
 # C · el equipo
@@ -208,7 +210,8 @@ t.paper("C", 40, 40, 1840, 1000, "grid", rot=-0.5)
 t.hand("C", 80, 70, "un programa de identidad monumental", at="@monumental", size=64)
 for i, (nm, sub, a) in enumerate([("Pedro Ramírez Vázquez", "arquitecto", "@Pedro"), ("Eduardo Terrazas", "arquitecto y diseñador", "@Terrazas"), ("Beatrice Trueblood", "diseño editorial", "@Beatriz"), ("Lance Wyman", "diseñador gráfico", "@Lance")]):
     x = 90 + i * 445
-    t.photo("C", x, 210, 380, 470, nm, tag="RETRATO", at=a, rot=(-1) ** i * 3, bw=True)
+    sr = {"Pedro Ramírez Vázquez": "ramirez_vazquez", "Eduardo Terrazas": "terrazas", "Lance Wyman": "lance_wyman"}.get(nm)
+    t.photo("C", x, 210, 380, 470, nm, tag="RETRATO", at=a, rot=(-1) ** i * 3, bw=not sr, **({"src": f"img/st/{sr}.png", "cutout": True} if sr else {}))
     t.hand("C", x, 700, nm.replace(" ", "\n", 1), at=a, size=54, font="caveat", rot=(-1) ** i * 2)
 t.circle("C", 1400, 180, 470, 560, at="@Lance")
 t.label("C", 300, 860, "+ decenas de **jóvenes dibujantes** · Universidad Iberoamericana", at="@jóvenes dibujantes", size=50)
@@ -219,7 +222,7 @@ t.tape("F", 400, 90, rot=6, at="@El resultado")
 t.photo("F", 1050, 140, 760, 220, "Emblema México 68", src="img/mexico68_emblema.png", fit="contain", at="@famoso logotipo", rot=2)
 t.label("F", 1060, 430, "**OP ART**", at="@Op Art", size=80, font="display")
 t.hand("F", 1460, 440, "+", at="@estambre", size=120)
-t.photo("F", 1080, 560, 560, 380, "Tabla de estambre huichol", at="@estambre", rot=4)
+t.photo("F", 1120, 520, 420, 418, "Tabla de estambre huichol", src="img/st/huichol_cuadro.png", cutout=True, at="@estambre", rot=4)
 t.label("F", 200, 880, "líneas que se expanden al **infinito**", at="@infinito", size=62)
 # E · pictogramas
 t.paper("E", 40, 60, 1840, 980, "kraft", rot=0.5)
@@ -236,7 +239,7 @@ t.hand("E", 520, 860, "¡sin necesidad de leer español!", at="@sin necesidad", 
 t.paper("D", 80, 80, 1760, 920, "page", rot=-1, page=299)
 t.label("D", 140, 120, "la **Olimpiada Cultural** llenó la ciudad", at="@Olimpiada Cultural", size=60)
 t.photo("D", 160, 260, 420, 600, "Cartel de la Olimpiada Cultural", tag="CARTEL", at="@carteles", rot=-4)
-t.photo("D", 700, 280, 360, 440, "Estampilla México 68", tag="ESTAMPILLA", at="@estampillas", rot=5)
+t.photo("D", 660, 320, 460, 292, "Estampilla México 68 · Wyman", src="img/st/estampilla_wyman.png", cutout=True, at="@estampillas", rot=5)
 t.photo("D", 1180, 300, 420, 420, "Moneda de plata de $25", tag="MONEDA", at="@moneda", rot=-3)
 t.hand("D", 1200, 760, "25 pesos · plata", at="@moneda", size=58, font="caveat")
 # H · México 70
@@ -245,7 +248,7 @@ t.paper("H", 240, 100, 1560, 900, "kraft", rot=1)
 t.year("H", 300, 160, "1970", at="@Dos años", size=260, color=NARANJA)
 t.rotulo("H", 300, 520, "MEXICO70", at="@Mundial", size=150, color=ROSA, bg="#FBF8F1")
 t.hand("H", 320, 760, "la misma lógica urbana", at="@lógica urbana", size=62, rot=-3)
-t.photo("H", 1200, 160, 460, 600, "Juanito, mascota de México 70", tag="MASCOTA", at="@Juanito", rot=4)
+t.photo("H", 1220, 140, 460, 590, "Juanito, mascota de México 70", src="img/st/juanito_cartel.png", cutout=True, at="@Juanito", rot=4)
 t.ficha("H", 1150, 760, "JUANITO", "Juan González Martínez", "1970", at="@Juan González", color=NARANJA)
 t.cam("@Pero la verdadera", "A"); t.cam("@En 1968", "B"); t.cam("@dirigido por", "C"); t.cam("@El resultado", "F")
 t.cam("@Pero lo más revolucionario", "E"); t.cam("@Además", "D"); t.cam("@Dos años", "H", 0.95)
@@ -256,14 +259,14 @@ scenes.append(dict(block="b4", start=-0.2, type="chapter", props=dict(num="03", 
 t = Tablero()
 # A · caos urbano + construcción
 t.paper("A", 80, 80, 1760, 920, "page", rot=-1, page=300)
-t.photo("A", 140, 140, 900, 600, "Obras del Metro, 1969", at="@caos urbano", rot=-2, bw=True)
+t.photo("A", 140, 140, 900, 590, "Obras del Metro en el Zócalo, 1969", src="img/st/obras_metro_zocalo.png", cutout=True, at="@caos urbano", rot=-2)
 t.label("A", 160, 790, "resolver el **caos urbano**", at="@caos urbano", size=66)
 t.year("A", 1100, 160, "1969", at="@inauguró", size=200, color=NARANJA)
 t.photo("A", 1180, 520, 360, 360, "Metro", src="img/metro_logo.png", fit="contain", at="@transporte", rot=5)
 # B · Wyman y la señalética
 t.paper("B", 60, 60, 1800, 960, "grid", rot=1)
-t.photo("B", 120, 140, 900, 620, "Inauguración del Metro, 1969", at="@transporte", rot=2, bw=True)
-t.photo("B", 1120, 120, 460, 560, "Lance Wyman", tag="RETRATO", at="@le encargó", rot=-4, bw=True)
+t.photo("B", 120, 140, 900, 580, "El Metro funcionando, septiembre de 1969", src="img/st/metro_1969_a.png", cutout=True, at="@transporte", rot=2)
+t.photo("B", 1080, 140, 600, 484, "Lance Wyman", src="img/st/lance_wyman.png", cutout=True, at="@le encargó", rot=-4)
 t.ficha("B", 1100, 700, "LANCE WYMAN", "toda la señalética del Metro", "1969", at="@Lance Wyman", color=NARANJA)
 t.hand("B", 200, 820, "toda la señalética", at="@señalética", size=70, rot=-3)
 t.arrow("B", 820, 760, 330, 150, *FLECHA_DER, at="@Lance Wyman")
@@ -278,13 +281,13 @@ t.embed("D", 110, 40, "network", at="@Gracias a esto", w=1700, props=dict(text="
 t.paper("G", 60, 60, 1820, 960, "page", rot=-1, page=301)
 t.label("G", 120, 100, "esta visión didáctica revolucionó **los museos**", at="@museos", size=58)
 t.year("G", 120, 220, "1964", at="@En septiembre", size=250, color=CIAN)
-t.photo("G", 900, 200, 860, 560, "Museo Nacional de Antropología, 1964", at="@Museo Nacional", rot=3, bw=True)
+t.photo("G", 900, 200, 820, 580, "Museo Nacional de Antropología", src="img/st/mna_1974.png", cutout=True, at="@Museo Nacional", rot=3)
 t.ficha("G", 140, 560, "PEDRO RAMÍREZ VÁZQUEZ", "coordinó el museo", "17 · IX · 1964", at="@coordinado", color=CIAN, w=700)
 t.label("G", 160, 850, "de colección fría a **espectáculo didáctico**", at="@espectáculo", size=56)
 t.arrow("G", 300, 840, 330, 60, "M0 34 C 90 20, 200 40, 320 26", at="@colección fría")
 # I · MUCA y Aristos
 t.paper("I", 60, 60, 1800, 960, "kraft", rot=1)
-t.photo("I", 120, 140, 620, 420, "MUCA · Ciudad Universitaria", at="@MUCA", rot=-3, bw=True)
+t.photo("I", 120, 140, 620, 417, "MUCA · Ciudad Universitaria", src="img/st/muca_expo.png", cutout=True, at="@MUCA", rot=-3)
 t.photo("I", 160, 600, 520, 340, "Galería Aristos", at="@Aristos", rot=4, bw=True)
 t.photo("I", 920, 100, 560, 820, "“Si los artistas nos vistieran…” MUCA, 1977", tag="CARTEL", at="@Si los artistas", rot=3)
 t.hand("I", 1500, 360, "1977", at="@Si los artistas", size=110, rot=-8)
@@ -311,17 +314,17 @@ t.ast("A", 1500, 160, at="@personalidad", color=ROSA)
 # B · logotipos
 t.paper("B", 40, 40, 1840, 1000, "page", rot=0.5, page=302)
 t.hand("B", 80, 70, "logotipos de nuestro paisaje diario", at="@De esta etapa", size=62)
-LOG = [("IMSS", "img/imss_logo.png", "@IMSS", "Jorge Canales Romo, ca. 1975"), ("SEP", None, "@emblema", "Almeida · Gleason · Valdés, 1977"), ("IPN", None, "@Politécnico", "Instituto Politécnico Nacional"),
-       ("Televisa", None, "@Televisa", "1972"), ("UAM", None, "@UAM", "1973"), ("Lotería Nacional", "img/loteria_logo.png", "@Lotería", "")]
+LOG = [("IMSS", "img/imss_logo.png", "@paisaje", "Jorge Canales Romo, ca. 1975"), ("SEP", "img/st/sep_logo.png", "@emblema", "Almeida · Gleason · Valdés, 1977"), ("IPN", "img/st/ipn_logo.png", "@Politécnico", "Instituto Politécnico Nacional"),
+       ("Televisa", None, "@Televisa", "1972"), ("UAM", "img/st/uam_logo.png", "@UAM", "1973"), ("Lotería Nacional", "img/loteria_logo.png", "@Lotería", "")]
 for i, (nm, src, a, sub) in enumerate(LOG):
     x = 100 + (i % 3) * 590; y = 200 + (i // 3) * 400
-    t.photo("B", x, y, 320, 300, nm, src=src, tag="LOGOTIPO", fit="contain", at=a, rot=(-1) ** i * 3)
+    t.photo("B", x, y, 320, 300, nm, src=src, tag="LOGOTIPO", fit="contain", at=a, rot=(-1) ** i * 3, cutout=bool(src and "/st/" in src))
     t.hand("B", x + 340, y + 90, nm + ("\n" + sub if sub else ""), at=a, size=44, font="caveat", rot=(-1) ** i * 2)
 t.circle("B", 60, 170, 420, 380, at="@Canales")
 # C · fábrica de billetes
 t.paper("C", 80, 80, 1760, 920, "kraft", rot=-1)
 t.year("C", 140, 160, "1969", at="@en 1969", size=260, color=VERDE)
-t.photo("C", 1000, 140, 760, 520, "Fábrica de Billetes del Banco de México, 1969", at="@fábrica", rot=3, bw=True)
+t.photo("C", 1000, 140, 760, 570, "Banco de México", src="img/st/banxico_edificio.png", cutout=True, at="@fábrica", rot=3)
 t.label("C", 160, 640, "hasta **nuestros bolsillos**", at="@bolsillos", size=70)
 # F · cuarta serie
 t.paper("F", 40, 40, 1840, 1000, "page", rot=0.5, page=303)
@@ -332,7 +335,7 @@ for i, (nm, a) in enumerate([("Sor Juana · $1000", "@Sor Juana"), ("Morelos · 
 t.paper("E", 160, 100, 1600, 880, "grid", rot=-1)
 t.label("E", 220, 150, "las estampillas dan crédito a sus **diseñadores**", at="@crédito oficial", size=56)
 t.photo("E", 300, 300, 400, 480, "Estampilla · Rafael Davidson", tag="ESTAMPILLA", at="@Davidson", rot=-5)
-t.photo("E", 1000, 300, 400, 480, "Estampilla · Lance Wyman", tag="ESTAMPILLA", at="@propio", rot=4)
+t.photo("E", 900, 340, 600, 381, "Estampilla · Lance Wyman", src="img/st/estampilla_wyman.png", cutout=True, at="@propio", rot=4)
 t.hand("E", 300, 820, "Rafael Davidson", at="@Davidson", size=60, font="caveat")
 t.hand("E", 1000, 820, "Lance Wyman", at="@propio", size=60, font="caveat")
 # H · conclusión
@@ -373,8 +376,20 @@ overlays = [
          ficha=dict(title="Los Supermachos, núm. 383 · Rius", sub="3 de mayo de 1973"))),
     dict(block="b2", at="@Familia Burrón", dur=3.4, props=dict(src="img/full/familia_burron.jpg", move="left",
          ficha=dict(title="La Familia Burrón · Gabriel Vargas", sub="Fachada del Museo del Estanquillo, CDMX"), nota=dict(text="¡clásico popular!", x=1180, y=120))),
-    dict(block="b3", at="@Juegos Olímpicos", dur=3.2, props=dict(src="img/full/boleto_soccer.jpg", fit="contain", move="in",
-         nota=dict(text="Estadio\nAzteca\n22·X·1968", x=1580, y=300, rot=-6), circulo=dict(x=400, y=230, w=290, h=270))),
+    dict(block="b3", at="@sede", dur=3.4, props=dict(src="img/full/estadio_1968_a.jpg", move="right",
+         ficha=dict(title="Ceremonia inaugural, 12 de octubre de 1968", sub="Estadio Olímpico Universitario"))),
+    dict(block="b3", at="@estambre", dur=2.4, props=dict(src="img/full/huichol_cuadro.jpg", fit="contain", move="in",
+         ficha=dict(title="Arte huichol (wixárika)", sub="cuadro de estambre"))),
+    dict(block="b3", at="@Juanito", dur=3.0, props=dict(src="img/full/juanito.jpg", fit="contain", move="in",
+         ficha=dict(title="Juanito, mascota de México 70", sub="Juan González Martínez"))),
+    dict(block="b4", at="@caos urbano", dur=3.0, props=dict(src="img/full/obras_metro_zocalo.jpg", move="out", bw=True,
+         ficha=dict(title="Obras del Metro en el Zócalo, 1969", sub="Archivo Histórico de la Ciudad de México"))),
+    dict(block="b4", at="@Distrito Federal", dur=3.2, props=dict(src="img/full/metro_1969_a.jpg", move="left", bw=True,
+         ficha=dict(title="El Metro funcionando, 5 de septiembre de 1969", sub="Archivo Histórico de la Ciudad de México"))),
+    dict(block="b4", at="@En septiembre", dur=3.4, props=dict(src="img/full/mna_1974.jpg", move="in",
+         ficha=dict(title="Museo Nacional de Antropología", sub="inaugurado el 17 de septiembre de 1964"))),
+    dict(block="b5", at="@fábrica", dur=3.0, props=dict(src="img/full/banxico_edificio.jpg", move="out",
+         ficha=dict(title="Banco de México", sub="en 1969 abre su propia fábrica de billetes"))),
     dict(block="b3", at="@creando líneas", until="@revolucionario", props=dict(src="img/full/cartel_mexico68.jpg", fit="contain", move="in",
          ficha=dict(title="Cartel oficial de México 68", sub="Programa de identidad · Library of Congress"))),
 ]
