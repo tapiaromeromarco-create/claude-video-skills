@@ -54,3 +54,18 @@ python3 scripts/storyboard_prompt.py "video corto sobre una ciudad futurista"
 ## Objetivo
 
 Este proyecto sirve como base para automatizar la parte creativa y operativa de producción de videos con Claude + herramientas externas.
+
+## Skills instaladas (`.claude/skills/`)
+
+Copiadas de los repos originales (licencia MIT). Claude Code las carga solas al abrir este repo.
+
+| Uso | Skill | Origen |
+|---|---|---|
+| Color grading, cortes, subtítulos | `video-use` (+ `manim-video`) | [browser-use/video-use](https://github.com/browser-use/video-use) |
+| Subtítulos animados, efectos de sonido, render | `remotion-*` | [remotion-dev/skills](https://github.com/remotion-dev/skills) |
+| Motion graphics / explainers | `video-toolkit` | [digitalsamba/claude-code-video-toolkit](https://github.com/digitalsamba/claude-code-video-toolkit) |
+
+Requisitos extra:
+- `video-use`: `pip install requests librosa matplotlib pillow numpy`, `ffmpeg`, y una API key de ElevenLabs en `.claude/skills/video-use/.env` para transcribir.
+- `video-toolkit`: necesita el repo completo clonado en `~/claude-code-video-toolkit` (o `$VIDEO_TOOLKIT_ROOT`) y `uv`.
+- `remotion-*`: Node.js 18+.

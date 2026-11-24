@@ -1,0 +1,90 @@
+#! Lista de activos por bloque para commons_download.py
+#! Títulos exactos ("File:...") o búsquedas ("q: consulta :: N" = primeros N resultados)
+## Bloque_1_Intro
+File:1968 Mexico emblem.svg
+File:Metro de la Ciudad de México logo.svg
+File:IMSS logo.svg
+File:Logo de la Loteria Nacional.svg
+q: TOMAS AEREAS DE LA CIUDAD 1962 :: 4
+q: vista aérea Paseo de la Reforma 1960s :: 3
+q: Torre Latinoamericana 1960s :: 2
+q: Ciudad de México 1968 calle :: 3
+## Bloque_2_Moneros
+File:Eduardo del Río (Rius).jpg
+File:MX GR HOMENAJE A RIUS (37794317696).jpg
+File:Abel Quezada.tif
+File:GabrielVargasEstanquillo.JPG
+File:Borola.jpg
+File:BoletoMetroCDMXfamiliaBurron.png
+File:Director Película "Un día sin mexicanos" Sergio Arau.jpg
+File:El Fisgon (Rafael Barajas Duran).jpg
+q: Alejandro Jodorowsky :: 3
+q: Colección del Museo de la Caricatura :: 6
+q: Museo de la Caricatura Ciudad de México :: 3
+q: historieta mexicana revista 1970 portada :: 4
+q: Los Supermachos Rius :: 3
+q: Los Agachados Rius :: 2
+q: kiosco revistas Ciudad de México :: 2
+## Bloque_3_Olimpiadas
+File:Arq. Ramírez Vázquez.jpg
+File:010884-R242-037 EL ARQUITECTO RÁMIREZ VÁZQUEZ VISITA TEPITO MAYO 1966 (31751733941).jpg
+File:Lance Wyman.png
+File:Hans Ulrich Obrist and Eduardo Terrazas.jpg
+File:Exposição Design & Utopia dos Jogos (28262053873).jpg
+q: Estadio Olímpico Universitario olimpia megnyitóünnepsége :: 3
+q: Opening Ceremony Mexico University Stadium :: 6
+q: 1968 Summer Olympics Mexico City :: 6
+q: Olimpiada 1968 México Fototeca :: 4
+File:Pictograma Boxeo México 68 - 33 (cropped).jpg
+File:Wrestling pictogram México 68 - 28 (cropped).jpg
+File:Mexico 1968 Olympic pictogram for Gymnastics (cropped).jpg
+File:50 años de México 68 - 28.jpg
+q: 50 años de México 68 :: 8
+q: México 68 cartel Olimpiada Cultural :: 4
+q: Huichol yarn painting :: 3
+q: Op art 1960s :: 2
+File:1968 Mexico Olympics, 5rp (1968).jpg
+File:1968 Mexico Olympics, 7.5rp (1968).jpg
+File:Mexico Stamp Olympiade 1968 Field Hockey.jpg
+q: estampilla México 1968 juegos olímpicos :: 4
+q: moneda 25 pesos 1968 plata :: 3
+File:1970 FIFA World Cup.svg
+File:Juanito Mexico 70.JPG
+File:Juanito mexico70.jpg
+q: Mexico 1970 World Cup Estadio Azteca 1970 :: 3
+q: Copa Mundial 1970 México cartel :: 3
+## Bloque_4_Metro_Museos
+q: FUNCIONANDO EL STC METRO SEPTIEMBRE 05 1969 :: 10
+q: TRABAJOS DEL METRO 1969 :: 6
+q: INAUGURACION DEL METRO 1969 :: 4
+q: ESTUDIANTES DE LA ESIA EN EL METRO :: 2
+q: Metro Mexico City 1970s train :: 3
+q: Metro de la Ciudad de México NM-73 :: 2
+q: Metro de la Ciudad de México tren MP-68 :: 2
+File:METRO CDMX INSURGENTE.jpg
+File:Logo STC METRO.svg
+q: Metro Chapultepec 02 :: 2
+q: Entrance to Metro Merced :: 1
+q: Mexico City Metro map 1970 :: 2
+q: MUSEO NACIONAL DE ANTROPOLOGIA 1964 :: 4
+q: Museo Nacional de Antropología paraguas Chávez Morado :: 3
+q: Museo Nacional de Antropología patio :: 3
+File:Museo Nacional de Antropología - Sala 6 - Mexicas.jpg
+File:Piedra del Sol - Sala Mexica del Museo Nacional de Antropología.jpg
+File:Pedro Ramírez Vázquez plaque (National Anthropology Museum - Facade).jpg
+q: Tláloc Museo Nacional de Antropología monolito Reforma :: 4
+q: traslado Tláloc Coatlinchán 1964 :: 3
+q: Museo Universitario de Ciencias y Arte UNAM :: 3
+q: Ciudad Universitaria UNAM 1960s :: 3
+## Bloque_5_Identidad_Billetes
+File:IMSS (Social Security) Logo - Siglo XXI Medical Center - Mexico City.jpg
+File:SEP logo.svg
+q: Logo del Instituto Politécnico Nacional :: 2
+q: logotipo UAM Universidad Autónoma Metropolitana :: 2
+q: Secretaría de Educación Pública edificio Centro Histórico :: 2
+q: Instituto Politécnico Nacional Zacatenco :: 2
+q: Centro Médico Siglo XXI IMSS :: 2
+q: Banco de México edificio :: 2
+q: billete mexicano Banco de México serie 1970s :: 6
+q: estampilla México 1970s Correos :: 4
+q: Lance Wyman stamp Mexico :: 2

@@ -1,0 +1,62 @@
+#! Solo los activos que usa video/storyboard_src.json (huecos con fuente libre en Commons).
+#! La lista completa de candidatos sigue en assets_spec.txt.
+#! Sin fuente libre (portadas con derechos, billetes Banxico, Televisa, Galería Aristos, cartel MUCA): ver PENDIENTES_ASSETS.md
+## Bloque_1_Intro
+#! Logos (ya descargados)
+File:1968 Mexico emblem.svg
+File:Metro de la Ciudad de México logo.svg
+File:IMSS logo.svg
+File:Logo de la Loteria Nacional.svg
+#! Vista aérea de la CDMX, años 60
+q: TOMAS AEREAS DE LA CIUDAD 1962 :: 2
+## Bloque_2_Moneros
+#! Gabriel Vargas / La Familia Burrón
+File:GabrielVargasEstanquillo.JPG
+File:Borola.jpg
+File:BoletoMetroCDMXfamiliaBurron.png
+#! Alejandro Jodorowsky
+q: Alejandro Jodorowsky :: 1
+#! Moneros: Rius, Abel Quezada, Sergio Arau
+File:Eduardo del Río (Rius).jpg
+File:Abel Quezada.tif
+File:Director Película "Un día sin mexicanos" Sergio Arau.jpg
+## Bloque_3_Olimpiadas
+#! Estadio Olímpico Universitario, 1968
+q: Opening Ceremony Mexico University Stadium :: 2
+#! Cartel de la Olimpiada Cultural
+q: México 68 cartel Olimpiada Cultural :: 2
+#! Estampilla México 68
+File:1968 Mexico Olympics, 5rp (1968).jpg
+File:Mexico Stamp Olympiade 1968 Field Hockey.jpg
+#! Moneda $25 plata
+q: moneda 25 pesos 1968 plata :: 2
+#! Juanito, mascota México 70
+File:Juanito Mexico 70.JPG
+File:Juanito mexico70.jpg
+#! Autores del cartel y del diseño de México 68
+File:Arq. Ramírez Vázquez.jpg
+File:Hans Ulrich Obrist and Eduardo Terrazas.jpg
+#! Arte huichol
+q: Huichol yarn painting :: 2
+## Bloque_4_Metro_Museos
+#! Inauguración del Metro, 1969
+q: INAUGURACION DEL METRO 1969 :: 2
+#! Lance Wyman
+File:Lance Wyman.png
+#! Andén y tren naranja
+q: Metro de la Ciudad de México tren MP-68 :: 2
+#! Museo Nacional de Antropología, 1964
+q: MUSEO NACIONAL DE ANTROPOLOGIA 1964 :: 2
+#! MUCA · Ciudad Universitaria
+q: Museo Universitario de Ciencias y Arte UNAM :: 1
+#! Obras del Metro, 1969
+q: TRABAJOS DEL METRO 1969 :: 2
+## Bloque_5_Identidad_Billetes
+#! Logos SEP, IPN, UAM
+File:SEP logo.svg
+q: Logo del Instituto Politécnico Nacional :: 1
+q: logotipo UAM Universidad Autónoma Metropolitana :: 1
+#! Banco de México (en lugar de la Fábrica de Billetes 1969)
+q: Banco de México edificio :: 1
+#! Estampillas con crédito de Lance Wyman / Rafael Davidson
+q: Lance Wyman stamp Mexico :: 2
