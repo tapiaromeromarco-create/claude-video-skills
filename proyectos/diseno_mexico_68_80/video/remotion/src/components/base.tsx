@@ -68,10 +68,9 @@ export const roughPolygon = (seed: string, jag = 1.2, n = 9) => {
 /* ---------- Entrada stop-motion: aparece "a saltos" a 12 fps ---------- */
 export const usePop = (startFrame: number, seed: string, dur = 8) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
 	const f = frame - startFrame;
 	const p = interpolate(f, [0, dur + 6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.3))});
-	const jitter = (random(`${seed}-${Math.floor(step12(frame, fps) / 6)}`) - 0.5) * 0.6; // leve vibración de recorte a 12 fps
+	const jitter = 0; // sin vibración stop-motion: movimiento continuo
 	return {p, visible: f >= 0, jitter};
 };
 
@@ -214,8 +213,7 @@ export const HandArrow: React.FC<{startFrame: number; d: string; color?: string;
 	style,
 }) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-	const prog = interpolate(step12(frame, fps) - startFrame, [0, 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const prog = interpolate(frame - startFrame, [0, 14], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
 	return (
 		<svg width={width} height={height} style={{position: 'absolute', overflow: 'visible', ...style}}>
 			<path d={d} fill="none" stroke={color} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - prog} />

@@ -46,9 +46,9 @@ const useCam = (t0: number, cams: Cam[], golpes: Golpe[] = []) => {
 	let x = cur.x, y = cur.y, z = cur.z;
 	for (let i = 1; i < cs.length; i++) {
 		const c = cs[i];
-		const dur = c.dur ?? Math.min(1.3, Math.max(0.75, 0.6 + Math.hypot(c.x - cur.x, c.y - cur.y) / 3500));
+		const dur = c.dur ?? Math.min(1.9, Math.max(1.1, 0.9 + Math.hypot(c.x - cur.x, c.y - cur.y) / 3000));
 		if (t >= c.at) {
-			const p = interpolate(t, [c.at, c.at + dur], [0, 1], {...clamp, easing: Easing.bezier(0.8, 0, 0.2, 1)});
+			const p = interpolate(t, [c.at, c.at + dur], [0, 1], {...clamp, easing: Easing.bezier(0.45, 0.05, 0.25, 1)});
 			x = cur.x + (c.x - cur.x) * p;
 			y = cur.y + (c.y - cur.y) * p;
 			// la cámara se aleja un poco a mitad del viaje (sensación de recorrido)
@@ -66,9 +66,9 @@ const useCam = (t0: number, cams: Cam[], golpes: Golpe[] = []) => {
 	let shx = 0, shy = 0;
 	for (const g of golpes) {
 		const dt = t - g.at;
-		if (dt < 0 || dt > 0.8) continue;
-		z *= 1 + g.fuerza * Math.exp(-dt * 7) * Math.min(1, dt * 30);
-		if (g.sacude && dt < 0.25) {
+		if (dt < 0 || dt > 1.0) continue;
+		z *= 1 + g.fuerza * Math.sin(Math.PI * (dt / 1.0)) ** 2; // empujón suave en campana (entra y sale en curva)
+		if (false && g.sacude && dt < 0.25) {
 			const k = (1 - dt / 0.25) * 9;
 			shx += Math.sin(dt * 140) * k;
 			shy += Math.cos(dt * 120) * k * 0.7;
@@ -79,9 +79,9 @@ const useCam = (t0: number, cams: Cam[], golpes: Golpe[] = []) => {
 	let vx = 0;
 	for (let i = 1; i < cs.length; i++) {
 		const c = cs[i], prev = cs[i - 1];
-		const dur = c.dur ?? Math.min(1.3, Math.max(0.75, 0.6 + Math.hypot(c.x - prev.x, c.y - prev.y) / 3500));
+		const dur = c.dur ?? Math.min(1.9, Math.max(1.1, 0.9 + Math.hypot(c.x - prev.x, c.y - prev.y) / 3000));
 		if (t >= c.at && t <= c.at + dur) {
-			const e = (tt: number) => Easing.bezier(0.8, 0, 0.2, 1)(Math.max(0, Math.min(1, (tt - c.at) / dur)));
+			const e = (tt: number) => Easing.bezier(0.45, 0.05, 0.25, 1)(Math.max(0, Math.min(1, (tt - c.at) / dur)));
 			vx = Math.hypot(c.x - prev.x, c.y - prev.y) * (e(t) - e(tp));
 		}
 	}
@@ -508,9 +508,9 @@ export const EtiquetaCapitulo: React.FC<{era: string; title: string; t0: number;
 export const BoardScene: React.FC<{t0: number; items: BoardItem[]; cams: Cam[]; era?: string; title?: string; barAt?: number}> = ({t0, items, cams, era, title, barAt}) => {
 	const golpes: Golpe[] = items
 		.filter((it) => it.at != null && ['photo', 'year', 'rotulo', 'label', 'pictos'].includes(it.type))
-		.map((it) => ({at: it.at as number, fuerza: it.type === 'year' || it.type === 'rotulo' ? 0.035 : 0.018, sacude: it.type === 'year' || it.type === 'rotulo'}));
+		.map((it) => ({at: it.at as number, fuerza: it.type === 'year' || it.type === 'rotulo' ? 0.025 : 0.012, sacude: false}));
 	const cam = useCam(t0, cams, golpes);
-	const blur = Math.min(5, cam.v * 0.045);
+	const blur = Math.min(3, cam.v * 0.035);
 	const tx = 960 - cam.x * cam.z;
 	const ty = 540 - cam.y * cam.z;
 	return (

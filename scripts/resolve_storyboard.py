@@ -105,10 +105,10 @@ for sc in scenes:
             if t > t_next - 3.0: break
             h = it.get("h", 300) if it["type"] != "year" else it.get("size", 300)
             z = max(1.2, min(1.5, 0.6 * 1080 / max(h, 200)))  # deja margen para nombres y notas
-            extra.append(dict(at=round(t, 3), x=it["x"] + it.get("w", 400) / 2, y=it["y"] + h / 2, z=round(z, 2), dur=1.4, kind="zoom"))
-            vuelta = t + 2.6
+            extra.append(dict(at=round(t, 3), x=it["x"] + it.get("w", 400) / 2, y=it["y"] + h / 2, z=round(z, 2), dur=1.9, kind="zoom"))
+            vuelta = t + 3.0
             if vuelta < t_next - 1.6:
-                extra.append(dict(at=round(vuelta, 3), x=c["x"], y=c["y"], z=c["z"], dur=1.3, kind="zoom"))
+                extra.append(dict(at=round(vuelta, 3), x=c["x"], y=c["y"], z=c["z"], dur=1.8, kind="zoom"))
             t = vuelta + 1.5; usados += 1
     sc["props"]["cams"] = sorted(cams + extra, key=lambda c: c["at"])
 

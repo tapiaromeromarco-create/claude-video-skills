@@ -134,9 +134,9 @@ export const Golpe: React.FC<{text: string; color?: string; fondo?: string; font
 	const f = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const dur = Math.max(10, Math.round((t1 - t0) * fps));
-	const s = interpolate(f, [0, 6], [2.6, 1], {...clamp, easing: Easing.out(Easing.cubic)});
-	const out = interpolate(f, [dur - 6, dur], [1, 0], clamp);
-	const sh = f >= 6 && f < 14 ? Math.sin(f * 2.2) * (14 - f) * 1.4 : 0;
+	const s = interpolate(f, [0, 12], [1.7, 1], {...clamp, easing: Easing.out(Easing.back(1.3))});
+	const out = interpolate(f, [0, 5, dur - 8, dur], [0, 1, 1, 0], clamp);
+	const sh = 0; // sin temblor: movimiento limpio
 	const ff = font === 'op' ? 'Monoton' : font === 'comic' ? 'Bangers' : 'Archivo Black';
 	return (
 		<AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 70, pointerEvents: 'none'}}>
