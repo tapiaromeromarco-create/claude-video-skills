@@ -1,5 +1,5 @@
 {
- "duration": 413.268,
+ "duration": 391.871,
  "blocks": [
   {
    "id": "b1",
@@ -11,124 +11,124 @@
      "file": "marco_intro",
      "speaker": "marco",
      "start": 0.8,
-     "dur": 43.748
+     "dur": 38.939
     }
    ],
-   "end": 45.448
+   "end": 40.639
   },
   {
    "id": "b2",
    "title": "La historieta crítica y los moneros",
    "years": "1970–1980",
-   "start": 45.448,
+   "start": 40.639,
    "segments": [
     {
      "file": "lucas_primer",
      "speaker": "lucas",
-     "start": 47.648,
+     "start": 42.839,
      "dur": 20.111
     },
     {
      "file": "lucas_segundo",
      "speaker": "lucas",
-     "start": 68.209,
+     "start": 63.4,
      "dur": 28.687
     },
     {
      "file": "lucas_tercer",
      "speaker": "lucas",
-     "start": 97.346,
+     "start": 92.537,
      "dur": 26.891
     }
    ],
-   "end": 125.138
+   "end": 120.328
   },
   {
    "id": "b3",
    "title": "Sistemas de identidad: México 68 y México 70",
    "years": "1968–1970",
-   "start": 125.138,
+   "start": 120.328,
    "segments": [
     {
      "file": "marco_mexico68",
      "speaker": "marco",
-     "start": 127.338,
-     "dur": 32.45
+     "start": 122.528,
+     "dur": 24.995
     },
     {
      "file": "lucas_cuarto",
      "speaker": "lucas",
-     "start": 160.488,
+     "start": 148.223,
      "dur": 39.531
     },
     {
      "file": "lucas_quinto",
      "speaker": "lucas",
-     "start": 200.469,
+     "start": 188.205,
      "dur": 21.787
     }
    ],
-   "end": 223.157
+   "end": 210.892
   },
   {
    "id": "b4",
    "title": "El Metro de la CDMX y la nueva museografía",
    "years": "1964–1977",
-   "start": 223.157,
+   "start": 210.892,
    "segments": [
     {
      "file": "clau_titulo",
      "speaker": "clau",
-     "start": 223.157,
+     "start": 210.892,
      "dur": 2.961
     },
     {
      "file": "clau_primer",
      "speaker": "clau",
-     "start": 226.568,
+     "start": 214.303,
      "dur": 26.48
     },
     {
      "file": "clau_segundo",
      "speaker": "clau",
-     "start": 253.498,
+     "start": 241.233,
      "dur": 18.238
     },
     {
      "file": "clau_tercer",
      "speaker": "clau",
-     "start": 272.186,
+     "start": 259.922,
      "dur": 34.026
     }
    ],
-   "end": 307.113
+   "end": 294.848
   },
   {
    "id": "b5",
    "title": "Identidad corporativa, billetes y cierre",
    "years": "1969–1980",
-   "start": 307.113,
+   "start": 294.848,
    "segments": [
     {
      "file": "marco_identidad",
      "speaker": "marco",
-     "start": 309.313,
-     "dur": 17.45
+     "start": 297.048,
+     "dur": 13.11
     },
     {
      "file": "clau_cuarto",
      "speaker": "clau",
-     "start": 327.463,
+     "start": 310.858,
      "dur": 53.574
     },
     {
      "file": "marco_cierre",
      "speaker": "marco",
-     "start": 381.736,
-     "dur": 29.132
+     "start": 365.132,
+     "dur": 24.34
     }
    ],
-   "end": 411.768
+   "end": 390.371
   }
  ]
 }

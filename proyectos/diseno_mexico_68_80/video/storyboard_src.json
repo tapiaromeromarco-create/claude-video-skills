@@ -116,7 +116,7 @@
       "y": 270,
       "label": "México 68",
       "src": "img/st/mexico68_emblema.png",
-      "at": "@Entre el final",
+      "at": "@Entre finales",
       "fit": "contain"
      },
      {
@@ -289,7 +289,7 @@
       "z": 9,
       "x": 5120,
       "y": 980,
-      "at": "@enteras"
+      "at": "@criticar"
      },
      {
       "type": "arrow",
@@ -300,7 +300,7 @@
       "x": 5020,
       "y": 800,
       "head": "M290 60 L332 92 L285 110",
-      "at": "@enteras"
+      "at": "@criticar"
      },
      {
       "type": "photo",
@@ -443,7 +443,7 @@
       "z": 9,
       "x": 2080,
       "y": 2490,
-      "at": "@Vamos a ver"
+      "at": "@se verá"
      },
      {
       "type": "photo",
@@ -499,7 +499,7 @@
       "y": 2650,
       "label": "Metro",
       "src": "img/st/metro_logo.png",
-      "at": "@olímpicos",
+      "at": "@el metro",
       "fit": "contain"
      },
      {
@@ -514,7 +514,7 @@
       "y": 2660,
       "label": "Museo Nacional de Antropología",
       "src": "img/st/mna_1974.png",
-      "at": "@y los billetes"
+      "at": "@los museos"
      },
      {
       "type": "photo",
@@ -571,7 +571,7 @@
       "z": 9,
       "x": 3190,
       "y": 3100,
-      "at": "@olímpicos",
+      "at": "@el metro",
       "font": "caveat"
      },
      {
@@ -582,7 +582,7 @@
       "z": 9,
       "x": 3540,
       "y": 2960,
-      "at": "@y los billetes",
+      "at": "@los museos",
       "font": "caveat"
      }
     ],
@@ -594,7 +594,7 @@
       "z": 1.0
      },
      {
-      "at": "@Entre el final",
+      "at": "@Entre finales",
       "x": 3000,
       "y": 680,
       "z": 1.0
@@ -618,7 +618,7 @@
       "z": 0.95
      },
      {
-      "at": "@Vamos a ver",
+      "at": "@se verá",
       "x": 3000,
       "y": 2980,
       "z": 0.92
@@ -991,11 +991,12 @@
       "h": 320,
       "rot": 4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 5320,
       "y": 1480,
       "label": "Freyre",
+      "src": "img/st/freyre.png",
       "at": "@Freire",
       "tag": "RETRATO"
      },
@@ -1042,11 +1043,12 @@
       "h": 320,
       "rot": 4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4730,
       "y": 1860,
       "label": "Naranjo",
+      "src": "img/st/naranjo.png",
       "at": "@Naranjo",
       "tag": "RETRATO"
      },
@@ -1114,26 +1116,23 @@
       "rot": 5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 2160,
       "y": 1420,
       "label": "La Garrapata",
+      "src": "img/st/garrapata.png",
       "at": "@Garrapata",
       "tag": "PORTADA"
      },
      {
-      "type": "photo",
-      "w": 380,
-      "h": 520,
-      "rot": -5,
-      "z": 3,
-      "bw": false,
-      "cutout": false,
+      "type": "hand",
+      "text": "El\nMitote Ilustrado",
+      "size": 78,
+      "rot": -6,
+      "z": 9,
       "x": 2590,
-      "y": 1480,
-      "label": "El Mitote Ilustrado",
-      "at": "@Mitote",
-      "tag": "PORTADA"
+      "y": 1580,
+      "at": "@Mitote"
      },
      {
       "type": "photo",
@@ -1142,10 +1141,11 @@
       "rot": 5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3020,
       "y": 1420,
       "label": "Quecosaedro",
+      "src": "img/st/quecosaedro.png",
       "at": "@Que Cosa",
       "tag": "PORTADA"
      },
@@ -1156,10 +1156,11 @@
       "rot": -5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3450,
       "y": 1480,
       "label": "SNIF",
+      "src": "img/st/snif.png",
       "at": "@SNIF",
       "tag": "PORTADA"
      },
@@ -1250,16 +1251,16 @@
      {
       "type": "photo",
       "w": 420,
-      "h": 580,
+      "h": 564,
       "rot": -4,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 400,
       "y": 2630,
-      "label": "Fábulas Pánicas, 1977",
-      "at": "@pánicas",
-      "tag": "PORTADA"
+      "label": "Fábulas Pánicas (página), Alejandro Jodorowsky",
+      "src": "img/st/fabulas_panicas.png",
+      "at": "@pánicas"
      },
      {
       "type": "photo",
@@ -1278,16 +1279,16 @@
      {
       "type": "photo",
       "w": 420,
-      "h": 580,
+      "h": 555,
       "rot": 5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 1300,
       "y": 2620,
       "label": "Profesor Planeta, 1974",
-      "at": "@Profesor Planeta",
-      "tag": "PORTADA"
+      "src": "img/st/profesor_planeta.png",
+      "at": "@Profesor Planeta"
      },
      {
       "type": "hand",
@@ -1609,7 +1610,7 @@
       "y": 310,
       "label": "Pedro Ramírez Vázquez",
       "src": "img/st/ramirez_vazquez.png",
-      "at": "@Pedro",
+      "at": "@Ramírez Vázquez",
       "tag": "RETRATO"
      },
      {
@@ -1620,7 +1621,7 @@
       "z": 9,
       "x": 4130,
       "y": 800,
-      "at": "@Pedro",
+      "at": "@Ramírez Vázquez",
       "font": "caveat"
      },
      {
@@ -1661,7 +1662,7 @@
       "y": 310,
       "label": "Beatrice Trueblood",
       "src": "img/st/trueblood.png",
-      "at": "@Beatriz",
+      "at": "@Trublo",
       "tag": "RETRATO"
      },
      {
@@ -1672,7 +1673,7 @@
       "z": 9,
       "x": 5020,
       "y": 800,
-      "at": "@Beatriz",
+      "at": "@Trublo",
       "font": "caveat"
      },
      {
@@ -1959,17 +1960,17 @@
      },
      {
       "type": "photo",
-      "w": 420,
-      "h": 600,
+      "w": 520,
+      "h": 515,
       "rot": -4,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 200,
-      "y": 1510,
-      "label": "Cartel de la Olimpiada Cultural",
-      "at": "@carteles",
-      "tag": "CARTEL"
+      "cutout": true,
+      "x": 180,
+      "y": 1500,
+      "label": "Programa Cultural de la XIX Olimpiada (Guanajuato)",
+      "src": "img/st/cartel_olimpiada_cultural_guanajuato.png",
+      "at": "@carteles"
      },
      {
       "type": "photo",
@@ -2274,7 +2275,7 @@
       "z": 9,
       "x": 2240,
       "y": 920,
-      "at": "@señalética"
+      "at": "@señal ética"
      },
      {
       "type": "arrow",
@@ -2459,7 +2460,7 @@
       "scene": "museografia",
       "w": 700,
       "z": 3,
-      "x": 4160,
+      "x": 4140,
       "y": 2990,
       "at": "@Aristos",
       "props": {
@@ -2471,16 +2472,16 @@
       "type": "embed",
       "scene": "cartelVestir",
       "w": 520,
-      "sceneW": 1000,
-      "sceneH": 1464,
       "z": 3,
-      "x": 4960,
+      "x": 4900,
       "y": 2500,
-      "rot": 3,
       "at": "@Si los artistas",
       "props": {
        "year": "1977"
-      }
+      },
+      "rot": 3,
+      "sceneW": 1000,
+      "sceneH": 1464
      },
      {
       "type": "hand",
@@ -2752,17 +2753,18 @@
       "rot": -3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 2730,
       "y": 300,
-      "label": "SEP · logotipo de 1977",
+      "label": "SEP",
+      "src": "img/st/sep_logo.png",
       "at": "@emblema",
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
      {
       "type": "hand",
-      "text": "SEP · logotipo de 1977\nAlmeida · Gleason · Valdés, 1977",
+      "text": "SEP\nAlmeida · Gleason · Valdés, 1977",
       "size": 44,
       "rot": -2,
       "z": 9,
@@ -2778,10 +2780,11 @@
       "rot": 3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3320,
       "y": 300,
       "label": "IPN",
+      "src": "img/st/ipn_logo.png",
       "at": "@Politécnico",
       "tag": "LOGOTIPO",
       "fit": "contain"
@@ -2858,10 +2861,11 @@
       "rot": -3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3320,
       "y": 700,
       "label": "Lotería Nacional",
+      "src": "img/st/loteria_logo.png",
       "at": "@Lotería",
       "tag": "LOGOTIPO",
       "fit": "contain"
@@ -3029,18 +3033,13 @@
       "at": "@crédito oficial"
      },
      {
-      "type": "photo",
-      "w": 400,
-      "h": 480,
-      "rot": -5,
-      "z": 3,
-      "bw": false,
-      "cutout": false,
-      "x": 2340,
-      "y": 1550,
-      "label": "Estampilla · Rafael Davidson",
-      "at": "@Davidson",
-      "tag": "ESTAMPILLA"
+      "type": "circle",
+      "w": 520,
+      "h": 200,
+      "z": 9,
+      "x": 2300,
+      "y": 1810,
+      "at": "@Davidson"
      },
      {
       "type": "photo",
@@ -3354,7 +3353,7 @@
   {
    "block": "b3",
    "at": "@estambre",
-   "dur": 2.4,
+   "dur": 1.8,
    "props": {
     "src": "img/full/huichol_cuadro.jpg",
     "fit": "contain",

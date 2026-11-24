@@ -1,5 +1,5 @@
 {
- "duration": 413.268,
+ "duration": 391.871,
  "scenes": [
   {
    "block": "b1",
@@ -53,7 +53,7 @@
       "z": 5,
       "x": 360,
       "y": 360,
-      "at": 0.76,
+      "at": 0.68,
       "color": "#1A1714"
      },
      {
@@ -64,7 +64,7 @@
       "z": 7,
       "x": 370,
       "y": 800,
-      "at": 3.8,
+      "at": 3.34,
       "font": "display"
      },
      {
@@ -75,7 +75,7 @@
       "z": 9,
       "x": 1220,
       "y": 330,
-      "at": 2.72
+      "at": 2.4
      },
      {
       "type": "asterisk",
@@ -83,7 +83,7 @@
       "z": 9,
       "x": 1500,
       "y": 920,
-      "at": 3.8
+      "at": 3.34
      },
      {
       "type": "tag",
@@ -116,7 +116,7 @@
       "y": 270,
       "label": "México 68",
       "src": "img/st/mexico68_emblema.png",
-      "at": 5.48,
+      "at": 4.56,
       "fit": "contain"
      },
      {
@@ -131,7 +131,7 @@
       "y": 250,
       "label": "Metro",
       "src": "img/st/metro_logo.png",
-      "at": 6.2,
+      "at": 5.26,
       "fit": "contain"
      },
      {
@@ -146,7 +146,7 @@
       "y": 660,
       "label": "IMSS",
       "src": "img/st/imss_logo.png",
-      "at": 7.92,
+      "at": 6.94,
       "fit": "contain"
      },
      {
@@ -161,7 +161,7 @@
       "y": 660,
       "label": "Televisa, 1973",
       "src": "img/st/televisa.png",
-      "at": 8.98
+      "at": 7.6
      },
      {
       "type": "photo",
@@ -175,7 +175,7 @@
       "y": 480,
       "label": "Vista aérea de la Ciudad de México, 1962",
       "src": "img/st/aerea_cdmx_1962.png",
-      "at": 10.44
+      "at": 8.56
      },
      {
       "type": "tape",
@@ -185,7 +185,7 @@
       "z": 8,
       "x": 2900,
       "y": 460,
-      "at": 10.44
+      "at": 8.56
      },
      {
       "type": "hand",
@@ -195,7 +195,7 @@
       "z": 9,
       "x": 2800,
       "y": 960,
-      "at": 12.94
+      "at": 10.62
      },
      {
       "type": "circle",
@@ -204,7 +204,7 @@
       "z": 9,
       "x": 2740,
       "y": 930,
-      "at": 12.94
+      "at": 10.62
      },
      {
       "type": "paper",
@@ -224,7 +224,7 @@
       "z": 7,
       "x": 4180,
       "y": 330,
-      "at": 14.42
+      "at": 11.66
      },
      {
       "type": "arrow",
@@ -234,7 +234,7 @@
       "z": 9,
       "x": 4170,
       "y": 350,
-      "at": 15.76
+      "at": 12.76
      },
      {
       "type": "hand",
@@ -244,7 +244,7 @@
       "z": 9,
       "x": 4340,
       "y": 460,
-      "at": 16.72
+      "at": 13.78
      },
      {
       "type": "label",
@@ -254,7 +254,7 @@
       "z": 7,
       "x": 4180,
       "y": 620,
-      "at": 18.46,
+      "at": 14.98,
       "font": "display"
      },
      {
@@ -269,7 +269,7 @@
       "y": 190,
       "label": "Libertad de expresión, 1968",
       "src": "img/st/cartel_libertad_expresion.png",
-      "at": 19.56
+      "at": 16.18
      },
      {
       "type": "tape",
@@ -279,7 +279,7 @@
       "z": 8,
       "x": 5340,
       "y": 170,
-      "at": 19.56
+      "at": 16.18
      },
      {
       "type": "hand",
@@ -289,7 +289,7 @@
       "z": 9,
       "x": 5120,
       "y": 980,
-      "at": 22.2
+      "at": 18.58
      },
      {
       "type": "arrow",
@@ -300,7 +300,7 @@
       "x": 5020,
       "y": 800,
       "head": "M290 60 L332 92 L285 110",
-      "at": 22.2
+      "at": 18.58
      },
      {
       "type": "photo",
@@ -314,7 +314,7 @@
       "y": 1370,
       "label": "Metro de la Ciudad de México, 1969",
       "src": "img/st/metro_1969_b.png",
-      "at": 20.72
+      "at": 16.88
      },
      {
       "type": "label",
@@ -324,7 +324,7 @@
       "z": 7,
       "x": 4220,
       "y": 2010,
-      "at": 20.72
+      "at": 16.88
      },
      {
       "type": "photo",
@@ -338,7 +338,7 @@
       "y": 1450,
       "label": "IMSS",
       "src": "img/st/imss_logo.png",
-      "at": 22.8,
+      "at": 19.7,
       "fit": "contain"
      },
      {
@@ -349,7 +349,7 @@
       "z": 7,
       "x": 5120,
       "y": 2010,
-      "at": 22.8
+      "at": 19.7
      },
      {
       "type": "asterisk",
@@ -357,7 +357,7 @@
       "z": 9,
       "x": 5140,
       "y": 1370,
-      "at": 22.8,
+      "at": 19.7,
       "color": "#E4007C"
      },
      {
@@ -389,7 +389,7 @@
       "z": 5,
       "x": 2370,
       "y": 1470,
-      "at": 25.68,
+      "at": 21.88,
       "color": "#1A1714"
      },
      {
@@ -400,7 +400,7 @@
       "z": 7,
       "x": 2380,
       "y": 1940,
-      "at": 25.68,
+      "at": 21.88,
       "bg": false
      },
      {
@@ -411,7 +411,7 @@
       "z": 5,
       "x": 3220,
       "y": 2040,
-      "at": 27.12,
+      "at": 22.82,
       "color": "#E4007C"
      },
      {
@@ -422,7 +422,7 @@
       "z": 9,
       "x": 3290,
       "y": 1510,
-      "at": 27.12,
+      "at": 22.82,
       "font": "caveat"
      },
      {
@@ -443,7 +443,7 @@
       "z": 9,
       "x": 2080,
       "y": 2490,
-      "at": 32.48
+      "at": 27.04
      },
      {
       "type": "photo",
@@ -457,7 +457,7 @@
       "y": 2660,
       "label": "Cómics",
       "src": "img/st/portada_supermachos.png",
-      "at": 36.26
+      "at": 30.08
      },
      {
       "type": "photo",
@@ -471,7 +471,7 @@
       "y": 2640,
       "label": "Carteles",
       "src": "img/st/cartel_mexico68_opart.png",
-      "at": 38.64
+      "at": 32.3
      },
      {
       "type": "photo",
@@ -485,7 +485,7 @@
       "y": 2670,
       "label": "Juegos Olímpicos",
       "src": "img/st/boleto_soccer.png",
-      "at": 40.94
+      "at": 34.34
      },
      {
       "type": "photo",
@@ -499,7 +499,7 @@
       "y": 2650,
       "label": "Metro",
       "src": "img/st/metro_logo.png",
-      "at": 40.94,
+      "at": 35.42,
       "fit": "contain"
      },
      {
@@ -514,7 +514,7 @@
       "y": 2660,
       "label": "Museo Nacional de Antropología",
       "src": "img/st/mna_1974.png",
-      "at": 41.66
+      "at": 36.2
      },
      {
       "type": "photo",
@@ -528,7 +528,7 @@
       "y": 2990,
       "label": "Billete de la 4ª serie",
       "src": "img/st/billete_1000.png",
-      "at": 42.62
+      "at": 37.66
      },
      {
       "type": "hand",
@@ -538,7 +538,7 @@
       "z": 9,
       "x": 2110,
       "y": 3100,
-      "at": 36.26,
+      "at": 30.08,
       "font": "caveat"
      },
      {
@@ -549,7 +549,7 @@
       "z": 9,
       "x": 2470,
       "y": 3100,
-      "at": 38.64,
+      "at": 32.3,
       "font": "caveat"
      },
      {
@@ -560,7 +560,7 @@
       "z": 9,
       "x": 2820,
       "y": 3100,
-      "at": 40.94,
+      "at": 34.34,
       "font": "caveat"
      },
      {
@@ -571,7 +571,7 @@
       "z": 9,
       "x": 3190,
       "y": 3100,
-      "at": 40.94,
+      "at": 35.42,
       "font": "caveat"
      },
      {
@@ -582,43 +582,43 @@
       "z": 9,
       "x": 3540,
       "y": 2960,
-      "at": 41.66,
+      "at": 36.2,
       "font": "caveat"
      }
     ],
     "cams": [
      {
-      "at": 0.76,
+      "at": 0.68,
       "x": 1000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 5.48,
+      "at": 4.56,
       "x": 3000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 14.42,
+      "at": 11.66,
       "x": 5000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 20.72,
+      "at": 16.88,
       "x": 5000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 25.68,
+      "at": 21.88,
       "x": 3000,
       "y": 1830,
       "z": 0.95
      },
      {
-      "at": 32.48,
+      "at": 27.04,
       "x": 3000,
       "y": 2980,
       "z": 0.92
@@ -626,26 +626,26 @@
     ],
     "era": "1968–80",
     "title": "La época de oro del diseño gráfico en México",
-    "barAt": 25.68
+    "barAt": 21.88
    },
-   "t1": 45.448
+   "t1": 40.639
   },
   {
    "block": "b2",
    "type": "chapter",
-   "t0": 45.448,
+   "t0": 40.639,
    "props": {
     "num": "01",
     "title": "La historieta crítica y los moneros",
     "years": "1970 – 1980",
     "color": "#E2231A"
    },
-   "t1": 47.848
+   "t1": 43.039
   },
   {
    "block": "b2",
    "type": "board",
-   "t0": 47.848,
+   "t0": 43.039,
    "props": {
     "items": [
      {
@@ -667,7 +667,7 @@
       "z": 5,
       "x": 160,
       "y": 240,
-      "at": 47.7,
+      "at": 42.98,
       "color": "#E2231A"
      },
      {
@@ -682,7 +682,7 @@
       "y": 220,
       "label": "Los Agachados de Rius",
       "src": "img/st/portada_agachados.png",
-      "at": 53.0
+      "at": 48.26
      },
      {
       "type": "photo",
@@ -696,7 +696,7 @@
       "y": 570,
       "label": "Los Supermachos, 1973",
       "src": "img/st/portada_supermachos.png",
-      "at": 52.56
+      "at": 47.76
      },
      {
       "type": "tape",
@@ -706,7 +706,7 @@
       "z": 8,
       "x": 1190,
       "y": 200,
-      "at": 53.0
+      "at": 48.26
      },
      {
       "type": "tape",
@@ -716,7 +716,7 @@
       "z": 8,
       "x": 760,
       "y": 550,
-      "at": 52.56
+      "at": 47.76
      },
      {
       "type": "hand",
@@ -726,7 +726,7 @@
       "z": 9,
       "x": 200,
       "y": 660,
-      "at": 53.0
+      "at": 48.26
      },
      {
       "type": "tag",
@@ -758,7 +758,7 @@
       "y": 300,
       "label": "La Familia Burrón",
       "src": "img/st/familia_burron_estanquillo.png",
-      "at": 58.68
+      "at": 53.88
      },
      {
       "type": "tag",
@@ -767,7 +767,7 @@
       "z": 6,
       "x": 2200,
       "y": 880,
-      "at": 58.68
+      "at": 53.88
      },
      {
       "type": "photo",
@@ -781,7 +781,7 @@
       "y": 250,
       "label": "Borola Burrón",
       "src": "img/st/borola.png",
-      "at": 59.9
+      "at": 55.1
      },
      {
       "type": "photo",
@@ -795,7 +795,7 @@
       "y": 400,
       "label": "Boleto conmemorativo del Metro (2015)",
       "src": "img/st/boleto_burron.png",
-      "at": 55.36
+      "at": 50.24
      },
      {
       "type": "ficha",
@@ -806,7 +806,7 @@
       "y": 780,
       "sub": "historietista",
       "year": "La Familia Burrón · 1948–2009",
-      "at": 59.9,
+      "at": 55.1,
       "color": "#E2231A"
      },
      {
@@ -817,7 +817,7 @@
       "z": 9,
       "x": 2800,
       "y": 220,
-      "at": 56.22
+      "at": 51.4
      },
      {
       "type": "arrow",
@@ -828,7 +828,7 @@
       "x": 2740,
       "y": 320,
       "head": "M290 60 L332 92 L285 110",
-      "at": 59.9
+      "at": 55.1
      },
      {
       "type": "paper",
@@ -853,7 +853,7 @@
       "y": 250,
       "label": "Rius",
       "src": "img/st/rius.png",
-      "at": 61.4
+      "at": 56.58
      },
      {
       "type": "ficha",
@@ -863,7 +863,7 @@
       "x": 5160,
       "y": 400,
       "sub": "(Eduardo del Río)\n– Caricaturista",
-      "at": 64.04,
+      "at": 59.22,
       "color": "#E2231A"
      },
      {
@@ -874,7 +874,7 @@
       "z": 7,
       "x": 4640,
       "y": 950,
-      "at": 66.22
+      "at": 61.42
      },
      {
       "type": "hand",
@@ -884,7 +884,7 @@
       "z": 9,
       "x": 4080,
       "y": 360,
-      "at": 63.62,
+      "at": 58.8,
       "underline": true
      },
      {
@@ -896,7 +896,7 @@
       "x": 4110,
       "y": 480,
       "head": "M222 214 L262 242 L215 262",
-      "at": 63.62
+      "at": 58.8
      },
      {
       "type": "circle",
@@ -905,7 +905,7 @@
       "z": 9,
       "x": 5140,
       "y": 360,
-      "at": 66.22
+      "at": 61.42
      },
      {
       "type": "asterisk",
@@ -913,7 +913,7 @@
       "z": 9,
       "x": 5600,
       "y": 220,
-      "at": 66.22
+      "at": 61.42
      },
      {
       "type": "paper",
@@ -933,7 +933,7 @@
       "z": 9,
       "x": 4120,
       "y": 1340,
-      "at": 68.32
+      "at": 63.8
      },
      {
       "type": "photo",
@@ -947,7 +947,7 @@
       "y": 1480,
       "label": "Rius",
       "src": "img/st/rius.png",
-      "at": 69.92,
+      "at": 65.12,
       "tag": "RETRATO"
      },
      {
@@ -958,7 +958,7 @@
       "z": 9,
       "x": 4420,
       "y": 1620,
-      "at": 69.92,
+      "at": 65.12,
       "font": "caveat"
      },
      {
@@ -973,7 +973,7 @@
       "y": 1480,
       "label": "Abel Quezada",
       "src": "img/st/abel_quezada.png",
-      "at": 70.6,
+      "at": 65.8,
       "tag": "RETRATO"
      },
      {
@@ -984,7 +984,7 @@
       "z": 9,
       "x": 5010,
       "y": 1620,
-      "at": 70.6,
+      "at": 65.8,
       "font": "caveat"
      },
      {
@@ -993,12 +993,13 @@
       "h": 320,
       "rot": 4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 5320,
       "y": 1480,
       "label": "Freyre",
-      "at": 71.9,
+      "src": "img/st/freyre.png",
+      "at": 67.08,
       "tag": "RETRATO"
      },
      {
@@ -1009,7 +1010,7 @@
       "z": 9,
       "x": 5600,
       "y": 1620,
-      "at": 71.9,
+      "at": 67.08,
       "font": "caveat"
      },
      {
@@ -1024,7 +1025,7 @@
       "y": 1860,
       "label": "Helioflores",
       "src": "img/st/helioflores.png",
-      "at": 73.0,
+      "at": 68.18,
       "tag": "RETRATO"
      },
      {
@@ -1035,7 +1036,7 @@
       "z": 9,
       "x": 4420,
       "y": 2000,
-      "at": 73.0,
+      "at": 68.18,
       "font": "caveat"
      },
      {
@@ -1044,12 +1045,13 @@
       "h": 320,
       "rot": 4,
       "z": 3,
-      "bw": true,
-      "cutout": false,
+      "bw": false,
+      "cutout": true,
       "x": 4730,
       "y": 1860,
       "label": "Naranjo",
-      "at": 73.78,
+      "src": "img/st/naranjo.png",
+      "at": 68.98,
       "tag": "RETRATO"
      },
      {
@@ -1060,7 +1062,7 @@
       "z": 9,
       "x": 5010,
       "y": 2000,
-      "at": 73.78,
+      "at": 68.98,
       "font": "caveat"
      },
      {
@@ -1075,7 +1077,7 @@
       "y": 1860,
       "label": "Sergio Arau",
       "src": "img/st/sergio_arau.png",
-      "at": 74.48,
+      "at": 69.68,
       "tag": "RETRATO"
      },
      {
@@ -1086,7 +1088,7 @@
       "z": 9,
       "x": 5600,
       "y": 2000,
-      "at": 74.48,
+      "at": 69.68,
       "font": "caveat"
      },
      {
@@ -1097,7 +1099,7 @@
       "z": 7,
       "x": 5040,
       "y": 2110,
-      "at": 78.16
+      "at": 73.44
      },
      {
       "type": "paper",
@@ -1116,26 +1118,23 @@
       "rot": 5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 2160,
       "y": 1420,
       "label": "La Garrapata",
-      "at": 81.34,
+      "src": "img/st/garrapata.png",
+      "at": 75.94,
       "tag": "PORTADA"
      },
      {
-      "type": "photo",
-      "w": 380,
-      "h": 520,
-      "rot": -5,
-      "z": 3,
-      "bw": false,
-      "cutout": false,
+      "type": "hand",
+      "text": "El\nMitote Ilustrado",
+      "size": 78,
+      "rot": -6,
+      "z": 9,
       "x": 2590,
-      "y": 1480,
-      "label": "El Mitote Ilustrado",
-      "at": 82.54,
-      "tag": "PORTADA"
+      "y": 1580,
+      "at": 77.72
      },
      {
       "type": "photo",
@@ -1144,11 +1143,12 @@
       "rot": 5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3020,
       "y": 1420,
       "label": "Quecosaedro",
-      "at": 84.18,
+      "src": "img/st/quecosaedro.png",
+      "at": 79.38,
       "tag": "PORTADA"
      },
      {
@@ -1158,11 +1158,12 @@
       "rot": -5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3450,
       "y": 1480,
       "label": "SNIF",
-      "at": 85.58,
+      "src": "img/st/snif.png",
+      "at": 80.78,
       "tag": "PORTADA"
      },
      {
@@ -1173,7 +1174,7 @@
       "z": 7,
       "x": 2220,
       "y": 2070,
-      "at": 87.04
+      "at": 82.22
      },
      {
       "type": "paper",
@@ -1194,7 +1195,7 @@
       "z": 5,
       "x": 260,
       "y": 1450,
-      "at": 90.62,
+      "at": 85.92,
       "color": "#F26B1D"
      },
      {
@@ -1205,7 +1206,7 @@
       "x": 340,
       "y": 1890,
       "sub": "para revalorar la narrativa visual mexicana",
-      "at": 93.1,
+      "at": 88.3,
       "color": "#F26B1D",
       "w": 900
      },
@@ -1215,7 +1216,7 @@
       "z": 9,
       "x": 1390,
       "y": 1510,
-      "at": 93.1,
+      "at": 88.3,
       "color": "#E2231A"
      },
      {
@@ -1247,21 +1248,21 @@
       "z": 7,
       "x": 380,
       "y": 2500,
-      "at": 98.08
+      "at": 93.3
      },
      {
       "type": "photo",
       "w": 420,
-      "h": 580,
+      "h": 564,
       "rot": -4,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 400,
       "y": 2630,
-      "label": "Fábulas Pánicas, 1977",
-      "at": 102.96,
-      "tag": "PORTADA"
+      "label": "Fábulas Pánicas (página), Alejandro Jodorowsky",
+      "src": "img/st/fabulas_panicas.png",
+      "at": 98.12
      },
      {
       "type": "photo",
@@ -1275,21 +1276,21 @@
       "y": 2630,
       "label": "Alejandro Jodorowsky",
       "src": "img/st/jodorowsky.png",
-      "at": 104.02
+      "at": 99.2
      },
      {
       "type": "photo",
       "w": 420,
-      "h": 580,
+      "h": 555,
       "rot": 5,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 1300,
       "y": 2620,
       "label": "Profesor Planeta, 1974",
-      "at": 107.36,
-      "tag": "PORTADA"
+      "src": "img/st/profesor_planeta.png",
+      "at": 102.54
      },
      {
       "type": "hand",
@@ -1299,7 +1300,7 @@
       "z": 9,
       "x": 880,
       "y": 3160,
-      "at": 113.04
+      "at": 108.26
      },
      {
       "type": "hand",
@@ -1309,7 +1310,7 @@
       "z": 9,
       "x": 1220,
       "y": 3230,
-      "at": 114.14
+      "at": 109.38
      },
      {
       "type": "hand",
@@ -1319,7 +1320,7 @@
       "z": 9,
       "x": 1440,
       "y": 3160,
-      "at": 114.68
+      "at": 109.86
      },
      {
       "type": "paper",
@@ -1339,7 +1340,7 @@
       "z": 7,
       "x": 4280,
       "y": 2700,
-      "at": 117.86,
+      "at": 113.14,
       "bg": false
      },
      {
@@ -1350,7 +1351,7 @@
       "z": 9,
       "x": 4940,
       "y": 2720,
-      "at": 119.52
+      "at": 114.7
      },
      {
       "type": "label",
@@ -1360,7 +1361,7 @@
       "z": 7,
       "x": 4280,
       "y": 2920,
-      "at": 122.24,
+      "at": 117.42,
       "font": "display"
      },
      {
@@ -1369,54 +1370,54 @@
       "z": 9,
       "x": 5500,
       "y": 2660,
-      "at": 122.24
+      "at": 117.42
      }
     ],
     "cams": [
      {
-      "at": 47.7,
+      "at": 42.98,
       "x": 1000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 54.66,
+      "at": 49.54,
       "x": 3000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 61.4,
+      "at": 56.58,
       "x": 5000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 68.32,
+      "at": 63.8,
       "x": 5000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 80.14,
+      "at": 75.24,
       "x": 3000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 90.62,
+      "at": 85.92,
       "x": 1000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 97.38,
+      "at": 92.6,
       "x": 1000,
       "y": 2980,
       "z": 1.0
      },
      {
-      "at": 117.86,
+      "at": 113.14,
       "x": 5000,
       "y": 2980,
       "z": 0.95
@@ -1425,24 +1426,24 @@
     "era": "70s",
     "title": "La historieta crítica y los ‘moneros’"
    },
-   "t1": 125.138
+   "t1": 120.328
   },
   {
    "block": "b3",
    "type": "chapter",
-   "t0": 125.138,
+   "t0": 120.328,
    "props": {
     "num": "02",
     "title": "Sistemas de identidad: México 68 y México 70",
     "years": "1968 – 1970",
     "color": "#E4007C"
    },
-   "t1": 127.54
+   "t1": 122.728
   },
   {
    "block": "b3",
    "type": "board",
-   "t0": 127.54,
+   "t0": 122.728,
    "props": {
     "items": [
      {
@@ -1473,7 +1474,7 @@
       "z": 7,
       "x": 300,
       "y": 300,
-      "at": 128.78
+      "at": 123.44
      },
      {
       "type": "rotulo",
@@ -1483,7 +1484,7 @@
       "z": 5,
       "x": 320,
       "y": 460,
-      "at": 133.22,
+      "at": 126.48,
       "color": "#1A1714",
       "bg": "#FBF8F1"
      },
@@ -1499,7 +1500,7 @@
       "y": 700,
       "label": "Boleto México 68",
       "src": "img/st/boleto_track.png",
-      "at": 135.0
+      "at": 127.68
      },
      {
       "type": "tape",
@@ -1509,7 +1510,7 @@
       "z": 8,
       "x": 1340,
       "y": 680,
-      "at": 135.0
+      "at": 127.68
      },
      {
       "type": "hand",
@@ -1519,7 +1520,7 @@
       "z": 9,
       "x": 340,
       "y": 800,
-      "at": 130.32
+      "at": 124.62
      },
      {
       "type": "paper",
@@ -1540,7 +1541,7 @@
       "z": 5,
       "x": 2160,
       "y": 240,
-      "at": 136.52,
+      "at": 128.94,
       "color": "#E4007C"
      },
      {
@@ -1555,7 +1556,7 @@
       "y": 250,
       "label": "Estadio Olímpico Universitario, 1968",
       "src": "img/st/estadio_1968_a.png",
-      "at": 139.62
+      "at": 130.88
      },
      {
       "type": "label",
@@ -1565,7 +1566,7 @@
       "z": 7,
       "x": 2200,
       "y": 720,
-      "at": 140.4
+      "at": 131.54
      },
      {
       "type": "photo",
@@ -1579,7 +1580,7 @@
       "y": 740,
       "label": "Boleto México 68",
       "src": "img/st/boleto_soccer.png",
-      "at": 140.4
+      "at": 131.54
      },
      {
       "type": "paper",
@@ -1599,7 +1600,7 @@
       "z": 9,
       "x": 4120,
       "y": 170,
-      "at": 144.54
+      "at": 135.06
      },
      {
       "type": "photo",
@@ -1613,7 +1614,7 @@
       "y": 310,
       "label": "Pedro Ramírez Vázquez",
       "src": "img/st/ramirez_vazquez.png",
-      "at": 146.58,
+      "at": 136.74,
       "tag": "RETRATO"
      },
      {
@@ -1624,7 +1625,7 @@
       "z": 9,
       "x": 4130,
       "y": 800,
-      "at": 146.58,
+      "at": 136.74,
       "font": "caveat"
      },
      {
@@ -1639,7 +1640,7 @@
       "y": 310,
       "label": "Eduardo Terrazas",
       "src": "img/st/terrazas.png",
-      "at": 149.12,
+      "at": 138.32,
       "tag": "RETRATO"
      },
      {
@@ -1650,7 +1651,7 @@
       "z": 9,
       "x": 4575,
       "y": 800,
-      "at": 149.12,
+      "at": 138.32,
       "font": "caveat"
      },
      {
@@ -1665,7 +1666,7 @@
       "y": 310,
       "label": "Beatrice Trueblood",
       "src": "img/st/trueblood.png",
-      "at": 150.02,
+      "at": 141.62,
       "tag": "RETRATO"
      },
      {
@@ -1676,7 +1677,7 @@
       "z": 9,
       "x": 5020,
       "y": 800,
-      "at": 150.02,
+      "at": 141.62,
       "font": "caveat"
      },
      {
@@ -1691,7 +1692,7 @@
       "y": 310,
       "label": "Lance Wyman",
       "src": "img/st/lance_wyman.png",
-      "at": 151.06,
+      "at": 200.46,
       "tag": "RETRATO"
      },
      {
@@ -1702,7 +1703,7 @@
       "z": 9,
       "x": 5465,
       "y": 800,
-      "at": 151.06,
+      "at": 200.46,
       "font": "caveat"
      },
      {
@@ -1712,7 +1713,7 @@
       "z": 9,
       "x": 5440,
       "y": 280,
-      "at": 151.06
+      "at": 200.46
      },
      {
       "type": "label",
@@ -1722,7 +1723,7 @@
       "z": 7,
       "x": 4340,
       "y": 960,
-      "at": 153.86
+      "at": 143.5
      },
      {
       "type": "opart",
@@ -1746,7 +1747,7 @@
       "y": 1360,
       "label": "Cartel México 68",
       "src": "img/st/cartel_mexico68_opart.png",
-      "at": 160.3
+      "at": 148.26
      },
      {
       "type": "tape",
@@ -1756,7 +1757,7 @@
       "z": 8,
       "x": 4440,
       "y": 1340,
-      "at": 160.3
+      "at": 148.26
      },
      {
       "type": "photo",
@@ -1770,7 +1771,7 @@
       "y": 1390,
       "label": "Emblema México 68",
       "src": "img/st/mexico68_emblema.png",
-      "at": 163.14,
+      "at": 150.9,
       "fit": "contain"
      },
      {
@@ -1781,7 +1782,7 @@
       "z": 7,
       "x": 5100,
       "y": 1680,
-      "at": 166.92,
+      "at": 154.66,
       "font": "display"
      },
      {
@@ -1792,7 +1793,7 @@
       "z": 9,
       "x": 5500,
       "y": 1690,
-      "at": 170.6
+      "at": 158.34
      },
      {
       "type": "photo",
@@ -1806,7 +1807,7 @@
       "y": 1770,
       "label": "Tabla de estambre huichol",
       "src": "img/st/huichol_cuadro.png",
-      "at": 170.6
+      "at": 158.34
      },
      {
       "type": "label",
@@ -1816,7 +1817,7 @@
       "z": 7,
       "x": 4240,
       "y": 2130,
-      "at": 175.54
+      "at": 163.22
      },
      {
       "type": "paper",
@@ -1836,14 +1837,14 @@
       "z": 7,
       "x": 2130,
       "y": 1350,
-      "at": 177.68
+      "at": 165.9
      },
      {
       "type": "pictos",
       "items": [
        {
         "name": "figura",
-        "at": 182.1
+        "at": 169.82
        }
       ],
       "w": 300,
@@ -1860,7 +1861,7 @@
       "z": 9,
       "x": 2160,
       "y": 1480,
-      "at": 184.72
+      "at": 172.46
      },
      {
       "type": "hand",
@@ -1870,7 +1871,7 @@
       "z": 9,
       "x": 2130,
       "y": 1790,
-      "at": 184.72,
+      "at": 172.46,
       "font": "caveat"
      },
      {
@@ -1885,22 +1886,22 @@
       "y": 1480,
       "label": "Boleto: ecuestre",
       "src": "img/st/boleto_horse.png",
-      "at": 188.7
+      "at": 176.44
      },
      {
       "type": "pictos",
       "items": [
        {
         "name": "box",
-        "at": 190.82
+        "at": 178.54
        },
        {
         "name": "bici",
-        "at": 192.66
+        "at": 180.42
        },
        {
         "name": "aro",
-        "at": 194.12
+        "at": 181.86
        }
       ],
       "w": 900,
@@ -1917,7 +1918,7 @@
       "z": 9,
       "x": 2920,
       "y": 1810,
-      "at": 194.12,
+      "at": 181.86,
       "font": "caveat"
      },
      {
@@ -1928,7 +1929,7 @@
       "z": 7,
       "x": 2500,
       "y": 1970,
-      "at": 188.7
+      "at": 176.44
      },
      {
       "type": "hand",
@@ -1938,7 +1939,7 @@
       "z": 9,
       "x": 2560,
       "y": 2110,
-      "at": 197.76
+      "at": 185.5
      },
      {
       "type": "paper",
@@ -1959,21 +1960,21 @@
       "z": 7,
       "x": 180,
       "y": 1370,
-      "at": 201.42
+      "at": 189.12
      },
      {
       "type": "photo",
-      "w": 420,
-      "h": 600,
+      "w": 520,
+      "h": 515,
       "rot": -4,
       "z": 3,
       "bw": false,
-      "cutout": false,
-      "x": 200,
-      "y": 1510,
-      "label": "Cartel de la Olimpiada Cultural",
-      "at": 203.16,
-      "tag": "CARTEL"
+      "cutout": true,
+      "x": 180,
+      "y": 1500,
+      "label": "Programa Cultural de la XIX Olimpiada (Guanajuato)",
+      "src": "img/st/cartel_olimpiada_cultural_guanajuato.png",
+      "at": 190.88
      },
      {
       "type": "photo",
@@ -1987,7 +1988,7 @@
       "y": 1510,
       "label": "Estampilla aérea México 68 · Wyman",
       "src": "img/st/estampilla_paloma_wyman.png",
-      "at": 203.92
+      "at": 191.64
      },
      {
       "type": "photo",
@@ -2001,7 +2002,7 @@
       "y": 1550,
       "label": "Moneda de plata de $25, 1968",
       "src": "img/st/moneda_25.png",
-      "at": 205.72
+      "at": 193.46
      },
      {
       "type": "hand",
@@ -2011,7 +2012,7 @@
       "z": 9,
       "x": 1240,
       "y": 2010,
-      "at": 205.72,
+      "at": 193.46,
       "font": "caveat"
      },
      {
@@ -2042,7 +2043,7 @@
       "z": 5,
       "x": 2340,
       "y": 2560,
-      "at": 208.86,
+      "at": 196.6,
       "color": "#F26B1D"
      },
      {
@@ -2053,7 +2054,7 @@
       "z": 5,
       "x": 2340,
       "y": 2920,
-      "at": 210.34,
+      "at": 198.04,
       "color": "#E4007C",
       "bg": "#FBF8F1"
      },
@@ -2065,7 +2066,7 @@
       "z": 9,
       "x": 2360,
       "y": 3160,
-      "at": 214.36
+      "at": 202.1
      },
      {
       "type": "photo",
@@ -2079,7 +2080,7 @@
       "y": 2540,
       "label": "Juanito, mascota de México 70",
       "src": "img/st/juanito_cartel.png",
-      "at": 219.68
+      "at": 207.42
      },
      {
       "type": "ficha",
@@ -2090,49 +2091,49 @@
       "y": 3160,
       "sub": "Juan González Martínez",
       "year": "1970",
-      "at": 221.12,
+      "at": 208.86,
       "color": "#F26B1D"
      }
     ],
     "cams": [
      {
-      "at": null,
+      "at": 122.36,
       "x": 1000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 136.52,
+      "at": 128.94,
       "x": 3000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 145.36,
+      "at": 135.76,
       "x": 5000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 160.3,
+      "at": 148.26,
       "x": 5000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 176.98,
+      "at": 165.2,
       "x": 3000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 200.5,
+      "at": 188.1,
       "x": 1000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 208.86,
+      "at": 196.6,
       "x": 3000,
       "y": 2980,
       "z": 0.95
@@ -2141,24 +2142,24 @@
     "era": "1968–70",
     "title": "México 68 y 70 · la revolución de los pictogramas"
    },
-   "t1": 222.957
+   "t1": 210.692
   },
   {
    "block": "b4",
    "type": "chapter",
-   "t0": 222.957,
+   "t0": 210.692,
    "props": {
     "num": "03",
     "title": "El Metro de la CDMX y la nueva museografía",
     "years": "1964 – 1977",
     "color": "#F26B1D"
    },
-   "t1": 227.38
+   "t1": 215.1
   },
   {
    "block": "b4",
    "type": "board",
-   "t0": 227.38,
+   "t0": 215.1,
    "props": {
     "items": [
      {
@@ -2184,7 +2185,7 @@
       "y": 240,
       "label": "Obras del Metro en el Zócalo, 1969",
       "src": "img/st/obras_metro_zocalo.png",
-      "at": 228.08
+      "at": 215.8
      },
      {
       "type": "label",
@@ -2194,7 +2195,7 @@
       "z": 7,
       "x": 200,
       "y": 890,
-      "at": 230.46
+      "at": 218.18
      },
      {
       "type": "year",
@@ -2204,7 +2205,7 @@
       "z": 5,
       "x": 1140,
       "y": 260,
-      "at": 233.22,
+      "at": 220.94,
       "color": "#F26B1D"
      },
      {
@@ -2219,7 +2220,7 @@
       "y": 620,
       "label": "Metro",
       "src": "img/st/metro_logo.png",
-      "at": 234.26,
+      "at": 222.02,
       "fit": "contain"
      },
      {
@@ -2244,7 +2245,7 @@
       "y": 240,
       "label": "El Metro funcionando, septiembre de 1969",
       "src": "img/st/metro_1969_a.png",
-      "at": 234.26
+      "at": 222.02
      },
      {
       "type": "photo",
@@ -2258,7 +2259,7 @@
       "y": 240,
       "label": "Lance Wyman",
       "src": "img/st/lance_wyman.png",
-      "at": 238.38
+      "at": 226.1
      },
      {
       "type": "ficha",
@@ -2269,7 +2270,7 @@
       "y": 800,
       "sub": "toda la señalética del Metro",
       "year": "1969",
-      "at": 241.62,
+      "at": 229.34,
       "color": "#F26B1D"
      },
      {
@@ -2280,7 +2281,7 @@
       "z": 9,
       "x": 2240,
       "y": 920,
-      "at": 240.48
+      "at": 228.24
      },
      {
       "type": "arrow",
@@ -2291,7 +2292,7 @@
       "x": 2860,
       "y": 860,
       "head": "M290 60 L332 92 L285 110",
-      "at": 241.62
+      "at": 229.34
      },
      {
       "type": "embed",
@@ -2300,11 +2301,11 @@
       "z": 4,
       "x": 4150,
       "y": 140,
-      "at": 244.24,
+      "at": 232.02,
       "props": {
-       "railsAt": 247.24,
-       "squareAt": 244.24,
-       "arrowAt": 252.18
+       "railsAt": 234.98,
+       "squareAt": 232.02,
+       "arrowAt": 239.92
       }
      },
      {
@@ -2314,10 +2315,10 @@
       "z": 4,
       "x": 4150,
       "y": 1290,
-      "at": 252.96,
+      "at": 241.42,
       "props": {
        "text": "Un símbolo único para cada estación",
-       "textAt": 257.88
+       "textAt": 245.62
       }
      },
      {
@@ -2327,18 +2328,18 @@
       "z": 4,
       "x": 2150,
       "y": 1290,
-      "at": 262.34,
+      "at": 250.04,
       "props": {
        "items": [
         {
          "name": "Chapultepec",
          "kind": "chapulin",
-         "at": 263.16
+         "at": 250.88
         },
         {
          "name": "Merced",
          "kind": "manzana",
-         "at": 264.78
+         "at": 252.52
         }
        ],
        "note": "Reinterpretación ilustrativa de los íconos de L. Wyman"
@@ -2351,10 +2352,10 @@
       "z": 4,
       "x": 150,
       "y": 1290,
-      "at": 265.8,
+      "at": 253.52,
       "props": {
        "text": "Incluso quien no sabía leer podía moverse por toda la red",
-       "textAt": 268.0
+       "textAt": 255.72
       }
      },
      {
@@ -2376,7 +2377,7 @@
       "z": 7,
       "x": 160,
       "y": 2500,
-      "at": 273.2
+      "at": 260.94
      },
      {
       "type": "year",
@@ -2386,7 +2387,7 @@
       "z": 5,
       "x": 160,
       "y": 2620,
-      "at": 275.66,
+      "at": 263.68,
       "color": "#009FDA"
      },
      {
@@ -2401,7 +2402,7 @@
       "y": 2600,
       "label": "Museo Nacional de Antropología",
       "src": "img/st/mna_1974.png",
-      "at": 279.36
+      "at": 267.1
      },
      {
       "type": "ficha",
@@ -2412,7 +2413,7 @@
       "y": 2960,
       "sub": "coordinó el museo",
       "year": "17 · IX · 1964",
-      "at": 281.48,
+      "at": 269.24,
       "color": "#009FDA",
       "w": 700
      },
@@ -2424,7 +2425,7 @@
       "z": 7,
       "x": 200,
       "y": 3250,
-      "at": 289.08
+      "at": 276.78
      },
      {
       "type": "arrow",
@@ -2434,7 +2435,7 @@
       "z": 9,
       "x": 340,
       "y": 3240,
-      "at": 287.3
+      "at": 275.02
      },
      {
       "type": "paper",
@@ -2458,35 +2459,35 @@
       "y": 2540,
       "label": "MUCA · Ciudad Universitaria (2025)",
       "src": "img/st/muca_expo.png",
-      "at": 291.9
+      "at": 279.62
      },
      {
       "type": "embed",
       "scene": "museografia",
       "w": 700,
       "z": 3,
-      "x": 4160,
+      "x": 4140,
       "y": 2990,
-      "at": 295.28,
+      "at": 283.02,
       "props": {
        "text": "MUCA y Aristos: museografía moderna",
-       "textAt": 297.04
+       "textAt": 284.76
       }
      },
      {
       "type": "embed",
       "scene": "cartelVestir",
       "w": 520,
-      "sceneW": 1000,
-      "sceneH": 1464,
       "z": 3,
-      "x": 4960,
+      "x": 4900,
       "y": 2500,
-      "rot": 3,
-      "at": 302.76,
+      "at": 290.34,
       "props": {
        "year": "1977"
-      }
+      },
+      "rot": 3,
+      "sceneW": 1000,
+      "sceneH": 1464
      },
      {
       "type": "hand",
@@ -2496,7 +2497,7 @@
       "z": 9,
       "x": 5540,
       "y": 2760,
-      "at": 302.76
+      "at": 290.34
      },
      {
       "type": "label",
@@ -2506,54 +2507,54 @@
       "z": 7,
       "x": 4680,
       "y": 3260,
-      "at": 300.28
+      "at": 288.02
      }
     ],
     "cams": [
      {
-      "at": 227.38,
+      "at": 215.1,
       "x": 1000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 238.38,
+      "at": 226.1,
       "x": 3000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 244.24,
+      "at": 232.02,
       "x": 5000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 252.96,
+      "at": 241.42,
       "x": 5000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 262.34,
+      "at": 250.04,
       "x": 3000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 265.8,
+      "at": 253.52,
       "x": 1000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 272.5,
+      "at": 260.24,
       "x": 1000,
       "y": 2980,
       "z": 1.0
      },
      {
-      "at": 291.2,
+      "at": 278.92,
       "x": 5000,
       "y": 2980,
       "z": 1.0
@@ -2562,24 +2563,24 @@
     "era": "1969–77",
     "title": "El Metro de la CDMX y la nueva museografía"
    },
-   "t1": 307.113
+   "t1": 294.848
   },
   {
    "block": "b5",
    "type": "chapter",
-   "t0": 307.113,
+   "t0": 294.848,
    "props": {
     "num": "04",
     "title": "Identidad corporativa, billetes y cierre",
     "years": "1969 – 1980",
     "color": "#1B3B2F"
    },
-   "t1": 309.513
+   "t1": 297.248
   },
   {
    "block": "b5",
    "type": "board",
-   "t0": 309.513,
+   "t0": 297.248,
    "props": {
     "items": [
      {
@@ -2600,7 +2601,7 @@
       "z": 9,
       "x": 200,
       "y": 250,
-      "at": 309.9,
+      "at": 297.54,
       "font": "caveat"
      },
      {
@@ -2615,7 +2616,7 @@
       "y": 250,
       "label": "Televisa, 1973",
       "src": "img/st/televisa.png",
-      "at": 311.04
+      "at": 298.56
      },
      {
       "type": "photo",
@@ -2629,7 +2630,7 @@
       "y": 400,
       "label": "Instituciones públicas",
       "src": "img/st/imss_logo.png",
-      "at": 312.94,
+      "at": 300.12,
       "fit": "contain"
      },
      {
@@ -2640,7 +2641,7 @@
       "z": 9,
       "x": 1220,
       "y": 570,
-      "at": 311.04,
+      "at": 298.56,
       "font": "caveat"
      },
      {
@@ -2651,7 +2652,7 @@
       "z": 9,
       "x": 1440,
       "y": 700,
-      "at": 312.94,
+      "at": 300.12,
       "font": "caveat"
      },
      {
@@ -2662,7 +2663,7 @@
       "z": 7,
       "x": 200,
       "y": 360,
-      "at": 316.42
+      "at": 302.24
      },
      {
       "type": "arrow",
@@ -2672,7 +2673,7 @@
       "z": 9,
       "x": 740,
       "y": 320,
-      "at": 318.16
+      "at": 303.4
      },
      {
       "type": "label",
@@ -2682,7 +2683,7 @@
       "z": 7,
       "x": 200,
       "y": 520,
-      "at": 321.12,
+      "at": 305.92,
       "font": "display"
      },
      {
@@ -2693,7 +2694,7 @@
       "x": 1120,
       "y": 720,
       "sub": "teórico de la imagen corporativa",
-      "at": 326.36,
+      "at": 309.62,
       "color": "#009FDA"
      },
      {
@@ -2702,7 +2703,7 @@
       "z": 9,
       "x": 1540,
       "y": 260,
-      "at": 321.12,
+      "at": 305.92,
       "color": "#E4007C"
      },
      {
@@ -2724,7 +2725,7 @@
       "z": 9,
       "x": 2120,
       "y": 170,
-      "at": 327.46
+      "at": 310.86
      },
      {
       "type": "photo",
@@ -2738,7 +2739,7 @@
       "y": 300,
       "label": "IMSS",
       "src": "img/st/imss_logo.png",
-      "at": 331.12,
+      "at": 314.52,
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
@@ -2750,7 +2751,7 @@
       "z": 9,
       "x": 2480,
       "y": 390,
-      "at": 331.12,
+      "at": 314.52,
       "font": "caveat"
      },
      {
@@ -2760,23 +2761,24 @@
       "rot": -3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 2730,
       "y": 300,
-      "label": "SEP · logotipo de 1977",
-      "at": 338.5,
+      "label": "SEP",
+      "src": "img/st/sep_logo.png",
+      "at": 321.88,
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
      {
       "type": "hand",
-      "text": "SEP · logotipo de 1977\nAlmeida · Gleason · Valdés, 1977",
+      "text": "SEP\nAlmeida · Gleason · Valdés, 1977",
       "size": 44,
       "rot": -2,
       "z": 9,
       "x": 3070,
       "y": 390,
-      "at": 338.5,
+      "at": 321.88,
       "font": "caveat"
      },
      {
@@ -2786,11 +2788,12 @@
       "rot": 3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3320,
       "y": 300,
       "label": "IPN",
-      "at": 345.06,
+      "src": "img/st/ipn_logo.png",
+      "at": 328.46,
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
@@ -2802,7 +2805,7 @@
       "z": 9,
       "x": 3660,
       "y": 390,
-      "at": 345.06,
+      "at": 328.46,
       "font": "caveat"
      },
      {
@@ -2817,7 +2820,7 @@
       "y": 700,
       "label": "Televisa",
       "src": "img/st/televisa.png",
-      "at": 347.06,
+      "at": 330.44,
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
@@ -2829,7 +2832,7 @@
       "z": 9,
       "x": 2480,
       "y": 790,
-      "at": 347.06,
+      "at": 330.44,
       "font": "caveat"
      },
      {
@@ -2844,7 +2847,7 @@
       "y": 700,
       "label": "UAM",
       "src": "img/st/uam_logo.png",
-      "at": 349.64,
+      "at": 333.02,
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
@@ -2856,7 +2859,7 @@
       "z": 9,
       "x": 3070,
       "y": 790,
-      "at": 349.64,
+      "at": 333.02,
       "font": "caveat"
      },
      {
@@ -2866,11 +2869,12 @@
       "rot": -3,
       "z": 3,
       "bw": false,
-      "cutout": false,
+      "cutout": true,
       "x": 3320,
       "y": 700,
       "label": "Lotería Nacional",
-      "at": 350.66,
+      "src": "img/st/loteria_logo.png",
+      "at": 334.06,
       "tag": "LOGOTIPO",
       "fit": "contain"
      },
@@ -2882,7 +2886,7 @@
       "z": 9,
       "x": 3660,
       "y": 790,
-      "at": 350.66,
+      "at": 334.06,
       "font": "caveat"
      },
      {
@@ -2892,7 +2896,7 @@
       "z": 9,
       "x": 2100,
       "y": 270,
-      "at": 336.92
+      "at": 320.32
      },
      {
       "type": "paper",
@@ -2912,7 +2916,7 @@
       "z": 5,
       "x": 4180,
       "y": 260,
-      "at": 356.7,
+      "at": 340.1,
       "color": "#7AB800"
      },
      {
@@ -2927,7 +2931,7 @@
       "y": 240,
       "label": "Banco de México",
       "src": "img/st/banxico_edificio.png",
-      "at": 360.44
+      "at": 343.82
      },
      {
       "type": "label",
@@ -2937,7 +2941,7 @@
       "z": 7,
       "x": 4200,
       "y": 740,
-      "at": 355.24
+      "at": 338.64
      },
      {
       "type": "paper",
@@ -2958,7 +2962,7 @@
       "z": 7,
       "x": 4140,
       "y": 1330,
-      "at": 362.52
+      "at": 345.92
      },
      {
       "type": "photo",
@@ -2972,7 +2976,7 @@
       "y": 1450,
       "label": "Sor Juana · $1000",
       "src": "img/st/billete_1000.png",
-      "at": 367.22
+      "at": 350.62
      },
      {
       "type": "photo",
@@ -2986,7 +2990,7 @@
       "y": 1450,
       "label": "Morelos · $20",
       "src": "img/st/billete_20.png",
-      "at": 368.4
+      "at": 351.76
      },
      {
       "type": "photo",
@@ -3000,7 +3004,7 @@
       "y": 1810,
       "label": "Benito Juárez · $50",
       "src": "img/st/billete_50.png",
-      "at": 369.8
+      "at": 353.2
      },
      {
       "type": "photo",
@@ -3014,7 +3018,7 @@
       "y": 1810,
       "label": "Carranza · $100",
       "src": "img/st/billete_100.png",
-      "at": 370.76
+      "at": 354.16
      },
      {
       "type": "paper",
@@ -3034,21 +3038,16 @@
       "z": 7,
       "x": 2260,
       "y": 1400,
-      "at": 373.36
+      "at": 356.72
      },
      {
-      "type": "photo",
-      "w": 400,
-      "h": 480,
-      "rot": -5,
-      "z": 3,
-      "bw": false,
-      "cutout": false,
-      "x": 2340,
-      "y": 1550,
-      "label": "Estampilla · Rafael Davidson",
-      "at": 378.28,
-      "tag": "ESTAMPILLA"
+      "type": "circle",
+      "w": 520,
+      "h": 200,
+      "z": 9,
+      "x": 2300,
+      "y": 1810,
+      "at": 361.68
      },
      {
       "type": "photo",
@@ -3062,7 +3061,7 @@
       "y": 1590,
       "label": "Estampilla · Lance Wyman",
       "src": "img/st/estampilla_wyman.png",
-      "at": 379.6
+      "at": 363.04
      },
      {
       "type": "hand",
@@ -3072,7 +3071,7 @@
       "z": 9,
       "x": 2340,
       "y": 2070,
-      "at": 378.28,
+      "at": 361.68,
       "font": "caveat"
      },
      {
@@ -3083,7 +3082,7 @@
       "z": 9,
       "x": 3040,
       "y": 2070,
-      "at": 379.6,
+      "at": 363.04,
       "font": "caveat"
      },
      {
@@ -3115,7 +3114,7 @@
       "z": 7,
       "x": 2300,
       "y": 2600,
-      "at": 382.66,
+      "at": 365.84,
       "bg": false
      },
      {
@@ -3126,7 +3125,7 @@
       "z": 5,
       "x": 2300,
       "y": 2740,
-      "at": 392.44,
+      "at": 373.8,
       "color": "#1A1714"
      },
      {
@@ -3137,7 +3136,7 @@
       "z": 7,
       "x": 2300,
       "y": 3160,
-      "at": 393.9,
+      "at": 375.4,
       "bg": false
      },
      {
@@ -3162,7 +3161,7 @@
       "y": 2560,
       "label": "Metro",
       "src": "img/st/metro_logo.png",
-      "at": 396.3,
+      "at": 377.78,
       "fit": "contain"
      },
      {
@@ -3177,7 +3176,7 @@
       "y": 2560,
       "label": "IMSS",
       "src": "img/st/imss_logo.png",
-      "at": 399.84,
+      "at": 380.34,
       "fit": "contain"
      },
      {
@@ -3192,7 +3191,7 @@
       "y": 2620,
       "label": "Un billete",
       "src": "img/st/billete_50.png",
-      "at": 402.7
+      "at": 382.38
      },
      {
       "type": "hand",
@@ -3202,7 +3201,7 @@
       "z": 9,
       "x": 4190,
       "y": 3020,
-      "at": 397.54,
+      "at": 378.54,
       "font": "caveat"
      },
      {
@@ -3213,7 +3212,7 @@
       "z": 9,
       "x": 4740,
       "y": 3080,
-      "at": 399.84,
+      "at": 380.34,
       "font": "caveat"
      },
      {
@@ -3224,7 +3223,7 @@
       "z": 9,
       "x": 5280,
       "y": 2940,
-      "at": 402.7,
+      "at": 382.38,
       "font": "caveat"
      },
      {
@@ -3235,48 +3234,48 @@
       "z": 7,
       "x": 4240,
       "y": 3220,
-      "at": 404.58
+      "at": 383.74
      }
     ],
     "cams": [
      {
-      "at": null,
+      "at": 297.04,
       "x": 1000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 327.46,
+      "at": 310.86,
       "x": 3000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 356.7,
+      "at": 340.1,
       "x": 5000,
       "y": 680,
       "z": 1.0
      },
      {
-      "at": 362.34,
+      "at": 345.74,
       "x": 5000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 372.66,
+      "at": 356.02,
       "x": 3000,
       "y": 1830,
       "z": 1.0
      },
      {
-      "at": 381.96,
+      "at": 365.14,
       "x": 3000,
       "y": 2980,
       "z": 0.95
      },
      {
-      "at": 395.6,
+      "at": 377.08,
       "x": 5000,
       "y": 2980,
       "z": 1.0
@@ -3285,12 +3284,12 @@
     "era": "1969–80",
     "title": "Identidad corporativa, billetes y estampillas"
    },
-   "t1": 409.04
+   "t1": 388.04
   },
   {
    "block": "b5",
    "type": "end",
-   "t0": 409.04,
+   "t0": 388.04,
    "props": {
     "credits": [
      "Voces: Marco · Lucas · Clau",
@@ -3298,15 +3297,15 @@
      "Referencia bibliográfica: [título del libro]"
     ]
    },
-   "t1": 413.268
+   "t1": 391.871
   }
  ],
  "overlays": [
   {
    "block": "b1",
    "type": "full",
-   "t0": 10.44,
-   "t1": 14.04,
+   "t0": 8.56,
+   "t1": 12.16,
    "props": {
     "src": "img/full/aerea_cdmx_1962.jpg",
     "move": "out",
@@ -3320,8 +3319,8 @@
   {
    "block": "b2",
    "type": "full",
-   "t0": 47.7,
-   "t1": 51.3,
+   "t0": 42.98,
+   "t1": 46.58,
    "props": {
     "src": "img/full/supermachos.jpg",
     "fit": "contain",
@@ -3335,8 +3334,8 @@
   {
    "block": "b2",
    "type": "full",
-   "t0": 58.68,
-   "t1": 62.08,
+   "t0": 53.88,
+   "t1": 57.28,
    "props": {
     "src": "img/full/familia_burron.jpg",
     "move": "left",
@@ -3354,8 +3353,8 @@
   {
    "block": "b3",
    "type": "full",
-   "t0": 139.62,
-   "t1": 143.02,
+   "t0": 130.88,
+   "t1": 134.28,
    "props": {
     "src": "img/full/estadio_1968_a.jpg",
     "move": "right",
@@ -3368,8 +3367,8 @@
   {
    "block": "b3",
    "type": "full",
-   "t0": 170.6,
-   "t1": 173.0,
+   "t0": 158.34,
+   "t1": 160.14,
    "props": {
     "src": "img/full/huichol_cuadro.jpg",
     "fit": "contain",
@@ -3383,8 +3382,8 @@
   {
    "block": "b3",
    "type": "full",
-   "t0": 219.68,
-   "t1": 222.68,
+   "t0": 207.42,
+   "t1": 210.42,
    "props": {
     "src": "img/full/juanito.jpg",
     "fit": "contain",
@@ -3398,8 +3397,8 @@
   {
    "block": "b4",
    "type": "full",
-   "t0": 230.46,
-   "t1": 233.46,
+   "t0": 218.18,
+   "t1": 221.18,
    "props": {
     "src": "img/full/obras_metro_zocalo.jpg",
     "move": "out",
@@ -3413,8 +3412,8 @@
   {
    "block": "b4",
    "type": "full",
-   "t0": 237.5,
-   "t1": 240.7,
+   "t0": 225.26,
+   "t1": 228.46,
    "props": {
     "src": "img/full/metro_1969_a.jpg",
     "move": "left",
@@ -3428,8 +3427,8 @@
   {
    "block": "b4",
    "type": "full",
-   "t0": 275.66,
-   "t1": 279.06,
+   "t0": 263.68,
+   "t1": 267.08,
    "props": {
     "src": "img/full/mna_1974.jpg",
     "move": "in",
@@ -3442,8 +3441,8 @@
   {
    "block": "b5",
    "type": "full",
-   "t0": 360.44,
-   "t1": 363.44,
+   "t0": 343.82,
+   "t1": 346.82,
    "props": {
     "src": "img/full/banxico_edificio.jpg",
     "move": "out",
@@ -3456,8 +3455,8 @@
   {
    "block": "b3",
    "type": "full",
-   "t0": 173.26,
-   "t1": 178.0,
+   "t0": 160.12,
+   "t1": 165.74,
    "props": {
     "src": "img/full/cartel_mexico68.jpg",
     "fit": "contain",
