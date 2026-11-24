@@ -35,7 +35,10 @@ for i, s in enumerate(D["scenes"]):
     p = s["props"]
     if s["type"] == "board":
         cams = [c for c in p.get("cams", []) if c.get("at") is not None]
-        for c in cams[1:]: put("whoosh", c["at"] - 0.1); n += 1
+        for c in cams[1:]:
+            if c.get("kind") == "zoom": put("swipe", c["at"], -8)  # acercamiento: barrido muy suave
+            else: put("whoosh", c["at"] - 0.1)
+            n += 1
         for it in sorted(p.get("items", []), key=lambda it: it.get("at") or 0):
             if it.get("at") is None: continue
             for name, dt in ITEM.get(it["type"], []):
@@ -44,6 +47,14 @@ for i, s in enumerate(D["scenes"]):
                 for pc in it.get("items", []): put("golpe", pc.get("at")); n += 1
     else:  # escenas sueltas: entradas de piezas
         for it in p.get("items", []) or []: put("papel", it.get("at")); n += 1
+# transiciones temáticas y golpes de palabra
+TR_CAP = {"b2": "papel", "b3": "papel", "b4": "papel", "b5": "papel"}
+for i, s in enumerate(D["scenes"]):
+    if i and (s["type"] == "chapter" or D["scenes"][i - 1]["type"] == "chapter" or s["type"] == "end"):
+        put("whoosh", s["t0"] - 0.45, 3); n += 1
+for o in D.get("overlays", []):
+    if o.get("type") == "golpe": put("sello", o["t0"] + 0.12, 3); n += 1
+    else: put("swipe", o["t0"]); n += 1
 peak = np.abs(track).max()
 if peak > 0.9: track *= 0.9 / peak
 sf.write(out, track, SR, subtype="PCM_16")

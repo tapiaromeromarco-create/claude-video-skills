@@ -590,37 +590,37 @@
      {
       "at": "@Alguna vez",
       "x": 1000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@Entre finales",
       "x": 3000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@Dejó de ser",
       "x": 5000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@organizar",
       "x": 5000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Hoy",
       "x": 3000,
-      "y": 1830,
+      "y": 1790,
       "z": 0.95
      },
      {
       "at": "@se verá",
       "x": 3000,
-      "y": 2980,
+      "y": 2940,
       "z": 0.92
      }
     ],
@@ -756,7 +756,7 @@
       "y": 300,
       "label": "La Familia Burrón",
       "src": "img/st/familia_burron_estanquillo.png",
-      "at": "@Familia Burrón"
+      "at": "@Por un lado"
      },
      {
       "type": "tag",
@@ -1125,14 +1125,19 @@
       "tag": "PORTADA"
      },
      {
-      "type": "hand",
-      "text": "El\nMitote Ilustrado",
-      "size": 78,
-      "rot": -6,
-      "z": 9,
+      "type": "photo",
+      "w": 380,
+      "h": 520,
+      "rot": -5,
+      "z": 3,
+      "bw": false,
+      "cutout": true,
       "x": 2590,
-      "y": 1580,
-      "at": "@Mitote"
+      "y": 1480,
+      "label": "El Mitote Ilustrado",
+      "src": "img/st/mitote_ilustrado.png",
+      "at": "@Mitote",
+      "tag": "PORTADA"
      },
      {
       "type": "photo",
@@ -1375,49 +1380,49 @@
      {
       "at": "@Arrancamos",
       "x": 1000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@Por un lado",
       "x": 3000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@al mismo tiempo",
       "x": 5000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@Caricaturistas",
       "x": 5000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Revistas",
       "x": 3000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Incluso en",
       "x": 1000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Y a la par",
       "x": 1000,
-      "y": 2980,
+      "y": 2940,
       "z": 1.0
      },
      {
       "at": "@El cómic dejó",
       "x": 5000,
-      "y": 2980,
+      "y": 2940,
       "z": 0.95
      }
     ],
@@ -2095,43 +2100,43 @@
      {
       "at": "@Pero la verdadera",
       "x": 1000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@En 1968",
       "x": 3000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@dirigido por",
       "x": 5000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@El resultado",
       "x": 5000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Pero lo más revolucionario",
       "x": 3000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Además",
       "x": 1000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Dos años",
       "x": 3000,
-      "y": 2980,
+      "y": 2940,
       "z": 0.95
      }
     ],
@@ -2469,6 +2474,34 @@
       }
      },
      {
+      "type": "photo",
+      "w": 420,
+      "h": 306,
+      "rot": 4,
+      "z": 3,
+      "bw": false,
+      "cutout": true,
+      "x": 5440,
+      "y": 2490,
+      "label": "Inauguración de una exposición (archivo)",
+      "src": "img/st/museo_inauguracion_bn.png",
+      "at": "@Mientras tanto"
+     },
+     {
+      "type": "photo",
+      "w": 400,
+      "h": 286,
+      "rot": -3,
+      "z": 3,
+      "bw": false,
+      "cutout": true,
+      "x": 5470,
+      "y": 2960,
+      "label": "Sala de exposición (archivo)",
+      "src": "img/st/museo_sala_bn.png",
+      "at": "@sistematizaron"
+     },
+     {
       "type": "embed",
       "scene": "cartelVestir",
       "w": 520,
@@ -2489,8 +2522,8 @@
       "size": 110,
       "rot": -8,
       "z": 9,
-      "x": 5540,
-      "y": 2760,
+      "x": 5480,
+      "y": 2820,
       "at": "@Si los artistas"
      },
      {
@@ -2508,49 +2541,49 @@
      {
       "at": "@sistema de pictogramas",
       "x": 1000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@le encargó",
       "x": 3000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@famosa M",
       "x": 5000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@Siguiendo",
       "x": 5000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@como el",
       "x": 3000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Gracias a esto",
       "x": 1000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@visión didáctica",
       "x": 1000,
-      "y": 2980,
+      "y": 2940,
       "z": 1.0
      },
      {
       "at": "@Mientras tanto",
       "x": 5000,
-      "y": 2980,
+      "y": 2940,
       "z": 1.0
      }
     ],
@@ -3233,43 +3266,43 @@
      {
       "at": "@Con todo este",
       "x": 1000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@De esta etapa",
       "x": 3000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@en 1969",
       "x": 5000,
-      "y": 680,
+      "y": 640,
       "z": 1.0
      },
      {
       "at": "@la cuarta serie",
       "x": 5000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@Al mismo tiempo",
       "x": 3000,
-      "y": 1830,
+      "y": 1790,
       "z": 1.0
      },
      {
       "at": "@En conclusión",
       "x": 3000,
-      "y": 2980,
+      "y": 2940,
       "z": 0.95
      },
      {
       "at": "@La próxima vez",
       "x": 5000,
-      "y": 2980,
+      "y": 2940,
       "z": 1.0
      }
     ],
@@ -3444,6 +3477,90 @@
      "title": "Cartel oficial de México 68",
      "sub": "Programa de identidad · Library of Congress"
     }
+   }
+  },
+  {
+   "block": "b1",
+   "at": "@lenguaje visual",
+   "dur": 1.1,
+   "kind": "golpe",
+   "props": {
+    "text": "LENGUAJE\nVISUAL",
+    "font": "op",
+    "color": "#171412",
+    "fondo": "#FBF8F1"
+   }
+  },
+  {
+   "block": "b2",
+   "at": "@moneros",
+   "dur": 1.1,
+   "kind": "golpe",
+   "props": {
+    "text": "¡MONEROS!",
+    "font": "comic",
+    "color": "#FFE14D",
+    "fondo": "#E2231A"
+   }
+  },
+  {
+   "block": "b2",
+   "at": "@alto impacto",
+   "dur": 1.1,
+   "kind": "golpe",
+   "props": {
+    "text": "¡ALTO IMPACTO!",
+    "font": "comic",
+    "color": "#171412",
+    "fondo": "#FFE14D"
+   }
+  },
+  {
+   "block": "b3",
+   "at": "@pictogramas",
+   "dur": 1.1,
+   "kind": "golpe",
+   "props": {
+    "text": "PICTOGRAMAS",
+    "font": "op",
+    "color": "#FBF8F1",
+    "fondo": "#E4007C"
+   }
+  },
+  {
+   "block": "b4",
+   "at": "@espectáculo",
+   "dur": 1.1,
+   "kind": "golpe",
+   "props": {
+    "text": "¡ESPECTÁCULO\nDIDÁCTICO!",
+    "font": "display",
+    "color": "#FBF8F1",
+    "fondo": "#009FDA"
+   }
+  },
+  {
+   "block": "b5",
+   "at": "@personalidad",
+   "dur": 1.1,
+   "kind": "golpe",
+   "props": {
+    "text": "PERSONALIDAD\nCORPORATIVA",
+    "font": "display",
+    "color": "#171412",
+    "fondo": "#FFE14D"
+   }
+  },
+  {
+   "block": "b5",
+   "at": "@bolsillos",
+   "dur": 1.1,
+   "kind": "golpe",
+   "props": {
+    "text": "¡HASTA TU\nBOLSILLO!",
+    "font": "display",
+    "color": "#FBF8F1",
+    "fondo": "#2E6B52"
    }
   }
  ]

@@ -7,6 +7,7 @@ import {FondoCapitulo} from './components/fondos';
 import {TEMAS, TemaCtx} from './theme';
 import {BoardScene} from './components/board';
 import {FullScene} from './components/full';
+import {DUR_TR, Golpe, Transicion} from './components/transitions';
 import {
 	ChapterScene,
 	CollageScene,
@@ -67,6 +68,17 @@ const SalidaFranjas: React.FC<{children: React.ReactNode; dur: number}> = ({chil
 	return <AbsoluteFill style={{maskImage: mask, WebkitMaskImage: mask}}>{children}</AbsoluteFill>;
 };
 
+// Transición temática al entrar a cada capítulo (con la estética de lo que viene)
+const TR_CAPITULO: Record<string, string> = {b2: 'semitono', b3: 'op', b4: 'metro', b5: 'billete'};
+const transicionDe = (scenes: Scene[], i: number): string | null => {
+	if (i === 0) return null;
+	const s = scenes[i];
+	if (s.type === 'chapter') return TR_CAPITULO[s.block] ?? 'op';
+	if (scenes[i - 1].type === 'chapter') return 'papel';
+	if (s.type === 'end') return 'op';
+	return null;
+};
+
 export const VideoEnsayo: React.FC = () => {
 	const {fps} = useVideoConfig();
 	const scenes = data.scenes as Scene[];
@@ -92,15 +104,31 @@ export const VideoEnsayo: React.FC = () => {
 				return (
 					<Sequence key={i} name={`${String(i).padStart(2, '0')} ${s.block} ${s.type}`} from={from} durationInFrames={dur}>
 						<TemaCtx.Provider value={TEMAS[s.block]}>
-							<Franjas on={i > 0}>
+							<Franjas on={i > 0 && !transicionDe(scenes, i)}>
 								<Comp t0={s.t0} {...s.props} />
 							</Franjas>
 						</TemaCtx.Provider>
 					</Sequence>
 				);
 			})}
+			{/* Transiciones temáticas entre capítulos (cubren el corte) */}
+			{scenes.map((s, i) => {
+				const kind = transicionDe(scenes, i);
+				if (!kind) return null;
+				return (
+					<Sequence key={`tr${i}`} name={`transición ${kind}`} from={Math.round(s.t0 * fps) - DUR_TR / 2} durationInFrames={DUR_TR}>
+						<Transicion kind={kind} />
+					</Sequence>
+				);
+			})}
+			{/* Golpes de palabra (estímulos breves) */}
+			{((data as unknown as {overlays?: Scene[]}).overlays ?? []).filter((s) => s.type === 'golpe').map((s, i) => (
+				<Sequence key={`g${i}`} name={`golpe ${i}`} from={Math.round(s.t0 * fps)} durationInFrames={Math.max(10, Math.round((s.t1 - s.t0) * fps))}>
+					<Golpe t0={s.t0} t1={s.t1} {...(s.props as {text: string})} />
+				</Sequence>
+			))}
 			{/* Imágenes a pantalla completa: encima del tablero, sin cortar su recorrido */}
-			{((data as unknown as {overlays?: Scene[]}).overlays ?? []).map((s, i) => {
+			{((data as unknown as {overlays?: Scene[]}).overlays ?? []).filter((s) => s.type !== 'golpe').map((s, i) => {
 				const from = Math.round(s.t0 * fps);
 				const dur = Math.max(1, Math.round(s.t1 * fps) - from) + TR;
 				return (

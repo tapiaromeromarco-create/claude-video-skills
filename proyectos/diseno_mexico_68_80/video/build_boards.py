@@ -16,7 +16,7 @@ class Tablero:
     def _add(s, zona, d, x, y, **kw):
         cx, cy = ZONAS[zona]; d.update(x=cx - 960 + x, y=cy - 540 + y); d.update({k: v for k, v in kw.items() if v is not None})
         s.items.append(d); return d
-    def cam(s, at, zona, z=1.0, dx=0, dy=40, dur=None):  # dy=40: deja libre la franja de la barra inferior
+    def cam(s, at, zona, z=1.0, dx=0, dy=0, dur=None):
         cx, cy = ZONAS[zona]; c = dict(at=at, x=cx + dx, y=cy + dy, z=z)
         if dur: c["dur"] = dur
         s.cams.append(c)
@@ -133,7 +133,7 @@ t.hand("A", 160, 560, "¡explosión!", at="@explosión", size=96, rot=-6)
 t.tag("A", 90, 100, "ARCHIVO")
 # B · La Familia Burrón
 t.paper("B", 100, 100, 1700, 900, "kraft", rot=1)
-t.photo("B", 140, 200, 800, 560, "La Familia Burrón", src="img/st/familia_burron_estanquillo.png", cutout=True, at="@Familia Burrón", rot=-4)
+t.photo("B", 140, 200, 800, 560, "La Familia Burrón", src="img/st/familia_burron_estanquillo.png", cutout=True, at="@Por un lado", rot=-4)
 t.tag("B", 160, 780, "MUSEO DEL ESTANQUILLO · CDMX", at="@Familia Burrón")
 t.photo("B", 1000, 150, 380, 620, "Borola Burrón", src="img/st/borola.png", cutout=True, at="@Gabriel Vargas", rot=3)
 t.photo("B", 1420, 300, 330, 254, "Boleto conmemorativo del Metro (2015)", src="img/st/boleto_burron.png", cutout=True, at="@clásicos", rot=-6)
@@ -161,7 +161,7 @@ t.label("F", 1000, 860, "para cuestionar al **sistema**", at="@cuestionar", size
 # E · revistas
 t.paper("E", 60, 100, 1800, 880, "kraft", rot=1)
 for i, (nm, a) in enumerate([("La Garrapata", "@Garrapata"), ("El Mitote Ilustrado", "@Mitote"), ("Quecosaedro", "@Que Cosa"), ("SNIF", "@SNIF")]):
-    sr = {"La Garrapata": "garrapata", "Quecosaedro": "quecosaedro", "SNIF": "snif"}.get(nm)
+    sr = {"La Garrapata": "garrapata", "El Mitote Ilustrado": "mitote_ilustrado", "Quecosaedro": "quecosaedro", "SNIF": "snif"}.get(nm)
     if sr:
         t.photo("E", 120 + i * 430, 170 + (i % 2) * 60, 380, 520, nm, tag="PORTADA", at=a, rot=(-1) ** i * 5, src=f"img/st/{sr}.png", cutout=True)
     else:  # sin imagen confiable: el nombre escrito a mano
@@ -293,8 +293,10 @@ t.arrow("G", 300, 840, 330, 60, "M0 34 C 90 20, 200 40, 320 26", at="@colección
 t.paper("I", 60, 60, 1800, 960, "kraft", rot=1)
 t.photo("I", 120, 140, 620, 417, "MUCA · Ciudad Universitaria (2025)", src="img/st/muca_expo.png", cutout=True, at="@MUCA", rot=-3)
 t.embed("I", 100, 590, "museografia", at="@Aristos", w=700, z=3, props=dict(text="MUCA y Aristos: museografía moderna", textAt="@museografía moderna"))
+t.photo("I", 1400, 90, 420, 306, "Inauguración de una exposición (archivo)", src="img/st/museo_inauguracion_bn.png", cutout=True, at="@Mientras tanto", rot=4)
+t.photo("I", 1430, 560, 400, 286, "Sala de exposición (archivo)", src="img/st/museo_sala_bn.png", cutout=True, at="@sistematizaron", rot=-3)
 t.embed("I", 860, 100, "cartelVestir", at="@Si los artistas", w=520, z=3, rot=3, sceneW=1000, sceneH=1464, props=dict(year="1977"))
-t.hand("I", 1500, 360, "1977", at="@Si los artistas", size=110, rot=-8)
+t.hand("I", 1440, 420, "1977", at="@Si los artistas", size=110, rot=-8)
 t.label("I", 640, 860, "carteles culturales de **vanguardia**", at="@vanguardia", size=52)
 t.cam("@sistema de pictogramas", "A"); t.cam("@le encargó", "B"); t.cam("@famosa M", "C"); t.cam("@Siguiendo", "F")
 t.cam("@como el", "E"); t.cam("@Gracias a esto", "D"); t.cam("@visión didáctica", "G"); t.cam("@Mientras tanto", "I")
@@ -397,6 +399,18 @@ overlays = [
          ficha=dict(title="Banco de México", sub="en 1969 abre su propia fábrica de billetes"))),
     dict(block="b3", at="@creando líneas", until="@revolucionario", props=dict(src="img/full/cartel_mexico68.jpg", fit="contain", move="in",
          ficha=dict(title="Cartel oficial de México 68", sub="Programa de identidad · Library of Congress"))),
+]
+
+# ============================== GOLPES DE PALABRA (estímulos breves) ==============================
+G = lambda block, at, text, **kw: dict(block=block, at=at, dur=kw.pop("dur", 1.1), kind="golpe", props=dict(text=text, **kw))
+overlays += [
+    G("b1", "@lenguaje visual", "LENGUAJE\nVISUAL", font="op", color="#171412", fondo="#FBF8F1"),
+    G("b2", "@moneros", "¡MONEROS!", font="comic", color="#FFE14D", fondo="#E2231A"),
+    G("b2", "@alto impacto", "¡ALTO IMPACTO!", font="comic", color="#171412", fondo="#FFE14D"),
+    G("b3", "@pictogramas", "PICTOGRAMAS", font="op", color="#FBF8F1", fondo="#E4007C"),
+    G("b4", "@espectáculo", "¡ESPECTÁCULO\nDIDÁCTICO!", font="display", color="#FBF8F1", fondo="#009FDA"),
+    G("b5", "@personalidad", "PERSONALIDAD\nCORPORATIVA", font="display", color="#171412", fondo="#FFE14D"),
+    G("b5", "@bolsillos", "¡HASTA TU\nBOLSILLO!", font="display", color="#FBF8F1", fondo="#2E6B52"),
 ]
 
 json.dump(dict(_doc=__doc__, scenes=scenes, overlays=overlays), open("storyboard_src.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)

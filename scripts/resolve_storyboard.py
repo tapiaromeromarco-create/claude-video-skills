@@ -80,7 +80,37 @@ for i, ov in enumerate(S.get("overlays", [])):
     if t0 is None: continue
     t1 = resolve(ov["until"], t0 + 0.5, b["end"], f"pantalla completa {i} (fin)") if ov.get("until") else None
     t1 = t1 if t1 is not None else t0 + ov.get("dur", 3.5)
-    overlays.append(dict(block=ov["block"], type="full", t0=round(t0, 3), t1=round(t1, 3), props=resolve(ov.get("props", {}), t0 - 0.3, t1 + 0.3, f"pantalla completa {i}")))
+    overlays.append(dict(block=ov["block"], type=ov.get("kind", "full"), t0=round(t0, 3), t1=round(t1, 3), props=resolve(ov.get("props", {}), t0 - 0.3, t1 + 0.3, f"pantalla completa {i}")))
+
+# Planos específicos: en las zonas largas la cámara se acerca a una pieza clave y luego regresa
+for sc in scenes:
+    if sc["type"] != "board": continue
+    cams = sorted([c for c in sc["props"].get("cams", []) if c.get("at") is not None], key=lambda c: c["at"])
+    if not cams: continue
+    items = sc["props"].get("items", [])
+    def zona_de(it):
+        cx = it["x"] + it.get("w", 400) / 2; cy = it["y"] + it.get("h", 300) / 2
+        return min(range(len(cams)), key=lambda i: (cams[i]["x"] - cx) ** 2 + (cams[i]["y"] - cy) ** 2)
+    extra = []
+    for i, c in enumerate(cams):
+        t_next = cams[i + 1]["at"] if i + 1 < len(cams) else sc["t1"]
+        d = t_next - c["at"]
+        if d < 6.5: continue
+        cands = [it for it in items if zona_de(it) == i and it.get("at") is not None and it["at"] < c["at"] + d * 0.7
+                 and (it["type"] in ("year", "rotulo", "pictos") or (it["type"] == "photo" and it.get("src")))]
+        cands.sort(key=lambda it: -(it.get("w", 300) * it.get("h", 300)))
+        usados = 0; t = c["at"] + max(2.2, d * 0.3)
+        for it in cands[:2 if d > 12 else 1]:
+            t = max(t, it["at"] + 0.8)
+            if t > t_next - 3.0: break
+            h = it.get("h", 300) if it["type"] != "year" else it.get("size", 300)
+            z = max(1.25, min(1.75, 0.72 * 1080 / max(h, 200)))
+            extra.append(dict(at=round(t, 3), x=it["x"] + it.get("w", 400) / 2, y=it["y"] + h / 2, z=round(z, 2), dur=1.4, kind="zoom"))
+            vuelta = t + 2.6
+            if vuelta < t_next - 1.6:
+                extra.append(dict(at=round(vuelta, 3), x=c["x"], y=c["y"], z=c["z"], dur=1.3, kind="zoom"))
+            t = vuelta + 1.5; usados += 1
+    sc["props"]["cams"] = sorted(cams + extra, key=lambda c: c["at"])
 
 json.dump(dict(duration=T["duration"], scenes=scenes, overlays=overlays), open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"{len(scenes)} escenas · {T['duration']:.1f}s")

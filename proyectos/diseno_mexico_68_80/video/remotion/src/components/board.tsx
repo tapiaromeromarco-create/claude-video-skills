@@ -14,7 +14,6 @@ export const CANVAS = {w: 6000, h: 3500};
 const ROJO = '#D7262E';
 const MARKER = 'Permanent Marker';
 const CAVEAT = 'Caveat';
-const OSWALD = 'Oswald';
 const TYPE = 'Special Elite';
 const M68 = ['#E4007C', '#009FDA', '#7AB800', '#F7A600', '#F26B1D'];
 
@@ -474,21 +473,30 @@ const Pieza: React.FC<{it: BoardItem; t0: number; cam: CamT}> = ({it, t0, cam}) 
 	);
 };
 
-/* ---------- Barra inferior del capítulo (negro + amarillo, rótulo condensado) ---------- */
-export const BarraCapitulo: React.FC<{era: string; title: string; t0: number; showAt?: number}> = ({era, title, t0, showAt}) => {
+/* ---------- Etiqueta de capítulo: talón de boleto estilo México 68 (arriba a la izquierda) ----------
+   Al empezar el capítulo aparece completa (época + título) y a los ~5 s se encoge a una pestaña. */
+const COLOR_ERA: Record<string, string> = {'1968–80': '#E4007C', '70s': '#E2231A', '1968–70': '#009FDA', '1969–77': '#F26B1D', '1969–80': '#2E6B52'};
+export const EtiquetaCapitulo: React.FC<{era: string; title: string; t0: number; showAt?: number}> = ({era, title, t0, showAt}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const st = Math.round(((showAt ?? t0 + 0.6) - t0) * fps);
-	const p = interpolate(frame - st, [0, 16], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
-	if (p <= 0) return null;
+	const f = frame - st;
+	if (f < 0) return null;
+	const entra = interpolate(f, [0, 14], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.4))});
+	const plega = interpolate(f, [5 * fps, 5 * fps + 16], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)}); // se encoge a pestaña
+	const color = COLOR_ERA[era] ?? '#E4007C';
+	const sc = 1 - plega * 0.42;
 	return (
-		<div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 118, translate: `0px ${(1 - p) * 130}px`, display: 'flex', alignItems: 'stretch', fontFamily: OSWALD, fontWeight: 700}}>
-			<div style={{background: '#E7B92E', flex: 1, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', borderTop: `6px solid ${C.ink}`}}>
-				{/* franjas finas, guiño a las líneas de México 68 */}
-				<div style={{position: 'absolute', inset: 0, backgroundImage: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.07) 0 3px, transparent 3px 12px)'}} />
-				<div style={{background: C.ink, color: '#E7B92E', height: '100%', display: 'flex', alignItems: 'center', padding: '0 34px', fontSize: 68, position: 'relative', whiteSpace: 'nowrap'}}>{era}</div>
-				<div style={{width: 5, height: 70, background: C.ink, margin: '0 28px', position: 'relative'}} />
-				<div style={{fontSize: 66, color: C.ink, letterSpacing: 1, textTransform: 'uppercase', position: 'relative', whiteSpace: 'nowrap'}}>{title}</div>
+		<div style={{position: 'absolute', left: 46, top: 40, transformOrigin: '0 0', scale: String(sc * (0.6 + 0.4 * entra)), opacity: entra, rotate: `${-1.5 + plega * 1.5}deg`, filter: 'drop-shadow(6px 10px 10px rgba(20,10,0,0.35))', display: 'flex'}}>
+			{/* banda de color con la época (rotulación de líneas) */}
+			<div style={{background: color, color: '#fff', fontFamily: 'Monoton', fontSize: 64, lineHeight: 1, padding: '20px 26px 16px', display: 'flex', alignItems: 'center', position: 'relative'}}>
+				{era}
+				{/* perforación del talón */}
+				<div style={{position: 'absolute', right: -7, top: 0, bottom: 0, width: 14, backgroundImage: 'radial-gradient(circle, #E9E5DC 4px, transparent 4.5px)', backgroundSize: '14px 16px'}} />
+			</div>
+			{/* cuerpo del talón con el título a máquina; se pliega */}
+			<div style={{background: '#F4EEDF', overflow: 'hidden', maxWidth: (1 - plega) * 1100, display: 'flex', alignItems: 'center'}}>
+				<div style={{fontFamily: 'Special Elite', fontSize: 40, color: '#171412', padding: '0 30px', whiteSpace: 'nowrap', borderTop: `6px solid ${color}`, borderBottom: `6px solid ${color}`, height: '100%', display: 'flex', alignItems: 'center'}}>{title}</div>
 			</div>
 		</div>
 	);
@@ -512,7 +520,7 @@ export const BoardScene: React.FC<{t0: number; items: BoardItem[]; cams: Cam[]; 
 					<Pieza key={i} it={it} t0={t0} cam={cam} />
 				))}
 			</div>
-			{era && title ? <BarraCapitulo era={era} title={title} t0={t0} showAt={barAt} /> : null}
+			{era && title ? <EtiquetaCapitulo era={era} title={title} t0={t0} showAt={barAt} /> : null}
 		</AbsoluteFill>
 	);
 };
